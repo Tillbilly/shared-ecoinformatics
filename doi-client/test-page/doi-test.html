@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TERN DOI Service - Update Doc</title>
+</head>
+<body>
+
+<p>Test case 1: <a href="https://doi.tern.uq.edu.au/doi/index.php?r=api/inactive&user_id=xxxx&app_id=1234567890&doi=10.5072/05/4FECFDB616CD2">Bad User Id</a></p>
+<hr />
+<p>Test case 2: <a href="https://doi.tern.uq.edu.au/doi/index.php?r=api/inactive&user_id=w.wong2@uq.edu.au&app_id=1234567890&doi=10.5072/05/4FF4DECF904B1">Bad AppId</a></p>
+<hr />
+<p>Test case 3: <a href="https://doi.tern.uq.edu.au/doi/index.php?r=api/inactive&user_id=w.wong2@uq.edu.au&app_id=bd49648ff73eedb1760c0955e966218e&doi=10.5072/05/4FF4DECF904B1">Deactivate DOI</a></p>
+<hr />
+<p>Test case 4: <a href="https://doi.tern.uq.edu.au/doi/index.php?r=api/active&user_id=w.wong2@uq.edu.au&app_id=bd49648ff73eedb1760c0955e966218e&doi=10.5072/05/4FF4DECF904B1">Activate DOI</a> </p>
+<hr />
+<p>Test case 5: <form action="https://doi.tern.uq.edu.au/test/index.php?r=api/create&user_id=benjamin.till@adelaide.edu.au&app_id=8c496cd603542cbae2fceacba19ec0f4&url=http://portal.aekos.org.au" method="post">
+<textarea name="xml" rows="20" cols="120">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resource xsi:schemaLocation="http://datacite.org/schema/kernel-2.1 http://schema.datacite.org/meta/kernel-2.1/metadata.xsd" xmlns="http://datacite.org/schema/kernel-2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <identifier identifierType="DOI"/>
+    <creators>
+        <creator>
+            <creatorName>Till, Benjamin</creatorName>
+        </creator>
+    </creators>
+    <titles>
+        <title>My test title</title>
+    </titles>
+    <publisher>SHaRED AEKOS</publisher>
+    <publicationYear>2013</publicationYear>
+</resource>
+</textarea><br />
+<input type="submit" value="Mint DOI" /></form></p>
+<hr />
+<P>Test case 6: DOI 110.5072/05/4FF57658B00EF<form action="https://doi.tern.uq.edu.au/test/index.php?r=api/update&user_id=s.guru@uq.edu.au&app_id=85e48869a7b5b5f167d5161044ca17f7&url=http://tern.org.au/?&doi=10.5072/05/4FF57658B00EF" method="post">
+<textarea name="xml" rows="20" cols="120">
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-2.1 http://schema.datacite.org/meta/kernel-2.1/metadata.xsd">
+  <identifier identifierType="DOI">10.5072/05/4FF57658B00EF</identifier>
+  <creators>
+    <creator>
+      <creatorName>Wong, Wing-Fai</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>API Update</title>
+  </titles>
+  <publisher>ACEAS</publisher>
+  <publicationYear>2012</publicationYear>
+  <subjects>
+    <subject subjectScheme="Subject">Subject</subject>
+  </subjects>
+  <contributors>
+    <contributor contributorType="ContactPerson">
+      <contributorName>Contributor 1</contributorName>
+      <nameIdentifier nameIdentifierScheme="THOMSON">Name Identifier</nameIdentifier>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName>Contributor 2</contributorName>
+      <nameIdentifier nameIdentifierScheme="THOMSON">Name Identifier</nameIdentifier>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName>Contributor 3</contributorName>
+      <nameIdentifier nameIdentifierScheme="THOMSON">Name Identifier</nameIdentifier>
+    </contributor>
+  </contributors>
+  <dates>
+    <date dateType="Accepted">2012-01-01</date>
+    <date dateType="Accepted">2012-02-02</date>
+    <date dateType="Accepted">2012-03-03</date>
+  </dates>
+  <language>UTF-8</language>
+  <resourceType resourceTypeGeneral="Collection">Resource Type</resourceType>
+  <alternateIdentifiers>
+    <alternateIdentifier alternateIdentifierType="Cites">Alternate Identifier 1</alternateIdentifier>
+    <alternateIdentifier alternateIdentifierType="Cites">Alternate Identifier 2</alternateIdentifier>
+    <alternateIdentifier alternateIdentifierType="Cites">Alternate Identifier 3</alternateIdentifier>
+  </alternateIdentifiers>
+  <relatedIdentifiers>
+    <relatedIdentifier relatedIdentifierType="ARK" relationType="Cites">Related Identifier 1</relatedIdentifier>
+    <relatedIdentifier relatedIdentifierType="ARK" relationType="Cites">Related Identifier 2</relatedIdentifier>
+    <relatedIdentifier relatedIdentifierType="ARK" relationType="Cites">Related Identifier 3</relatedIdentifier>
+  </relatedIdentifiers>
+  <sizes>
+    <size>Size 1</size>
+    <size>Size 2</size>
+    <size>Size 3</size>
+  </sizes>
+  <formats>
+    <format>Format 1</format>
+    <format>Format 2</format>
+    <format>Format 3</format>
+  </formats>
+  <version>Version</version>
+  <rights>Rights</rights>
+  <descriptions>
+    <description descriptionType="Abstract">Description</description>
+  </descriptions>
+</resource>
+</textarea><br />
+<input type="submit" value="Update DOI" />
+</form></p>
+<hr />
+<h1>Test case 7: Form Post Data Submission</h1>
+<P><form action="https://doi.tern.uq.edu.au/doi/index.php?r=api/post" method="post"> 
+<p>USER ID:<input type="text" name="user_id" value="w.wong2@uq.edu.au" /></p>
+<p>APP ID:<input type="text" name="app_id" value="bd49648ff73eedb1760c0955e966218e" /></p>
+<p>URL:<input type="text" name="url" value="http://tern.org.au/?" /></p>
+<p>DOI:<input type="text" name="doi" value="10.5072/05/4FF4DECF904B1" /></p>
+<p>Publisher:<input type="text" name="publisher" value="ACEAS" /></p>
+<p>Publication Year:<input type="text" name="publicationYear" value="2012" /></p>
+<hr>
+<p>Title[]:<input type="text" name="title[]" value="API Post Data" /></p>
+<hr>
+<p>Creator Name[]:<input type="text" name="creatorName[]" value="Wong, Wing-Fai" /></p>
+<hr>
+<h3>Optional Data</h3>
+<p>Version:<input type="text" name="version" value="Version" /></p>
+<p>Rights:<input type="text" name="rights" value="Rights" /></p>
+<p>Language:<input type="text" name="language" value="UTF-8" /></p>
+<p>ResourceType:<input type="text" name="resourceType" value="Resource Type" /></p>
+<p>Resource Type General:<input type="text" name="resourceTypeGeneral" value="Collection" /></p>
+
+<hr>
+<p>Subject[]:<input type="text" name="subject[]" value="Subject" /></p>
+<p>Subject Scheme[]:<input type="text" name="subjectScheme[]" value="Subject" /></p>
+<hr>
+<p>Contributor Name[]:<input type="text" name="contributorName[]" value="Contributor 1" /></p>
+<p>Contributor Type[]:<input type="text" name="contributorType[]" value="ContactPerson" /></p>
+<p>Contributor - Name Identifier[]:<input type="text" name="nameIdentifier[]" value="Name Identifier" /></p>
+<p>Contributor - Name Identifier Scheme[]:<input type="text" name="nameIdentifierScheme[]" value="THOMSON" /></p>
+<hr>
+<p>Date[]:<input type="text" name="date[]" value="2012-01-01" /></p>
+<hr>
+<p>Date Type[]:<input type="text" name="dateType[]" value="Accepted" /></p>
+<hr>
+<p>Alternate Identifier[]:<input type="text" name="alternateIdentifier[]" value="Alternate Identifier 1" /></p>
+<p>Alternate Identifier Type[]:<input type="text" name="alternateIdentifierType[]" value="Cites" /></p>
+<hr>
+<p>Related Identifiers[]:<input type="text" name="relatedIdentifier[]" value="Related Identifiers 1" /></p>
+<p>Related Identifier Type[]:<input type="text" name="relatedIdentifierType[]" value="ARK" /></p>
+<p>Relation Type[]:<input type="text" name="relationType[]" value="Cites" /></p>
+<hr>
+<p>Size[]:<input type="text" name="size[]" value="Size 1" /></p>
+<p>Size[]:<input type="text" name="size[]" value="Size 2" /></p>
+<p>Size[]:<input type="text" name="size[]" value="Size 3" /></p>
+<p>Size[]:<input type="text" name="size[]" value="Size 4" /></p>
+<hr>
+<p>Format[]:<input type="text" name="format[]" value="format 1" /></p>
+<hr>
+<p>Description[]:<input type="text" name="description[]" value="Description" /></p>
+<hr>
+<p>Description Type[]:<input type="text" name="descriptionType[]" value="Abstract" /></p>
+<hr>
+
+<input type="submit" value="Send Request" />
+</form></p>
+</table>
+</body>
+</html>
+

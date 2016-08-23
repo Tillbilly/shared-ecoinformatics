@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>1</version>
+	<title>CitationExampleServiceImplTest</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>Introduction to Shared</introduction>
+
+	<items>
+		<questionGroup id="3">
+			<groupTitle>Dataset citation</groupTitle>
+			<groupDescription></groupDescription>
+			<items>
+				<question id="3.1" showId="true" type="TEXT" mandatory="false" meta="SHD.authorGivenNames">
+				<text>What are the author(s) names?</text>
+				<description></description>
+			</question>
+			</items>
+		</questionGroup>
+	</items>
+</questionnaire>

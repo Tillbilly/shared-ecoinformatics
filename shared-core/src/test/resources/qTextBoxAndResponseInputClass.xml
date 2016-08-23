@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire  xmlns="http://shared.aekos.org.au/shared">
+    <version>version 3</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Introduction to Shared - Question Group and Page Break Example</introduction>
+    <items>
+        <question id="1" type="CONTROLLED_VOCAB_SUGGEST" mandatory="true" trait="data-type-default">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Research</value>
+                </tag>
+                <tag>
+                    <value>Professional</value>
+                    <desc>Professional</desc>
+                    <display>Professional Data</display>
+                </tag>
+                <tag>
+                    <value>Survey</value>
+                    <desc>Survey data description</desc>
+                    <display>Survey Data</display>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="1.1" type="CONTROLLED_VOCAB_SUGGEST" trait="data-type-default" mandatory="true">
+            <text>What kind of data are you submitting, really?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Research</value>
+                </tag>
+                <tag>
+                    <value>Professional</value>
+                    <desc>Professional</desc>
+                    <display>Professional Data</display>
+                </tag>
+                <tag>
+                    <value>Survey</value>
+                    <desc>Survey data description</desc>
+                    <display>Survey Data</display>
+                </tag>
+            </defaultVocabulary>
+            <displayCondition questionId="1" responseNull="true" />
+        </question>
+        <question id="2" type="YES_NO" mandatory="true">
+            <text>Is the data awesome?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="3" type="CONTROLLED_VOCAB" trait="genus" mandatory="true">
+            <text>No really, what kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Animal</value>
+                </tag>
+                <tag>
+                    <value>Vegetable</value>
+                    <desc>A genus definition</desc>
+                </tag>
+                <tag>
+                    <value>Mineral</value>
+                    <desc>A genus definition</desc>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="4" type="DATE" mandatory="false">
+            <text>Please pick a Date?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="5" type="YES_NO">
+            <text>Please pick a Yes/No?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="6" type="YES_NO">
+            <text>Display if 5 Yes?</text>
+            <description> a description for help or something</description>
+            <displayCondition questionId="5" responseNotNull="true" responseValue="Y" />
+        </question>
+        <question id="7" type="TEXT">
+            <text>Question 7</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="7.1" type="TEXT">
+            <text>Question 7</text>
+            <description> a description for help or something</description>
+            <responseInputClass>testClass anotherClass</responseInputClass>
+        </question>
+        <question id="7.2" type="TEXT_BOX">
+            <text>Question 7</text>
+            <description> a description for help or something</description>
+            <responseInputClass>testClass anotherClass</responseInputClass>
+        </question>
+    </items>
+</questionnaire>

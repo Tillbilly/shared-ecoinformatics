@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+		<bean id="idWriter" class="au.edu.aekos.shared.service.index.IdValueWriter" />
+		<bean id="doiWriter" class="au.edu.aekos.shared.service.index.DoiValueWriter" />
+		<bean id="descriptionWriter" class="au.edu.aekos.shared.service.index.DescriptionWriter" >
+		    <!-- Add description config here -->
+		    <property name="abstractTag" value="SHD.datasetAbstract" />
+		</bean>
+		<bean id="methodWriter" class="au.edu.aekos.shared.service.index.MethodValueWriter" />
+		<bean id="studyLocationWriter" class="au.edu.aekos.shared.service.index.StudyLocationWriter" />
+		<bean id="studyAreaGeometryWriter" class="au.edu.aekos.shared.service.index.StudyAreaGeometryWriter" />
+		
+		<!-- Used to process normal field writing along with a custom writer, for a given shared metatag.  Used in a MultiWriter -->
+		<bean id="defaultWriter" class="au.edu.aekos.shared.service.index.DefaultValueWriter" />
+		
+		<!-- ************* Flora Species File Index Field Writer 'floraFileWriter' ************** -->
+		
+		<bean id="floraSpeciesFileWriter" class="au.edu.aekos.shared.service.index.SpeciesFileWriter" >
+		    <property name="traitName" value="taxon names" />
+		</bean>
+		<bean id="floraSemanticSpeciesFileWriter" class="au.edu.aekos.shared.service.index.SemanticSpeciesFileWriter" >
+		    <property name="traitName" value="taxon names" />
+		</bean>
+		<bean id="floraFileWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="floraSpeciesFileWriter"/>
+		           <ref bean="floraSemanticSpeciesFileWriter"/>
+		        </list>
+		     </property>
+	     </bean>
+	     
+	     <!-- ************  Flora Species Picked  -->
+	     <bean id="floraSemanticSpeciesWriter" class="au.edu.aekos.shared.service.index.SemanticSpeciesWriter">
+	         <property name="traitName" value="taxon names" />
+	     </bean>
+	     <bean id="floraWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="defaultWriter"/>
+		           <ref bean="floraSemanticSpeciesWriter"/>
+		        </list>
+		     </property>
+	     </bean>
+	     
+	     <!-- ************* Flora Common Names File Index Field Writer 'floraCommonFileWriter' ************** -->
+  	     
+		<bean id="floraCommonSpeciesFileWriter" class="au.edu.aekos.shared.service.index.SpeciesFileWriter" >
+		    <property name="traitName" value="common flora names" />
+		</bean>
+		<bean id="floraCommonSpeciesSemanticFileWriter" class="au.edu.aekos.shared.service.index.CommonSemanticSpeciesFileWriter">
+		    <property name="traitName" value="common flora names" />
+		    <property name="scientificNameTrait" value="taxon names" />
+		</bean>
+		<bean id="floraCommonFileWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="floraCommonSpeciesFileWriter"/>
+		           <ref bean="floraCommonSpeciesSemanticFileWriter"/>
+		        </list>
+		    </property>
+		</bean>
+		
+		<bean id="floraCommonSpeciesSemanticWriter" class="au.edu.aekos.shared.service.index.SemanticCommonSpeciesNameWriter">
+		    <property name="traitName" value="common flora names" />
+		    <property name="scientificTraitName" value="taxon names" />
+		</bean>
+		<bean id="floraCommonWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="defaultWriter"/>
+		           <ref bean="floraCommonSpeciesSemanticWriter"/>
+		        </list>
+		     </property>
+	     </bean>
+		
+		
+		<!-- *************** Fauna Species File Index Field Writer 'faunaFileWriter' ************** -->
+		
+		<bean id="faunaSpeciesFileWriter" class="au.edu.aekos.shared.service.index.SpeciesFileWriter"  >
+		    <property name="traitName" value="fauna taxon names" />
+		</bean>
+		<bean id="faunaSemanticSpeciesFileWriter" class="au.edu.aekos.shared.service.index.SemanticSpeciesFileWriter" >
+		    <property name="traitName" value="fauna taxon names" />
+		</bean>
+		<bean id="faunaFileWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="faunaSpeciesFileWriter"/>
+		           <ref bean="faunaSemanticSpeciesFileWriter"/>
+		        </list>
+		     </property>
+	     </bean>
+	     
+	     <bean id="faunaSemanticSpeciesWriter" class="au.edu.aekos.shared.service.index.SemanticSpeciesWriter">
+	         <property name="traitName" value="fauna taxon names" />
+	     </bean>
+	     <bean id="faunaWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="defaultWriter"/>
+		           <ref bean="faunaSemanticSpeciesWriter"/>
+		        </list>
+		     </property>
+	     </bean>
+	     
+		
+		<!-- ************* Fauna Common Names File Index Field Writer 'faunaCommonFileWriter' ************** -->
+		<bean id="faunaCommonSpeciesFileWriter" class="au.edu.aekos.shared.service.index.SpeciesFileWriter"  >
+		    <property name="traitName" value="common fauna names" />
+		</bean>
+		<bean id="faunaCommonSpeciesSemanticFileWriter" class="au.edu.aekos.shared.service.index.CommonSemanticSpeciesFileWriter">
+		    <property name="traitName" value="common fauna names" />
+		    <property name="scientificNameTrait" value="fauna taxon names" />
+		</bean>
+		<bean id="faunaCommonFileWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="faunaCommonSpeciesFileWriter"/>
+		           <ref bean="faunaCommonSpeciesSemanticFileWriter"/>
+		        </list>
+		    </property>
+		</bean>
+		
+		<bean id="faunaCommonSpeciesSemanticWriter" class="au.edu.aekos.shared.service.index.SemanticCommonSpeciesNameWriter">
+		    <property name="traitName" value="common fauna names" />
+		    <property name="scientificTraitName" value="fauna taxon names" />
+		</bean>
+		<bean id="faunaCommonWriter" class="au.edu.aekos.shared.service.index.MultiWriter">
+		    <property name="writerList">
+		        <list>
+		           <ref bean="defaultWriter"/>
+		           <ref bean="faunaCommonSpeciesSemanticWriter"/>
+		        </list>
+		     </property>
+	     </bean>
+		
+		<bean id="authorWriter" class="au.edu.aekos.shared.service.index.AuthorWriter" >
+		    <property name="givenNamesTag" value="SHD.authorGivenNames" />
+		    <property name="surnameTag" value="SHD.authorSurname" />
+		</bean>
+		<bean id="studyAreaBoundingBoxWriter" class="au.edu.aekos.shared.service.index.StudyAreaBoundingBoxWriter" >
+		    <property name="minXTag" value="SHD.studyAreaBoundingBoxXmin" />
+		    <property name="minYTag" value="SHD.studyAreaBoundingBoxYmin" />
+		    <property name="maxXTag" value="SHD.studyAreaBoundingBoxXmax" />
+		    <property name="maxYTag" value="SHD.studyAreaBoundingBoxYmax" />
+		    <property name="crsTag" value="SHD.studyAreaBoundingBoxCRS" />
+		</bean>
+		
+		<bean id="pubindexConfig" class="au.edu.aekos.shared.service.index.SubmissionIndexConfig">
+		    <property name="solrUrl" value="http://115.146.85.142:8080/solr" />
+		    <property name="authRequired" value="true" />
+		    <property name="username" value="solr" />
+		    <property name="password" value="solr" />
+            <!-- These properties are used for an embedded solr server (i.e. for dev) -->
+            <property name="embeddedServer" value="false" />
+            <property name="coreName" value="" />
+            <property name="embeddedIndexLocation" value="" />
+		    <property name="manualFieldWriterMap">
+		        <map>
+                    <entry key="id" value-ref="idWriter"/>
+                    <entry key="doi" value-ref="doiWriter"/>
+                    <entry key="description" value-ref="descriptionWriter"/>
+                    <entry key="author" value-ref="authorWriter" />
+                    <entry key="bbox" value-ref="studyAreaBoundingBoxWriter" />
+                    <entry key="SHD.methodName" value-ref="methodWriter"/>
+                    <entry key="SHD.methodAbstract" value-ref="methodWriter"/>
+                    <entry key="SHD.studySpeciesFloraFile" value-ref="floraFileWriter"/>
+                    <entry key="SHD.studySpeciesFloraCommonFile" value-ref="floraCommonFileWriter"/>
+                    <entry key="SHD.studySpeciesFaunaFile" value-ref="faunaFileWriter"/>
+                    <entry key="SHD.studySpeciesFaunaCommonFile" value-ref="faunaCommonFileWriter"/>
+                    <entry key="SHD.taxonName" value-ref="floraWriter"/>
+                    <entry key="SHD.floraCommonName" value-ref="floraCommonWriter"/>
+                    <entry key="SHD.faunaTaxonomicName" value-ref="faunaWriter"/>
+                    <entry key="SHD.faunaCommonName" value-ref="faunaCommonWriter"/>
+                    <entry key="SHD.studyLocationFile" value-ref="studyLocationWriter"/>
+                    <entry key="SHD.studyAreaGeometry" value-ref="studyAreaGeometryWriter"/>
+		        </map>
+		    </property>
+		    
+		    <property name="fieldMappingList">
+		        <list>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="id" />
+		                <property name="indexFieldName" value="id" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="doi" />
+		                <property name="indexFieldName" value="doi" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetFormalName" />
+		                <property name="indexFieldName" value="title" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="description" />
+		                <property name="indexFieldName" value="description" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetFormalName" />
+		                <property name="indexFieldName" value="datasetFormalName_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetNameForCitation" />
+		                <property name="indexFieldName" value="datasetNameForCitation_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetIdentifier" />
+		                <property name="indexFieldName" value="datasetIdentifier_t" />
+		            </bean>
+		            
+		            <!-- Martin's suggested picker additions -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.projectName" />
+		                <property name="indexFieldName" value="projectName_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.researchProgramName" />
+		                <property name="indexFieldName" value="researchProgramName_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.researchProgramIdentifier" />
+		                <property name="indexFieldName" value="researchProgramIdentifier_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.projectIdentifier" />
+		                <property name="indexFieldName" value="projectIdentifier_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.projectIdentifierType" />
+		                <property name="indexFieldName" value="projectIdentifierType_t" />
+		            </bean>
+		            
+		             <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.numberStudyLocation" />
+		                <property name="indexFieldName" value="numberStudyLocation_i" />
+		            </bean>
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetAbstract" />
+		                <property name="indexFieldName" value="datasetAbstract_t" />
+		            </bean>
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.ecologicalTheme" />
+		                <property name="indexFieldName" value="ecologicalTheme_stxt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.ecologicalThemeSuggest" />
+		                <property name="indexFieldName" value="ecologicalTheme_stxt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.threatsPressures" />
+		                <property name="indexFieldName" value="threatsPressures_stxt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.threatsPressuresSuggest" />
+		                <property name="indexFieldName" value="threatsPressures_stxt" />
+		            </bean>
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.conservationManagement" />
+		                <property name="indexFieldName" value="conservationManagement_stxt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.conservationManagementSuggest" />
+		                <property name="indexFieldName" value="conservationManagement_stxt" />
+		            </bean>
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.fieldsOfResearch" />
+		                <property name="indexFieldName" value="fieldOfResearch_stxt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.socioEconomicObjectives" />
+		                <property name="indexFieldName" value="socioEconomicObjectives_txt" />
+		            </bean>
+		            
+		            <!-- Study Location and Spatial  -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studyAreaDescription" />
+		                <property name="indexFieldName" value="studyAreaDescription_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studyLocationFile" />
+		                <property name="indexFieldName" value="geo_mv" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studyAreaGeometry" />
+		                <property name="indexFieldName" value="geo_mv" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="bbox" />
+		                <property name="indexFieldName" value="geo_mv" />
+		            </bean>
+		            
+		            <!-- Temporal -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.firstStudyAreaVisitDate" />
+		                <property name="indexFieldName" value="firstStudyAreaVisitDate_dt" />
+		                <property name="convertValueToClass" value="java.util.Date" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.lastStudyAreaVisitDate" />
+		                <property name="indexFieldName" value="lastStudyAreaVisitDate_dt" />
+		                <property name="convertValueToClass" value="java.util.Date" />
+		            </bean>
+		            
+		            <!-- IBRA -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.ibraRegion" />
+		                <property name="indexFieldName" value="ibraRegion_txt" />
+		            </bean>
+		            
+		            <!-- Species Indexing - -->    
+		            <!--  
+		            SHD.studySpeciesFloraFile         entries to  studySpeciesFlora_txt, species_txt
+                    SHD.studySpeciesFloraCommonFile
+                    SHD.studySpeciesFaunaFile
+                    SHD.studySpeciesFaunaCommonFile
+                    
+                    SHD.taxonName                     entries to  studySpeciesFlora_txt, species_txt
+                    SHD.floraCommonName
+                    SHD.faunaTaxonomicName
+                    SHD.faunaCommonName
+		            -->
+		            
+		           <!-- species_txt contains all of the species entries, fauna, flora including common -->
+		            <!-- Flora File-->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFloraFile" />
+		                <property name="indexFieldName" value="studySpeciesFlora_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFloraFile" />
+		                <property name="indexFieldName" value="species_txt" />
+		            </bean>
+		            <!-- Flora Common File-->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFloraCommonFile" />
+		                <property name="indexFieldName" value="studySpeciesFloraCommon_txt" />
+		                <property name="speciesIndexFieldName" value="studySpeciesFlora_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFloraCommonFile" />
+		                <property name="indexFieldName" value="species_txt" />
+		            </bean>
+		            <!-- Fauna File --> 
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFaunaFile" />
+		                <property name="indexFieldName" value="studySpeciesFauna_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFaunaFile" />
+		                <property name="indexFieldName" value="species_txt" />
+		            </bean>
+		            <!-- Fauna Common File -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFaunaCommonFile" />
+		                <property name="indexFieldName" value="studySpeciesFaunaCommon_txt" />
+		                <property name="speciesIndexFieldName" value="studySpeciesFauna_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studySpeciesFaunaCommonFile" />
+		                <property name="indexFieldName" value="species_txt" />
+		            </bean>
+		            <!-- Flora Picked -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.taxonName" />
+		                <property name="indexFieldName" value="studySpeciesFlora_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.taxonName" />
+		                <property name="indexFieldName" value="species_txt" />
+		            </bean>
+		            <!-- Flora Common Picked -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.floraCommonName" />
+		                <property name="indexFieldName" value="studySpeciesFloraCommon_txt" />
+		                <property name="speciesIndexFieldName" value="studySpeciesFlora_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.floraCommonName" />
+		                <property name="indexFieldName" value="species_txt" />
+		                <property name="speciesIndexFieldName" value="species_txt" />
+		            </bean>
+		            
+		             <!-- Fauna Picked -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaTaxonomicName" />
+		                <property name="indexFieldName" value="studySpeciesFauna_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaTaxonomicName" />
+		                <property name="indexFieldName" value="species_txt" />
+		            </bean>
+		            
+		            <!-- Fauna Common Picked -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaCommonName" />
+		                <property name="indexFieldName" value="studySpeciesFaunaCommon_txt" />
+		                <property name="speciesIndexFieldName" value="studySpeciesFauna_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaCommonName" />
+		                <property name="indexFieldName" value="species_txt" />
+		                <property name="speciesIndexFieldName" value="species_txt" />
+		            </bean>
+		            
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaGroup" />
+		                <property name="indexFieldName" value="faunaGroup_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaGroupSuggest" />
+		                <property name="indexFieldName" value="faunaGroup_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.floraGroup" />
+		                <property name="indexFieldName" value="floraGroup_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.floraGroupSuggest" />
+		                <property name="indexFieldName" value="floraGroup_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.environmentalFeatures" />
+		                <property name="indexFieldName" value="environmentalFeatures_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.environmentalFeaturesSuggest" />
+		                <property name="indexFieldName" value="environmentalFeatures_txt" />
+		            </bean>
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.samplingDesign" />
+		                <property name="indexFieldName" value="samplingDesign_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.samplingDesignSuggest" />
+		                <property name="indexFieldName" value="samplingDesign_txt" />
+		            </bean>
+		            
+		            <!-- Flora, fauna technique -->
+		           
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.floraTechnique" />
+		                <property name="indexFieldName" value="floraTechnique_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.floraTechniqueSuggest" />
+		                <property name="indexFieldName" value="floraTechnique_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaTechnique" />
+		                <property name="indexFieldName" value="faunaTechnique_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.faunaTechniqueSuggest" />
+		                <property name="indexFieldName" value="faunaTechnique_txt" />
+		            </bean>
+		            
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.measurement" />
+		                <property name="indexFieldName" value="measurement_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.measurementSuggest" />
+		                <property name="indexFieldName" value="measurement_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.measurementTheme" />
+		                <property name="indexFieldName" value="measurementTheme_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.measurementThemeSuggest" />
+		                <property name="indexFieldName" value="measurementTheme_txt" />
+		            </bean>
+		            
+                    <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.artefacts" />
+		                <property name="indexFieldName" value="artefacts_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.artefactsSuggest" />
+		                <property name="indexFieldName" value="artefacts_txt" />
+		            </bean>
+ 
+                    <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.artefactsSuggest" />
+		                <property name="indexFieldName" value="artefacts_txt" />
+		            </bean>
+ 
+                     <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.associatedMaterialType" />
+		                <property name="indexFieldName" value="associatedMaterialType_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.associatedMaterialTypeSuggest" />
+		                <property name="indexFieldName" value="associatedMaterialType_txt" />
+		            </bean>
+ 
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetContactName" />
+		                <property name="indexFieldName" value="contactName_tn" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetContactOrganisation" />
+		                <property name="indexFieldName" value="contactOrganisation_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetContactAddress" />
+		                <property name="indexFieldName" value="contactAddress_tn" />
+		            </bean>
+		            <!--  
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetContactEmail" />
+		                <property name="indexFieldName" value="contactEmail_tn" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetContactPhone" />
+		                <property name="indexFieldName" value="contactPhone_tn" />
+		            </bean>
+		            
+		            -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.licenseType" />
+		                <property name="indexFieldName" value="licenseType_t" />
+		            </bean>
+		            
+                    <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.embargo" />
+		                <property name="indexFieldName" value="embargoDate_dt" />
+		                <property name="convertValueToClass" value="java.util.Date" />
+		            </bean>
+		            
+		            <!-- Method names and abstract -->
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.methodName" />
+		                <property name="indexFieldName" value="methodName_x_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.methodAbstract" />
+		                <property name="indexFieldName" value="methodAbstract_x_txt" />
+		            </bean>
+		          
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.curationStatus" />
+		                <property name="indexFieldName" value="curationStatus_t" />
+		            </bean>
+		          
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="author" />
+		                <property name="indexFieldName" value="author_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.spatialScale" />
+		                <property name="indexFieldName" value="spatialScale_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.spatialScaleSuggest" />
+		                <property name="indexFieldName" value="spatialScale_txt" />
+		            </bean>
+		            
+		        </list>
+		    </property>
+		</bean>
+		
+</beans>
+    

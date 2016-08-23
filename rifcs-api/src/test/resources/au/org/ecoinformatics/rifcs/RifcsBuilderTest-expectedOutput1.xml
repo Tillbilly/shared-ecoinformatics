@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<registryObjects xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd" xmlns:ns2="http://ands.org.au/standards/rif-cs/extendedRegistryObjects" xmlns="http://ands.org.au/standards/rif-cs/registryObjects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <registryObject group="GROUP">
+        <key>myCollectionKey</key>
+        <originatingSource>http://hello.org</originatingSource>
+        <collection type="dataset" dateModified="2012-01-12" dateAccessioned="2010-01-10">
+            <identifier type="local">aekos.org.au/collection/shared/58991</identifier>
+            <dates type="dc.dateSubmitted">
+                <date type="dateFrom" dateFormat="W3CDTF">2010-10-20</date>
+            </dates>
+            <dates type="dc.available">
+                <date type="dateFrom" dateFormat="W3CDTF">2010-10-21</date>
+            </dates>
+            <name type="primary">
+                <namePart>Global Human Vital Rates</namePart>
+            </name>
+            <location>
+                <address>
+                    <physical type="streetAddress">
+                        <addressPart type="text">My House, In The Middle Of My Street</addressPart>
+                        <addressPart type="telephoneNumber">0408899788</addressPart>
+                    </physical>
+                </address>
+                <address>
+                    <electronic type="url">
+                        <value>http://www.google.com</value>
+                    </electronic>
+                </address>
+            </location>
+            <coverage>
+                <temporal>
+                    <date type="dateFrom" dateFormat="W3CDTF">2011-10-01</date>
+                    <date type="dateTo" dateFormat="W3CDTF">2012-12-12</date>
+                </temporal>
+                <spatial type="text">Spatial Description</spatial>
+                <spatial type="iso19139dcmiBox">BBOX ME</spatial>
+            </coverage>
+            <relatedObject>
+                <key>2345-33255-SOME-ID</key>
+                <relation type="isOwnedBy"/>
+            </relatedObject>
+            <subject type="subject-type1">Subject1</subject>
+            <subject type="subject-type2">Subject2</subject>
+            <description type="full">description blah blah</description>
+            <relatedInfo>
+                <identifier type="Digital Object Identifier">10.4227/05/53B1F1C02C8E7</identifier>
+                <title>Title of some other related stuff</title>
+            </relatedInfo>
+            <rights>
+                <rightsStatement>Rights Statement Yall</rightsStatement>
+                <licence type="CC-BY">The License String</licence>
+                <accessRights>Access Rights String</accessRights>
+            </rights>
+            <citationInfo>
+                <fullCitation>This is the full citation String</fullCitation>
+            </citationInfo>
+            <citationInfo>
+                <citationMetadata>
+                    <identifier type="doi">MY-DOI</identifier>
+                    <contributor seq="1">
+                        <namePart>Author 1 String</namePart>
+                    </contributor>
+                    <contributor seq="2">
+                        <namePart>Author 2 String</namePart>
+                    </contributor>
+                    <title>My Dataset Title</title>
+                    <publisher>The Publisher</publisher>
+                    <version>v6.6.6</version>
+                    <date type="dateSubmitted">2001-01-01</date>
+                    <date type="publicationDate">2010-01-01</date>
+                </citationMetadata>
+            </citationInfo>
+        </collection>
+    </registryObject>
+</registryObjects>

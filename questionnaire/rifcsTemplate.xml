@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+    <registryObject group="Advanced Ecological Knowledge and Observation System">
+        <key>aekos.org.au/collection/shared/[AUTOGENERATE-SHARED-IDENTIFIER]</key>
+        <originatingSource type="authoritative">http://www.aekos.org.au/link/to/oaipmh/provider</originatingSource>
+        <collection type="dataset" dateAccessioned="[AUTOGENERATE BASED ON SUBMISSION DATE]" dateModified="[AUTOGENERATE BASED ON MODIFICATION DATE]">
+            <identifier type="local">[AUTOGENERATE-SHARED-IDENTIFIER]</identifier>
+            <identifier type="doi">[AUTOGENERATE-DOI]</identifier>
+            <name type="primary">
+                <namePart>SHD.datasetFullName</namePart>
+            </name>
+            <name type="abbreviated">
+                <namePart>SHD.datasetShortName</namePart>
+            </name>
+            <location>
+                <address>
+                    <electronic type="url">
+                        <value>http://www.aekos.org.au/shared/[AUTOGENERATE-SHARED-IDENTIFIER]</value>
+                    </electronic>
+                    <electronic type="email">
+                        <value>SHD.datasetContactEmail</value>
+                    </electronic>
+                </address>
+            </location>
+            <location>
+                <address>
+                    <physical type="postalAddress">
+                        <addressPart type="text">SHD.datasetContactAddress</addressPart>
+                        <addressPart type="telephoneNumber">SHD.datasetContactPhone</addressPart>
+                    </physical>
+                </address>
+            </location>
+            <relatedObject>
+                <key>[registryKeyForRelatedObject: needs to be obtained from ANDS]</key>
+                <relation type="SHD.relatedPartyRelationToDataset"></relation>
+            </relatedObject>
+            <subject type="anzsrc-for">SHD.fieldsOfResearch</subject>
+            <subject type="anzsrc-seo">SHD.socioEconomicObjectives</subject>
+            <subject type="local">SHD.thematicScope</subject>
+            <subject type="local">SHD.taxonName</subject>
+            <description type="brief">
+            	SHD.methodAbstract </description>
+            <coverage>
+                <spatial type="text">SHD.studyAreaDescription</spatial>
+                <spatial type="iso19139dcmiBox">SHD.studyLocationCoordinatesFromFile/SHD.studyLocationCoordinatesFromFile</spatial>
+                <temporal>
+                    <date type="dateFrom" dateFormat="W3CDTF">SHD.firstStudyLocationVisit</date>
+                    <date type="dateTo" dateFormat="W3CDTF">SHD.firstStudyLocationVisit</date>
+                </temporal>
+            </coverage>
+            <rights>
+                <accessRights>[hardcoded statement describing the access to the metadata and the data via AEKOS (depending on the ingestion type)]<accessRights>
+                <rightsStatement>
+                   SHD.rightsStatement</rightsStatement>
+                <licence>SHD.licenseType</licence>
+            </rights>
+            <citationInfo>
+                <citationMetadata>
+                    <identifier type="SHD.datasetIdentifierType">SHD.datasetIdentifier</identifier>
+                    <contributor>SHD.authors</contributor>
+                    <title>SHD.datasetNameForCitation</title>
+                    <publisher>SHD.datasetPublisher</publisher>
+                    <date type="publicationDate">SHD.datasetPublicationYear</date>
+                    <url>SHD.datasetLink</url>
+                </citationMetadata>
+            </citationInfo>
+            <Info type="SHD.additionalResourceType">
+                <identifier type="SHD.additionalResourceIdentifierType">SHD.additionalResourceIdentifier</identifier>
+                <title>SHD.additionalResourceName</title>
+            </relatedInfo>
+        </collection>
+    </registryObject>
+</registryObjects>

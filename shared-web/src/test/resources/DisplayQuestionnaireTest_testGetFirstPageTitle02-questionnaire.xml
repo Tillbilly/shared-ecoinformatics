@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>1</version>
+	<title>CitationExampleServiceImplTest</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>Introduction to Shared</introduction>
+	<submissionTitleQuestionId>1.1</submissionTitleQuestionId>
+	<firstPageTitle>Dataset description</firstPageTitle>
+
+	<items>
+		<question id="1" showId="true" type="TEXT" mandatory="false" meta="SHD.something">
+			<text>Answer the question?</text>
+			<description>
+							<![CDATA[]]>
+			</description>
+		</question>
+
+		<pageBreak pageTitle="Coverage" />
+
+		<question id="2" showId="true" type="TEXT" mandatory="false" meta="SHD.something2">
+			<text>Page 2 question?</text>
+			<description>
+							<![CDATA[]]>
+			</description>
+		</question>
+	</items>
+</questionnaire>

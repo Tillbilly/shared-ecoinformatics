@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire  xmlns="http://shared.aekos.org.au/shared">
+    <version>0.1</version>
+    <title>SHaRED AEKOS Submission Tool - Test Submission Service Questionnaire Config</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Introduction to Shared - Question Group and Page Break Example</introduction>
+    
+    <!--
+	    TEXT(""),
+	    CONTROLLED_VOCAB(""),
+	    CONTROLLED_VOCAB_SUGGEST(""),
+	    YES_NO(""),
+	    DATE(""),
+	    ##COORDINATE(""),
+	    IMAGE(""),
+	    ##BBOX(""),
+	    MULTISELECT_TEXT(""),
+      -->
+    <items>
+        <question id="1.0" type="TEXT" mandatory="true">
+            <text>Please enter some text?</text>
+            <description>help text</description>
+        </question>
+        <question id="1.1" type="TEXT" >
+            <text>Please enter some more text?</text>
+            <description>help text</description>
+        </question>
+        <question id="2.0" type="CONTROLLED_VOCAB" trait="genus-def" mandatory="true">
+            <text>Select a controlled vocab?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Animal</value>
+                </tag>
+                <tag>
+                    <value>Vegetable</value>
+                    <desc>A genus definition</desc>
+                </tag>
+                <tag>
+                    <value>Mineral</value>
+                    <desc>A genus definition</desc>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="2.1" type="CONTROLLED_VOCAB" trait="genus-def1" mandatory="false">
+            <text>Select another controlloed vocab?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Animal</value>
+                </tag>
+                <tag>
+                    <value>Vegetable</value>
+                    <desc>A genus definition</desc>
+                </tag>
+                <tag>
+                    <value>Mineral</value>
+                    <desc>A genus definition</desc>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="3.0" type="CONTROLLED_VOCAB_SUGGEST" trait="genus-def" mandatory="true">
+            <text>Select a controlloed vocab suggest?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Animal</value>
+                </tag>
+                <tag>
+                    <value>Vegetable</value>
+                    <desc>A genus definition</desc>
+                </tag>
+                <tag>
+                    <value>Mineral</value>
+                    <desc>A genus definition</desc>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="3.1" type="CONTROLLED_VOCAB_SUGGEST" trait="genus-def1" mandatory="false">
+            <text>Select another controlled vocab suggest?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Animal</value>
+                </tag>
+                <tag>
+                    <value>Vegetable</value>
+                    <desc>A genus definition</desc>
+                </tag>
+                <tag>
+                    <value>Mineral</value>
+                    <desc>A genus definition</desc>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="4.0" type="YES_NO" mandatory="true">
+            <text>Please pick a Yes/No?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="4.1" type="YES_NO">
+            <text>Please pick another Yes/No?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="5.0" type="DATE" mandatory="true">
+            <text>Please pick a Date?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="5.1" type="DATE">
+            <text>Please pick another Date?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="6.0" type="IMAGE">
+            <text>Please pick an Image?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="6.1" type="IMAGE">
+            <text>Please pick another image?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="7.0" type="MULTISELECT_TEXT" mandatory="true">
+            <text>Please pick a multiselect text?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="7.1" type="MULTISELECT_TEXT">
+            <text>Please pick another multiselect text?</text>
+            <description> a description for help or something</description>
+        </question>
+    </items>
+</questionnaire>

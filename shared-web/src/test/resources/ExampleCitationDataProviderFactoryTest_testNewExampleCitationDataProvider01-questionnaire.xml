@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>1</version>
+	<title>CitationExampleServiceImplTest</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>Introduction to Shared</introduction>
+
+	<items>
+		<questionGroup id="3">
+			<groupTitle>Dataset Description</groupTitle>
+			<groupDescription></groupDescription>
+			<items>
+				<question id="3.1" showId="true" type="TEXT" mandatory="true" meta="SHD.datasetNameForCitation">
+					<text>What is your dataset's full title?</text>
+					<description></description>
+				</question>
+				<question id="3.4" type="TEXT" mandatory="false" meta="SHD.datasetVersion">
+					<text>What is the version number of the dataset?</text>
+					<description></description>
+				</question>
+			</items>
+		</questionGroup>
+		<multipleQuestionGroup id="12">
+			<text>Dataset Author(s)</text>
+			<description></description>
+			<items>
+				<question id="12.1" showId="false" type="TEXT" mandatory="false" meta="SHD.authorGivenNames">
+					<text>Author's Initials</text>
+					<description></description>
+				</question>
+				<question id="12.2" showId="false" type="TEXT" mandatory="false" meta="SHD.authorSurname">
+					<text>Author's Surname or Organisation Name</text>
+					<description></description>
+				</question>
+			</items>
+		</multipleQuestionGroup>
+		<questionGroup id="13">
+			<groupTitle>Dataset Conditions of Use</groupTitle>
+			<groupDescription></groupDescription>
+			<items>
+				<multipleQuestionGroup id="13.4" showId="true">
+					<text>Dataset Custodians(s)</text>
+					<description></description>
+					<items>
+						<question id="13.4.1" showId="false" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.legalCustodianOrganisation">
+							<text>Select the organisation(s) considered to have legal custodianship of the dataset (i.e. intellectual property rights of the dataset)?</text>
+							<description></description>
+						</question>
+					</items>
+				</multipleQuestionGroup>
+			</items>
+		</questionGroup>
+	</items>
+</questionnaire>

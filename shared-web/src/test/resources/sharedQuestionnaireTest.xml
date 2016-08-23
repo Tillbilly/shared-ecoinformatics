@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>122</version>
+	<title>SHaRED AEKOS Submission Tool</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>QA DataTeam version 1</introduction>
+	<submissionTitleQuestionId>1.1</submissionTitleQuestionId>
+	<items>
+		<questionGroup id="1">
+			<groupTitle>Submission</groupTitle>
+			<groupDescription>Information about the submission</groupDescription>
+			<items>
+			    <question id="1.1" type="TEXT" mandatory="true" meta="SHD.submissionName">
+					<text>Submission name</text>
+					<description>Please provide a name for this submission.</description>
+				</question>
+			</items>
+		</questionGroup>
+		<questionGroup id="2">
+			<groupTitle>Dataset</groupTitle>
+			<groupDescription>Basic information about the dataset</groupDescription>
+			<items>
+				<question id="2.1" type="TEXT" mandatory="true" meta="SHD.datasetFullName">
+					<text>Dataset name</text>
+					<description>
+						<![CDATA[
+							Please provide the formal name which is <br/>
+							commonly used to refer to dataset.
+						]]>
+					</description>
+				</question>
+				<question id="2.2" type="TEXT" mandatory="false" meta="SHD.datasetShortName">
+					<text>Abbreviated dataset name</text>
+					<description>
+						<![CDATA[
+							If available, please provide an abbreviated<br/>
+							name which is commonly used to refer<br/>
+							to dataset.
+						]]>
+					</description>
+				</question>
+				<question id="2.3" type="CONTROLLED_VOCAB_SUGGEST" isCustom="true" trait="researchProgramme" mandatory="false" meta="SHD.researchProgram">
+					<text>Research program</text>
+					<description>
+						<![CDATA[
+							If the project which led to the establishment<br/>
+							of the dataset is part of a larger research <br/>
+							program, please provide the name of this <br/>
+							program.
+						]]>
+					</description>
+				</question>
+				<question id="2.4" type="CONTROLLED_VOCAB" isCustom="true" trait="rifcsIdentifierType" mandatory="false" meta="SHD.researchProgramIdentifierType">
+					<text>Research program identifier type</text>
+					<description>
+						<![CDATA[
+							If the project which led to the<br/>
+							establishment of the dataset is<br/>
+							part of a broader research program<br/>
+							which is registered  in a metadata<br/>
+							repository such as Research Data<br/>
+							Australia (RDA) or TROVE (National<br/>
+							Library of Australia), <br/>
+							please provide the type of the <br/>
+							persistent identifier of this program<br/>
+							in the metadata repository.<br/>
+						]]> 
+					</description>
+					<displayCondition questionId="2.3" responseNotNull="true" />
+				</question>
+				<question id="2.5" type="TEXT" mandatory="false" meta="SHD.researchProgramIdentifier">
+					<text>Research activity identifier</text>
+					<description>
+						<![CDATA[
+							If the project which led to the<br/>
+							establishment of the dataset is<br/>
+							part of a broader research activity<br/>
+							which is registered  in a metadata<br/>
+							repository such as Research Data<br/>
+							Australia (RDA) or TROVE (National<br/>
+							Library of Australia), <br/>
+							please provide a persistent<br/>
+							identifier of this activity<br/>
+							in the metadata repository.<br/>
+						]]>
+					</description>
+					<displayCondition questionId="2.3" responseNotNull="true" />
+				</question>
+				<questionGroup id="2.6">
+					<groupTitle>Dataset contact</groupTitle>
+					<groupDescription>
+						<![CDATA[
+							Information about the person which can be<br/>
+							contacted for questions in regard to the<br/>
+							dataset.
+						]]>
+					</groupDescription>
+					<items>
+						<question id="2.6.1" type="YES_NO" mandatory="true" meta="SHD.submitterIsDatasetContact">
+							<text>Is the submitter also the primary dataset contact?</text>
+							<description>
+							<![CDATA[
+								Please specify if the submitter is also the <br/>
+								person to be contacted for questions on the <br/>
+								dataset.
+							]]>    
+							</description>
+						</question>
+						<question id="2.6.2" type="YES_NO" mandatory="true" meta="SHD.ownerIsDatasetContact">
+							<text>Is the dataset owner also the primary dataset contact?</text>
+							<description>
+							<![CDATA[
+								Please specify if the owner, which is specified<br/>
+								in the following section 'Legal information', <br/>
+								is also the person to be contacted for <br/>
+								questions on the dataset.
+							]]>      
+							</description>
+							<displayCondition questionId="2.6.1" responseNotNull="true" responseValue="N" />
+						</question>
+						<question id="2.6.3" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="true" meta="SHD.datasetContact">
+							<text>Dataset contact</text>
+							<description>
+							<![CDATA[
+								Please specify the person to be contacted<br/>
+								for questions on the dataset by clicking<br/>
+								on the corresponding entry in the list.<br/>
+								If the required person is not in the list,<br/>
+								please choose 'Other - Please suggest' and<br/>
+								provide details for this person in the following<br/>
+								questions.
+							]]>   
+							</description>
+							<displayCondition questionId="2.6.2" responseValue="N" responseNotNull="true" />
+						</question>
+						<question id="2.6.4" type="TEXT" mandatory="false" meta="SHD.datasetContactAddress">
+							<text>Postal address</text>
+							<description>
+							<![CDATA[
+								Please provide the postal address of the<br/>
+								dataset contact.<br/>
+							]]>  
+							</description>	
+							<displayCondition questionId="2.6.3" responseNotNull="true" responseValue="OTHER" />
+						</question>
+						<question id="2.6.5" type="TEXT" mandatory="false" meta="SHD.datasetContactEmail">
+							<text>Email address</text>
+							<description>
+							<![CDATA[
+								Please provide the email address of the<br/>
+								dataset contact.<br/>
+							]]> 
+							</description>	
+							<displayCondition questionId="2.6.3" responseNotNull="true" responseValue="OTHER" />
+						</question>
+						<question id="2.6.6" type="TEXT" mandatory="false" meta="SHD.datasetContactPhone">
+							<text>Telephone number</text>
+							<description>
+							<![CDATA[
+								Please provide the telephone number<br/>
+								of the dataset contact.<br/>
+							]]> 
+							</description>	
+							<displayCondition questionId="2.6.3" responseNotNull="true" responseValue="OTHER" />
+						</question>
+						<question id="2.6.7" type="CONTROLLED_VOCAB" trait="rifcsPartyRelationType" isCustom="true" mandatory="false" meta="SHD.relationContactToDataset">
+							<text>Relation to dataset</text>
+							<description>
+							<![CDATA[
+								Please specify the relation of the primary<br/>
+								contact person to the  dataset by choosing <br/>
+								a role from the list.
+							]]>   
+							</description>
+						</question>
+					</items>
+				</questionGroup>
+			</items>
+		</questionGroup>
+		<pageBreak />
+		<questionGroup id="3">
+			<groupTitle>Legal information</groupTitle>
+			<groupDescription>Legal information about the dataset</groupDescription>
+			<items>			
+				<question id="3.1" type="YES_NO" mandatory="true" meta="SHD.submitterIsOwner">
+					<text>Is the submitter also the dataset owner?</text>
+					<description>
+					<![CDATA[
+						Please specify if the submitter is also the legal<br/>
+						owner of the dataset.<br/>
+					]]>   
+					</description>
+				</question>
+			<multipleQuestionGroup id="3.2">
+				<text>Additional dataset owners</text>
+				<description>Information about additional dataset owners</description>
+				<items>	
+					<question id="3.2.1" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="true" meta="SHD.datasetOwnerName">
+						<text>Dataset owner</text>
+						<description>
+						<![CDATA[
+							Please specify the dataset owner by<br/>
+							clicking on the corresponding entry<br/>
+							in the list.<br/>
+							If the required owner is not in the list,<br/>
+							please choose 'Other - Please suggest' and<br/>
+							provide details for this owner in the following<br/>
+							questions.
+						]]>
+						</description>
+					</question>
+					<question id="3.2.2" type="TEXT" meta="SHD.datasetOwnerAddress">
+						<text>Postal address</text>
+						<description>
+						<![CDATA[
+							Please provide the postal address of the<br/>
+							dataset owner.<br/>
+						]]>
+						</description>
+						<displayCondition questionId="3.2.1" responseNotNull="true" responseValue="OTHER" />
+					</question>
+					<question id="3.2.3" type="TEXT" mandatory="false" meta="SHD.datasetOwnerEmail">
+						<text>Email address</text>
+						<description>
+						<![CDATA[
+							Please provide the email address of the<br/>
+							dataset owner.<br/>
+						]]>
+						</description>
+						<displayCondition questionId="3.2.1" responseNotNull="true" responseValue="OTHER" />
+					</question>
+					<question id="3.2.4" type="TEXT" mandatory="false" meta="SHD.datasetOwnerPhone">
+						<text>Telephone number</text>
+						<description>
+						<![CDATA[
+							Please provide the telephone number of <br/>
+							the dataset owner.<br/>
+						]]>
+						</description>
+						<displayCondition questionId="3.2.1" responseNotNull="true" responseValue="OTHER" />
+					</question>
+					<question id="3.2.5" type="TEXT" mandatory="false" meta="SHD.datasetOwnerWebsite">
+						<text>Website</text>
+						<description>
+							<![CDATA[
+								Please enter the website address of<br/>
+								the dataset owner.<br/>
+							]]>
+						</description>
+					<displayCondition questionId="3.2.1" responseNotNull="true" responseValue="OTHER" />
+					</question>	
+			</items>
+			</multipleQuestionGroup>
+		<questionGroup id="3.3">
+			<groupTitle>Dataset licensing</groupTitle>
+			<groupDescription>
+				<![CDATA[
+					Information about the licence which applies<br/>
+					to usage of the dataset
+				]]>
+			</groupDescription>
+			<items>
+				<question id="3.3.1" type="CONTROLLED_VOCAB_SUGGEST" isCustom="true" trait="licenseType" mandatory="true" meta="SHD.licenseType">
+					<text>Licence type</text>
+					<description>
+					<![CDATA[
+						Please provide the licence type which<br/>
+						defines the usage of the dataset.<br/><br/>
+						A Creative Commons-Attribution (CC-BY)<br/>
+						licence lets others distribute, remix<br/>
+						and build upon a work, even commercially,<br/>
+						as long as they credit the original creator/s<br/>
+						(and any other nominated parties). This is the<br/>
+						most accommodating of the licences in terms<br/> 
+						of what others can do with the work. For more<br/>
+						information on the CC-BY licence, please refer<br/>
+						to the <a href="http://creativecommons.org/licences/by/3.0/au/deed.en">Creative Commons web site</a>.<br/><br/>
+						The TERN Attribution (TERN-BY) data licence<br/> 
+						v1.0 is based on the Creative Commons v3.0<br/> 
+						standards but have been modified to protect<br/> 
+						those items of research data which may not <br/>
+						be subject to copyright. The TERN Attribution<br/>
+						Licence (TERN-BY) lets others distribute, remix,<br/>
+						and build upon a work, even commercially,<br/>
+						provided that they credit the original source<br/>
+						and any other nominated parties.  Please refer <br/> 
+						to the <a href="http://tern.org.au/datalicence/TERN-BY/1.0/">TERN web site</a> for more information<br/>
+						about the TERN-BY data licence.<br/><br/>
+						If the applicable licence is not in the list,<br/>
+						please choose 'Other - Please suggest' and<br/>
+						provide details for this licence in the following<br/>
+						questions.
+					]]>
+					</description>
+				</question>
+				<question id="3.3.2" type="IMAGE" mandatory="true" meta="SHD.licenceDocument">
+					<text>Licence conditions document upload</text>
+					<description>
+					<![CDATA[
+						Please upload a file specifying the details<br/>
+						of the licence conditions which apply to<br/>
+						the usage of the dataset.<br/>
+					]]>   
+					</description>
+					<displayCondition questionId="3.3.1" responseNotNull="true" responseValue="OTHER"/><!--double-check if visible when 3.2.1 'Other'-->
+				</question>
+				<question id="3.3.3" type="TEXT_BOX"  mandatory="true" meta="SHD.rightsStatement">
+					<text>Rights management statement</text>
+					<description>
+					<![CDATA[
+						Please provide details of the rights<br/>
+						management statement applicable to the<br/>
+						dataset, as specified in the licence.
+					]]>   
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+					<displayCondition questionId="3.3.1" responseNotNull="true" responseValue="OTHER" />
+						<!--double-check if visible when 3.2.1 'Other'-->
+				</question>
+			</items>
+		</questionGroup>
+		<questionGroup id="3.4">
+			<groupTitle>Dataset citation</groupTitle>
+			<groupDescription>
+				<![CDATA[
+					Information about the citation to be used<br/>
+					when referring to the dataset
+				]]>
+			</groupDescription>
+			<items>
+				<multipleQuestionGroup id="3.4.1">
+					<text>Dataset authors</text>
+					<description>
+						<![CDATA[
+							Identification of the main contributors<br/>
+							to the production of the dataset
+						]]>
+					</description>
+					<items>
+						<question id="3.4.1.1" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="true" meta="SHD.authors">
+							<text>Author name</text>
+							<description>
+							<![CDATA[
+								Please specify a person or a party which<br/>
+								contributed to the production of the<br/>
+								dataset. If entering a person's name,<br/>
+								please use the format <br/>
+								'[Surname],[First name's intital].', e.g.<br/>
+								'Smith, J.'
+							]]>  
+							</description>
+						</question>
+					</items>
+				</multipleQuestionGroup>
+				<multipleQuestionGroup id="3.4.11">
+					<text>Dataset author given and surname</text>
+					<description>
+						<![CDATA[
+							Identification of the main contributors<br/>
+							to the production of the dataset
+						]]>
+					</description>
+					<items>
+						<question id="3.4.11.1" type="TEXT"  mandatory="true" meta="SHD.authorGiven">
+							<text>Author given</text>
+							<description>
+							<![CDATA[
+								Please specify a person or a party which<br/>
+								contributed to the production of the<br/>
+								dataset. If entering a person's name,<br/>
+								please use the format <br/>
+								'[Surname],[First name's intital].', e.g.<br/>
+								'Smith, J.'
+							]]>  
+							</description>
+						</question>
+						<question id="3.4.11.2" type="TEXT" meta="SHD.authorSurname">
+							<text>Author surname</text>
+							<description>
+							<![CDATA[
+								Please specify a person or a party which<br/>
+								contributed to the production of the<br/>
+								dataset. If entering a person's name,<br/>
+								please use the format <br/>
+								'[Surname],[First name's intital].', e.g.<br/>
+								'Smith, J.'
+							]]>  
+							</description>
+						</question>
+					</items>
+				</multipleQuestionGroup>
+				<question id="3.4.2" type="TEXT" mandatory="false" meta="SHD.datasetPublicationYear">
+					<text>Publication year</text>
+					<description>
+					<![CDATA[
+						If the dataset has been published previous<br/>
+						to this SHaRED submission, please provide<br/>
+						the year of publication.
+					]]>  
+					</description>
+				</question>
+				<question id="3.4.3" type="TEXT" mandatory="false" meta="SHD.datasetVersion">
+					<text>Dataset version</text>
+					<description>
+					<![CDATA[
+						Please enter the edition or version number<br/>
+						of the dataset.
+					]]>  
+					</description>
+				</question>
+				<question id="3.4.4" type="TEXT" mandatory="true" meta="SHD.datasetNameForCitation">
+					<text>Dataset name</text><!--this field should probably be pre-populated based on the answers to the dataset name question(2.1) -->
+					<description>
+					<![CDATA[
+						Please provide the name which should be<br/>
+						used when citing the dataset.							
+					]]>  
+					</description>
+					<!--this field should probably be pre-populated based on the questions NAME(2.1) -->
+				</question>
+				<question id="3.4.5" type="CONTROLLED_VOCAB" trait="rifcsIdentifierType" isCustom="true" mandatory="false" meta="SHD.datasetIdentifierType">
+					<text>Dataset identifier type</text>
+					<description>
+					<![CDATA[
+						If a record for the dataset has been<br/>
+						created in a metadata repository such<br/>
+						as Research Data Australia (RDA) <br/>
+						or TROVE (National Library of Australia), <br/> 
+						please specify the type of identifier used <br/>
+						for the record in the repository.
+					]]>    
+					</description>
+				</question>
+				<question id="3.4.6" type="TEXT" mandatory="true" meta="SHD.datasetIdentifier">
+					<text>Dataset identifier</text>
+					<description>
+					<![CDATA[
+						If a record for the dataset has been<br/>
+						created in a metadata repository such<br/>
+						as Research Data Australia (RDA) <br/>
+						or TROVE (National Library of Australia), <br/> 
+						please specify the identifier used <br/>
+						for the record in the repository.<br/>
+					]]>    
+					</description>
+					<displayCondition questionId="3.4.5" responseNotNull="true" />
+				</question>
+				<question id="3.4.7" type="TEXT" mandatory="true" meta="SHD.datasetPublisher">
+					<text>Publisher</text><!--this field should probably be pre-populated based on the answers to the ownership questions(3.1 and 3.2) -->
+					<description>
+					<![CDATA[
+						Please provide the name of the entity that<br/>
+						holds, archives, published, distributes,<br/>
+						releases, issues or produces the dataset.<br/>
+						"Publish" is understood to mean making the<br/>
+						data available to the community of<br/>
+						researchers.
+					]]>  
+					</description>
+				</question>
+				<question id="3.4.8" type="TEXT" mandatory="false" meta="SHD.datasetLink">
+					<text>Dataset link</text>
+					<description>
+					<![CDATA[
+						If the data can be accessed through a<br/>
+						service other than SHaRED, please provide<br/>
+						a url which links to the dataset.
+					]]>  
+					</description>
+				</question>
+				<question id="3.4.9"  type="TEXT" mandatory="false" meta="SHD.additionalInformation">
+					<text>Additional information for citation</text>
+					<description>
+					<![CDATA[
+						Please provide additional information which<br/>
+						which should be included in the citation.<br/>
+					]]>  
+					</description>
+				</question>
+			</items>
+		</questionGroup>
+		<question id="3.4"  type="TEXT_BOX" mandatory="false" meta="SHD.acknowledgement">
+			<text>Acknowledgement</text>
+			<description>
+			<![CDATA[
+				If contributors to the dataset are to be<br/>
+				acknowledged, please provide a corresponding<br/>
+				statement.
+			]]>  
+			</description>
+			<responseInputClass>textBoxDefault</responseInputClass>
+		</question>
+	</items>
+</questionGroup>
+<pageBreak />
+		<questionGroup id="4">
+				<groupTitle>Dataset management</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information about the management of the<br/>
+						dataset
+					]]>
+				</groupDescription>
+				<items>		
+					<multipleQuestionGroup id="4.1">
+						<text>Related parties</text>
+						<description>Please specify related parties and their roles in relation to the dataset, e.g. contributors, funding bodies, collectors.</description>
+						<items>							
+							<question id="4.1.1" type="CONTROLLED_VOCAB" trait="rifcsPartyRelationType" isCustom="true" mandatory="false" meta="SHD.relatedPartyRelationToDataset">
+								<text>Relation to dataset</text>
+								<description>
+									<![CDATA[
+										Please choose the role of the<br/>
+										related party in relation<br/>
+										to the dataset.<br/>
+									]]>
+								</description>
+							</question>
+							<question id="4.1.2" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="true" meta="SHD.relatedPartyName">
+								<text>Party name</text>
+								<description>
+									<![CDATA[
+										Please choose a party from the list.<br/>
+										If the required party is not in the list,<br/>
+										please choose 'Other - Please suggest' and<br/>
+										provide details for this person in the following<br/>
+										questions.
+									]]>  
+								</description>
+							</question>
+							<question id="4.1.3" type="TEXT" mandatory="false" meta="SHD.relatedPartyAddress">
+								<text>Postal address</text>
+								<description>
+									<![CDATA[
+										Please enter the postal address<br/>
+										of the related party.<br/>
+									]]>  							
+								</description>
+								<displayCondition questionId="4.1.2" responseNotNull="true" responseValue="OTHER" />
+							</question>
+							<question id="4.1.4" type="TEXT"  meta="SHD.relatedPartyEmail">
+								<text>Email address</text>
+								<description>
+									<![CDATA[
+										Please enter the email address<br/>
+										of the related party.<br/>
+									]]>  
+								</description>
+								<displayCondition questionId="4.1.2" responseNotNull="true" responseValue="OTHER" />
+							</question>
+							<question id="4.1.5" type="TEXT" meta="SHD.relatedPartyPhone">
+								<text>Telephone number</text>
+								<description>
+									<![CDATA[
+										Please enter the telephone<br/>
+										number of the related party.<br/>
+									]]>  
+								</description>
+								<displayCondition questionId="4.1.2" responseNotNull="true" responseValue="OTHER" />
+							</question>
+							<question id="4.1.6" type="TEXT" meta="SHD.relatedPartyWebsite">
+								<text>Website</text>
+								<description>
+									<![CDATA[
+										Please enter the website <br/>
+										address of the related party.<br/>
+									]]>
+								</description>
+								<displayCondition questionId="4.1.2" responseNotNull="true" responseValue="OTHER" />
+							</question>	
+						</items>
+					</multipleQuestionGroup>
+					<questionGroup id="4.2">
+					<groupTitle>Accessibility</groupTitle>
+					<groupDescription>
+						<![CDATA[
+							Information about the available ways to<br/>
+							access the dataset
+						]]>
+					</groupDescription>
+					<items>
+						<question id="4.2.1" type="TEXT_BOX" mandatory="false" meta="SHD.access">
+							<text>Access</text>
+							<description>
+								<![CDATA[
+									Please provide information on how the<br/>
+									dataset can be accessed apart from this<br/>
+									SHaRED submission.<br/>
+								]]>
+							</description>
+							<responseInputClass>textBoxDefault</responseInputClass>
+						</question>
+						<question id="4.2.2" type="DATE" mandatory="false" meta="SHD.embargo">
+							<text>Embargo date</text>
+							<description>
+								<![CDATA[
+									Please provide date until which the dataset<br/>
+									is embargoed.<br/>
+								]]>
+							</description>
+						</question>
+					</items>
+				</questionGroup>
+				<questionGroup id="4.3">
+					<groupTitle>Data management</groupTitle>
+					<groupDescription>
+						<![CDATA[
+							Information about the management of <br/>
+							the dataset by the data custodian
+						]]>
+					</groupDescription>
+					<items>
+						<question id="4.3.1" type="MULTISELECT_CONTROLLED_VOCAB" trait="curation status" mandatory="false" meta="SHD.curationActivity">
+							<text>Curation activities</text>
+							<description>
+								<![CDATA[
+									Please provide the curation activities which<br/>
+									have been applied to the dataset.<br/>
+								]]>
+							</description>
+						</question>
+						<question id="4.3.2" type="TEXT" mandatory="false" meta="SHD.curationComments">
+							<text>Curation comments</text>
+							<description>
+								<![CDATA[
+									Please specify comments on the curation<br/>
+									status of the dataset.<br/>
+								]]>
+							</description>
+							<responseInputClass>textBoxDefault</responseInputClass>
+						</question>
+						<question id="4.3.3" type="CONTROLLED_VOCAB" trait="project status" mandatory="false" meta="SHD.curationStatus">
+							<text>Current status</text>
+							<description>
+								<![CDATA[
+									Please provide the current  activity status<br/>
+									of the dataset.<br/>
+								]]>
+							</description>
+						</question>
+					</items>
+				</questionGroup>
+			</items>
+		</questionGroup>
+		<pageBreak />
+		<questionGroup id="5">
+		<groupTitle>Dataset content</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the content of the dataset
+			]]>
+		</groupDescription>
+		<items>
+			<questionGroup id="5.1">
+			<groupTitle>Dataset overview</groupTitle>
+			<groupDescription>Overview of the dataset</groupDescription>
+			<items>
+				<question id="5.1.1" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.datasetKeyword">
+					<text>Keywords</text>
+					<description>
+						<![CDATA[
+							Please specify keywords that describe the<br/>
+							dataset.
+						]]>
+					</description>
+				</question>
+				<question id="5.1.2" type="TEXT_BOX" mandatory="true" meta="SHD.datasetAbstract">
+					<text>Abstract</text>
+					<description>
+						<![CDATA[
+							Please provide a short but meaningful<br/>
+							summary about the nature of the dataset<br/>
+							as well as how and why it was collected.
+						]]>
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+				</question>
+				<question id="5.1.3" type="MULTISELECT_TEXT" mandatory="true" meta="SHD.datasetObjective">
+					<text>Objectives</text>
+					<description>
+						<![CDATA[
+							Please describe the objectives of the data<br/>
+							collection which led to the production of<br/>
+							the dataset.<br/>
+						]]>
+					</description>
+				</question>
+			</items>
+		</questionGroup>
+		<questionGroup id="5.2">
+			<groupTitle>Spatial coverage</groupTitle>
+			<groupDescription>
+				<![CDATA[
+					Information on the spatial extent of the<br/> 
+					dataset]]>
+			</groupDescription>
+			<items>
+				<question id="5.2.1" type="TEXT_BOX" mandatory="false" meta="SHD.studyAreaDescription">
+					<text>Study area</text>
+					<description>
+						<![CDATA[
+							Please describe the geographic extent of the<br/>
+							dataset.
+						]]>
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+				</question>
+				<questionGroup id="5.2.2">
+					<groupTitle>Spatial corverage</groupTitle>
+					<groupDescription>
+						<![CDATA[
+							Coordinates defining the area covered by the<br/>
+							dataset
+						]]>
+					</groupDescription>
+					<items>
+						<question id="5.2.2.1" type="SITE_FILE" mandatory="false" meta="SHD.studyLocationFileURL">
+							<text>Study location file upload</text>
+							<description>
+							<![CDATA[
+								Please upload a file containing the<br/>
+								coordinates of the study locations.
+							]]>
+							</description>
+						</question>
+						<question id="5.2.2.2" type="GEO_FEATURE_SET" mandatory="false" meta="SHD.studyAreaGeometry">	<!--this question should only be displayyed if no site file (csv) hasbeen uploaded-->
+							<text>Map tool</text>
+							<description>
+							<![CDATA[
+								Please use the map tool to specify of the<br/>
+								locations, area coverage or bounding box<br/>
+								of the dataset.<br/>
+							]]>
+							</description>
+						</question>
+						<question id="5.2.2.3" type="TEXT" mandatory="false" meta="SHD.totalNumberStudyLocation"><!--make this a number field-->
+							<text>Total number of study locations</text>
+							<description>
+							<![CDATA[
+								Please specify the total number of study<br/>
+								locations for which data is available in the<br/>
+								dataset.<br/>
+							]]>
+							</description>
+							<displayCondition questionId="5.2.2.1" responseNull="true" /><!--test if site file has been uploaded or individual coordinates have been specified using the 'draw point' feature of the map tool.-->
+						</question>
+					</items>
+				</questionGroup>
+			</items>
+		</questionGroup>
+		<questionGroup id="5.3">
+			<groupTitle>Temporal coverage</groupTitle>
+			<groupDescription>
+				<![CDATA[
+					Information on the temporal coverage of<br/>
+					the dataset
+				]]>
+			</groupDescription>
+			<items>
+				<question id="5.3.1" type="DATE" mandatory="true" meta="SHD.firstStudyLocationVisit">
+					<text>First study location visit date</text>
+					<description>
+						<![CDATA[
+							Please specify the date of the earliest visit<br/>
+							to a study location covered by the dataset.							
+						]]>
+					</description>
+				</question>
+				<question id="5.3.2" type="DATE" mandatory="true" meta="SHD.lastStudyLocationVisit">
+					<text>Last study location visit date</text>
+					<description>
+						<![CDATA[
+							Please specify the date of the latest visit<br/>
+							to a study location covered by the dataset.
+						]]>
+					</description>
+				</question>
+			</items>
+			</questionGroup>
+			<questionGroup id="5.4">
+				<groupTitle>Taxa information</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information on taxa included in the<br/>
+						dataset
+					]]>
+				</groupDescription>
+				<items>
+					<multipleQuestionGroup id="5.4.1"><!--this group should only be visible if no taxa file has been uploaded under queserion 5.4.1-->
+						<text>Taxa</text>
+						<description>
+							<![CDATA[
+								Please provide the taxa and <br/>
+								ranks included in the dataset.
+							]]>
+						</description>
+						<items>
+							<question id="5.4.1.1" type="CONTROLLED_VOCAB" trait="taxonomicRank" isCustom="true" mandatory="false" meta="SHD.taxonRank">
+								<text>Taxon rank</text>
+								<description>
+									<![CDATA[
+										Please specify the rank of the<br/>
+										taxon from the list.<br/>
+									]]>
+								</description>
+							</question>
+							<question id="5.4.1.2" type="CONTROLLED_VOCAB" trait="species name" mandatory="false" meta="SHD.taxonName"><!--need to be able to use CONTROLLED_VOCAB tag for multipleQuestionGroup items, here: taxonConcepts from AEKOS-->
+								<text>Taxon name</text>
+								<description>
+									<![CDATA[
+										Please enter the name of the taxon.<br/>
+									]]>
+								</description>
+							</question>
+						</items>
+					</multipleQuestionGroup>
+				</items>
+			</questionGroup>
+			<pageBreak />
+			<questionGroup id="5.5">
+				<groupTitle>Thematic coverage</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information on the thematic coverage of<br/>
+						the dataset
+					]]>
+				</groupDescription>
+				<items>
+					<question id="5.5.1" type="MULTISELECT_CONTROLLED_VOCAB" trait="thematic scope item" mandatory="false" meta="SHD.thematicScope">
+						<text>Thematic scope</text>
+						<description>
+							<![CDATA[
+								Please select one or more thematic areas<br/>
+								from the list.
+							]]>
+		 
+						</description>
+					</question>
+					<question id="5.5.2" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcfor" isCustom="true" mandatory="false" meta="SHD.fieldsOfResearch">
+						<text>Fields of research</text>
+						<description>
+							<![CDATA[
+								Please select one or more items from the<br/>
+								Australian and New Zealand Standard<br/>
+								Research Classification (ANZSRC) list of<br/>
+								fields of research.<br/>
+							]]>
+						</description>
+					</question>
+					<question id="5.5.3" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcseo" isCustom="true" mandatory="false" meta="SHD.socioEconomicObjectives">
+						<text>Socio-economic objectives</text>
+						<description>
+							<![CDATA[
+								Please select one or more items from the<br/>
+								fAustralian and New Zealand Standard<br/>
+								Research Classification (ANZSRC) list of<br/>
+								socio-economic objectives.<br/>
+							]]>
+						</description>
+					</question>
+				</items>
+			</questionGroup>
+			<multipleQuestionGroup id="5.6">
+				<text>Field methods</text>
+				<description>
+						<![CDATA[
+							Please provide method names and <br/>
+							abstracts for all methods used to<br/>
+							collect the data in the field.
+						]]>
+	 
+				</description>
+				<items>
+					<question id="5.6.1" type="TEXT" mandatory="false" meta="SHD.methodName">
+						<text>Method name</text>
+						<description>
+							<![CDATA[
+								Please enter the name of the field<br/>
+								method used to collect data for<br/>
+								the dataset.<br/>
+							]]>
+						</description>
+					</question>
+					<question id="5.6.2" type="TEXT_BOX" mandatory="false" meta="SHD.methodAbstract">
+						<text>Method abstract</text>
+						<description>
+							<![CDATA[
+								Please enter the field method used<br/>
+								to collect data for the dataset.<br/>
+							]]>
+						</description>
+						<responseInputClass>textBoxDefault</responseInputClass>
+					</question>
+				</items>
+			</multipleQuestionGroup>
+			<multipleQuestionGroup id="5.7">
+				<text>Additional resources</text>
+				<description>
+					<![CDATA[
+						Please specify the title, type,<br/>
+						identifier and identifier type for <br/>
+						additional resources related to the<br/>
+						dataset, such as field manuals,<br/>
+						scientific papers or dataset schemas.
+					]]>
+				</description>
+				<items>
+					<question id="5.7.1" type="TEXT" mandatory="true" meta="SHD.additionalResourceName">
+						<text>Name</text>
+						<description>
+						<![CDATA[
+							Please enter the name of the<br/>
+							additional resource.
+						]]>
+						</description>
+					</question>
+					<question id="5.7.2" type="CONTROLLED_VOCAB" isCustom="true" trait="rifcsRelatedInformationType" mandatory="false" meta="SHD.additionalResourceType">
+						<text>Type</text>
+						<description>
+						<![CDATA[
+							Please select the type of the<br/>
+							additional resource from the list.
+						]]>
+						</description>
+					</question>
+					<question id="5.7.3" type="CONTROLLED_VOCAB" trait="rifcsRelatedInformationIdentifierType" isCustom="true" mandatory="true" meta="SHD.additionalResourceIdentifierType">
+						<text>Identifier type</text>
+						<description>
+						<![CDATA[
+							Please choose the type of identifier<br/>
+							by which the additional resource can be<br/>
+							identified.
+						]]>
+						</description>
+					</question>
+					<question id="5.7.4" type="TEXT" mandatory="true" meta="SHD.additionalResourceIdentifier">
+						<text>Identifier</text>
+						<description>
+						<![CDATA[
+							Please enter a unique and <br/>
+							persistent identifier for the<br/>
+							additional resource.
+						]]>
+						</description>
+					</question>
+				</items>
+			</multipleQuestionGroup>
+			<question id="5.8" type="MULTISELECT_IMAGE" mandatory="false" meta="SHD.additionalResourceUpload">  <!--need a non-image file upload tag, similar to IMAGE tag-->
+				<text>Additional resources document upload</text><!--need to be able to upload multiple files--><!--ideally, this upload should be included in the above question group-->
+				<description>
+					<![CDATA[
+						Please upload documents related to the data<br/>
+						collection (e.g. data collection method<br/>
+						description, map, datasheet) and/or the<br/>
+						technical features of the database (e.g.<br/>
+						database schema).<br/>
+				]]>
+				</description>
+			</question>
+		</items>
+		</questionGroup>
+	</items>
+</questionnaire> 

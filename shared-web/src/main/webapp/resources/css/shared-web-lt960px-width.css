@@ -1,0 +1,48 @@
+@media only screen and (max-width: 960px) {
+	.main-content {
+		width: 100%;
+		padding: 0 0 1em;
+	}
+	
+	#brandingBlurbImage {
+		max-width: 100%;
+	}
+	
+	h1 {
+		font-size: 1.5em;
+	}
+	
+	h2 {
+		font-size: 1.2em;
+	}
+	
+	.sharedLogo {
+		max-width: 80%;
+	}
+	
+	.imageContainer {
+		width: 50%;
+	}
+	
+	.imageContainer img {
+		width: 100%;
+	}
+	
+	#loginForm {
+		padding: 0.5em;
+		max-width: 85%;
+	}
+	
+	.lessImportantText, .nectarBlurb {
+		padding: 0 0.5em;
+	}
+	
+	#loginMethodContainer {
+		width: 75%;
+		text-align: center;
+	}
+	
+	.loginMethod {
+		width: auto;
+	}
+}

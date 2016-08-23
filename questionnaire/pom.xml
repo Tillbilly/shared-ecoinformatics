@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>au.edu.aekos.shared</groupId>
+	<artifactId>questionnaire</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1</version>
+	<name>questionnaire</name>
+
+	<parent>
+		<groupId>au.org.aekos.shared</groupId>
+		<version>1.0-SNAPSHOT</version>
+		<artifactId>shared-parent</artifactId>
+		<relativePath>../pom/pom.xml</relativePath>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>au.edu.aekos.shared</groupId>
+			<artifactId>shared-core</artifactId>
+			<version>3.2.3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<!-- Check the parent for inherited plugins -->
+		</plugins>
+	</build>
+</project>

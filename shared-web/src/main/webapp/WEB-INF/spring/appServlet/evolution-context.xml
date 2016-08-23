@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <!-- 
+       To add a new Handler, add a new ChangedMetatagHandler bean
+       Example:
+      
+       <bean id="myMetatagHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+           <property name="metatag" value="SHD.myMetatag" />
+           <property name="alternateMetatagList" >
+               <list>
+                   <value></value>
+                   <value></value>
+               </list>
+           </property>
+           <property name="ignore" value="false" />
+           <property name="useDefaultValue" value="true" />
+           <property name="defaultDateStrategy" value="CURRENT,DEFAULT_VALUE" />  
+           <property name="defaultDateString" value="" />
+           <property name="defaultDateFormatString" value="" />
+           <property name="defaultTextValue" value="" />
+       </bean>
+     -->
+    <bean id="lastStudyAreaVisitDate_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.lastStudyAreaVisitDate" />
+        <property name="alternateMetatagList" >
+               <list>
+                   <value>SHD.lastStudyLocationVisitDate</value>
+               </list>
+        </property>
+    </bean>
+    <bean id="associatedMaterialTypeSuggest_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">        
+        <property name="metatag" value="SHD.associatedMaterialTypeSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="associatedMaterialDescription_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">        
+        <property name="metatag" value="SHD.associatedMaterialDescription" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="associatedMaterialIdentifierType_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">        
+        <property name="metatag" value="SHD.associatedMaterialIdentifierType" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="associatedMaterialIdentifier_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">        
+        <property name="metatag" value="SHD.associatedMaterialIdentifier" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="datasetVersion_Handler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.datasetVersion" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="floraCommonNameSuggest_Handler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.floraCommonNameSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="faunaCommonNameSuggest_Handler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.faunaCommonNameSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="datasetObjectiveSuggest_Handler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.datasetObjectiveSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="imageFile_Handler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.imageFile" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="datasetObjective_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.datasetObjective" />
+        <property name="alternateMetatagList" >
+               <list>
+                   <value>SHD.datasetSamplingGoal</value>
+               </list>
+        </property>
+    </bean>
+    <bean id="submissionName_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.submissionName" />
+        <property name="alternateMetatagList" >
+               <list>
+                   <value>SHD.datasetFormalName</value>
+               </list>
+        </property>
+    </bean>
+    <bean id="legalCustodianOrganisation_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.legalCustodianOrganisation" />
+        <property name="alternateMetatagList" >
+               <list>
+                   <value>SHD.dataCustodian</value>
+               </list>
+        </property>
+    </bean>
+    <bean id="legalCustodianOrganisationType_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.legalCustodianOrganisationType" />
+        <property name="alternateMetatagList" >
+               <list>
+                   <value>SHD.dataCustodianOrganisationType</value>
+               </list>
+        </property>
+    </bean>
+    <bean id="curationActivitiesOther_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.curationActivitiesOther" />
+        <property name="alternateMetatagList" >
+        
+               <list>
+                   <value>SHD.curationStatusSuggest</value>
+                   <value>SHD.curationSuggest</value>
+               </list>
+        </property>
+    </bean>
+    <bean id="dataCustodian_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.dataCustodian" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="fundingProgramName_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.fundingProgramName" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="researchProgramSummary_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.researchProgramSummary" />
+        <property name="ignore" value="true" />
+    </bean>
+    
+     <bean id="forSuggest_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.fieldsOfResearchSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="seoSuggest_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.socioEconomicObjectivesSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="taxonNameSuggest_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.taxonNameSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="faunaTaxonomicNameSuggest_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.faunaTaxonomicNameSuggest" />
+        <property name="ignore" value="true" />
+    </bean>
+    <bean id="authorAffiliation_evolutionHandler" class="au.edu.aekos.shared.data.infomodel.ChangedMetatagHandler">
+        <property name="metatag" value="SHD.authorAffiliation" />
+        <property name="ignore" value="true" />
+    </bean>
+    
+</beans>

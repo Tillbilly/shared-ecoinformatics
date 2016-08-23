@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<registryObjects xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd" xmlns:ns2="http://ands.org.au/standards/rif-cs/extendedRegistryObjects" xmlns="http://ands.org.au/standards/rif-cs/registryObjects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <registryObject group="Advanced Ecological Knowledge and Observation System">
+        <key>aekos.org.au/collection/shared/REPLACE_ME_ID</key>
+        <originatingSource>shared.aekos.org.au</originatingSource>
+        <collection type="dataset" dateModified="2015-12-12" dateAccessioned="2015-12-12">
+            <identifier type="local">aekos.org.au/collection/shared/REPLACE_ME_ID</identifier>
+            <dates type="dc.dateAccepted">
+                <date type="dateFrom" dateFormat="W3CDTF">2015-12-12</date>
+            </dates>
+            <name type="primary">
+                <namePart>My Fantastic Dataset</namePart>
+            </name>
+            <location>
+                <address>
+                    <physical type="streetAddress">
+                        <addressPart type="addressLine">Dataset Contact Name</addressPart>
+                        <addressPart type="addressLine">Dataset Organisation Yall</addressPart>
+                        <addressPart type="addressLine">Dataset Contact Address my Friends</addressPart>
+                        <addressPart type="telephoneNumber">Ph: 123 456 666</addressPart>
+                    </physical>
+                </address>
+                <address>
+                    <electronic type="email">
+                        <value>ben@shared.com</value>
+                    </electronic>
+                    <electronic type="url">
+                        <value>http://aekos.org.au/dataset/REPLACE_ME_ID</value>
+                    </electronic>
+                </address>
+            </location>
+            <coverage>
+                <temporal>
+                    <date type="dateFrom" dateFormat="W3CDTF">2000-11-21</date>
+                    <date type="dateTo" dateFormat="W3CDTF">2010-10-13</date>
+                </temporal>
+                <spatial type="text">Study Area Description</spatial>
+                <spatial type="iso19139dcmiBox">northlimit=-27.95569; southlimit=-35.38489; eastlimit=143.35522; westlimit=135.92603; projection=GDA94</spatial>
+            </coverage>
+            <relatedObject>
+                <key>adelaide.edu.au/party/universityofadelaide/20110608</key>
+                <relation type="isOwnedBy">
+                    <description>This dataset is managed by TERN Eco-informatics at the University of Adelaide on behalf of a third party submitter</description>
+                    <url>http://www.adelaide.edu.au</url>
+                </relation>
+            </relatedObject>
+            <relatedObject>
+                <key>GVH4v3YLysc0iCRBeIsKlGubLyGS2z7zlEuGyiiWBkNJNuaS2ste</key>
+                <relation type="isProducedBy">
+                    <description>This dataset has been submitted via SHaRED</description>
+                    <url>http://shared.ecoinformatics.org.au</url>
+                </relation>
+            </relatedObject>
+            <relatedObject>
+                <key>bu1hlLoUF72Z54Qu9Z6q9TVwxD6j5Km64eefPt0lrTamNQHNGD4F</key>
+                <relation type="supports">
+                    <description>This dataset can be accessed through AEKOS</description>
+                    <url>http://aekos.org.au</url>
+                </relation>
+            </relatedObject>
+            <relatedObject>
+                <key>dfUv1CF6zf7yVF7170MfV51bVkMWMiSQnCbf5GbuM9TyEQpBH1Hs</key>
+                <relation type="isOutputOf">
+                    <url>http://www.tern.org.au/Eco-informatics-pg17733.html</url>
+                </relation>
+            </relatedObject>
+            <relatedObject>
+                <key>TERN-NC-10</key>
+                <relation type="isPartOf">
+                    <url>http://www.tern.org.au</url>
+                </relation>
+            </relatedObject>
+            <relatedObject>
+                <key>TERN-NC-0</key>
+                <relation type="isOutputOf"/>
+            </relatedObject>
+            <subject type="anzsrc-for">01</subject>
+            <subject type="anzsrc-for">02</subject>
+            <subject type="anzsrc-for">0601</subject>
+            <subject type="anzsrc-for">0602</subject>
+            <subject type="anzsrc-for">060601</subject>
+            <subject type="anzsrc-for">060608</subject>
+            <subject type="anzsrc-for">020406</subject>
+            <subject type="anzsrc-seo">04</subject>
+            <subject type="anzsrc-seo">05</subject>
+            <subject type="anzsrc-seo">0201</subject>
+            <subject type="anzsrc-seo">0202</subject>
+            <subject type="anzsrc-seo">020601</subject>
+            <subject type="anzsrc-seo">020608</subject>
+            <subject type="local">ecological theme uno</subject>
+            <subject type="local">ecological theme dos</subject>
+            <subject type="local">something threatening</subject>
+            <subject type="local">some pressure</subject>
+            <subject type="local">conserving</subject>
+            <subject type="local">managing</subject>
+            <description type="full">Dataset abstract all about my dataset</description>
+            <relatedInfo>
+                <identifier type="Digital Object Identifier">10.4227/05/53B1F1C02C8E7</identifier>
+                <title>That other thing that I did</title>
+            </relatedInfo>
+            <relatedInfo>
+                <identifier type="Digital Object Identifier">20.3338/39/53B1F1C55D1A0</identifier>
+                <title>beyond 0 and 1</title>
+            </relatedInfo>
+            <rights>
+                <rightsStatement>(C)2015 Org1, Org2. Rights owned by Org1, Org2. Rights licensed subject to Creative Commons - Attribution 3.0 Australia.</rightsStatement>
+                <licence>Creative Commons - Attribution 3.0 Australia</licence>
+                <accessRights>These data can be freely downloaded via the Advanced Ecological Knowledge and Observation System (ÆKOS) Data Portal and used subject to the Creative Commons - Attribution 3.0 Australia. Attribution and citation is required as described under License and Citation. We ask you to send citations of publications arising from work that use these data to TERN Eco-informatics at datacited@aekos.org.au and citation and copies of publications to ben@shared.com</accessRights>
+            </rights>
+            <citationInfo>
+                <fullCitation>Davis, R.M., McCracken, P.Q. (2015). Most awesome submission, Version 1.2.wow. http://doi.org/10.33327/05/537C5C5553F9E. ÆKOS Data Portal, rights owned by Org1, Org2. Accessed dd mmm yyyy, e.g., 01 Jan 2016.</fullCitation>
+            </citationInfo>
+            <citationInfo>
+                <citationMetadata>
+                    <identifier type="doi">http://doi.org/10.33327/05/537C5C5553F9E</identifier>
+                    <contributor seq="1">
+                        <namePart>Davis, R.M.</namePart>
+                    </contributor>
+                    <contributor seq="2">
+                        <namePart>McCracken, P.Q.</namePart>
+                    </contributor>
+                    <title>My Fantastic Dataset</title>
+                    <publisher>ÆKOS Data Portal, rights owned by Org1, Org2</publisher>
+                    <version>1.2.wow</version>
+                    <date type="publicationDate">2015</date>
+                </citationMetadata>
+            </citationInfo>
+        </collection>
+    </registryObject>
+</registryObjects>

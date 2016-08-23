@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+    <version>version X</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Version 2 XML Structure Example</introduction>
+    <items>
+        <question id="1" type="TEXT" mandatory="true" meta="sub.text">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+    </items>    
+</questionnaire>

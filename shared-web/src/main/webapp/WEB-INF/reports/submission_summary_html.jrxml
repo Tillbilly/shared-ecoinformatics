@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="submission_summary" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="4159026e-9982-4531-a274-6fb8a7a0a39c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.html.using.images.to.align" value="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[type]]></fieldDescription>
+	</field>
+	<field name="title" class="java.lang.String">
+		<fieldDescription><![CDATA[title]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[value]]></fieldDescription>
+	</field>
+	<field name="section" class="java.lang.String">
+		<fieldDescription><![CDATA[section]]></fieldDescription>
+	</field>
+	<field name="groupName" class="java.lang.String">
+		<fieldDescription><![CDATA[groupName]]></fieldDescription>
+	</field>
+	<group name="ReportSection">
+		<groupExpression><![CDATA[$F{section}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="555" height="27" backcolor="#CCCCCC" uuid="86e7b9cd-a71d-4e64-a866-e90369ec80cf"/>
+					<box leftPadding="15">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{section}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="0" width="554" height="50" uuid="10f1bdf6-b2a3-4361-b627-2418c7781f4b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="15"/>
+				</textElement>
+				<text><![CDATA[SHaRED Submission Summary]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="367" y="30" width="187" height="20" uuid="2fa17055-404d-4810-aa15-c249ac2fc028"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="22">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="0" y="0" width="160" height="22" uuid="c82ecf76-482a-4b96-b2c1-ae2e3097d903"/>
+				<box topPadding="3" leftPadding="15" bottomPadding="1">
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="160" y="0" width="395" height="22" uuid="2b5fec26-5c04-470f-b8ca-72850c2beb0f"/>
+				<box topPadding="3" leftPadding="10" bottomPadding="1">
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="223" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="64" uuid="a004c99f-5a29-44f0-9487-ccad016c31cb"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHaRED (Submission Harmonisation and Retrieval of Ecological Data) is an online data submission service for ecologists to upload their research datasets and enable them to be published via ÆKOS data portal. ÆKOS is an online ecological data service providing free and open access to rich, ecological data collected using plot-based research methods. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="109" width="245" height="15" uuid="84410f19-3229-4b50-9344-d0182b654ea5"/>
+				<text><![CDATA[aekos.org.au]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="79" width="200" height="15" uuid="a676a245-c215-4bdc-83c7-094d0d3196fc"/>
+				<text><![CDATA[L12 Schulz Building]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="94" width="245" height="15" uuid="0230c885-aa1d-4520-9c5c-a361e3a2fab8"/>
+				<text><![CDATA[Adelaide, South Australia, Australia 5005]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="64" width="143" height="15" uuid="93456bd3-d2c8-40c0-b28e-042e833f8f02"/>
+				<text><![CDATA[The University of Adelaide]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

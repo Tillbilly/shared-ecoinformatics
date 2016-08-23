@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+    
+    <bean id="exampleCitationDataProviderFactory" class="au.edu.aekos.shared.service.submission.ExampleCitationDataProviderFactory">
+		<property name="accessDateFragment" value="${citation.date-template.text}" />
+		<property name="doiFragment" value="[Digital Object Identifier (DOI) to be created automatically when your SHaRED submission is published in &amp;AElig;KOS]" />
+		<property name="newLineFragment" value="&lt;br /&gt;" />
+	</bean>
+		
+    <bean name="doiClientConfig" class="au.edu.aekos.shared.doiclient.service.DoiClientConfig">
+        <property name="userId" value="${doi.userId}"/>
+        <property name="appId" value="${doi.appId}"/>
+        <property name="topLevelUrl" value="${doi.top-level-url}"/>
+        <property name="doiMintingServiceUrl" value="${doi.mintingServiceUrl}"/>
+        <property name="keystoreFilePath" value="classpath:ternkeystore.bks"/>
+        <property name="keystorePassword" value="mysecret" />
+    </bean>
+    
+    <bean name="doiDataConfig" class="au.edu.aekos.shared.service.doi.DoiDataConfig" >
+        <property name="publisher" value="AEKOS - TERN Ecoinformatics" />
+        <property name="anzsrcforTraitName" value="anzsrcfor" />
+        <property name="subjectTagList">
+            <list>
+                <value>SHD.ecologicalTheme</value>
+                <value>SHD.threatsPressures</value>
+                <value>SHD.conservationManagement</value>
+            </list>
+        </property>
+    </bean>
+</beans>    

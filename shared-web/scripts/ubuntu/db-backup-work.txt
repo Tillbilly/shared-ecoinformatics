@@ -1,0 +1,78 @@
+ #As root
+
+mkdir /usr/local/backup-work
+mkdir /usr/local/backup-work/dbdumps
+chown postgres /usr/local/backup-work/dbdumps
+
+#Put s3clientexec.jar in the directory /usr/local/backup-work , this is the shaded jar built in the s3client project
+
+#Create the following scripts in /usr/local/backup-work
+
+pgdumphr.sh
+---------------------
+#!/bin/sh
+DATE=$1
+pg_dump -f /usr/local/backup-work/dbdumps/sharedHourly$DATE.dump shared
+
+
+
+pgdumpday.sh
+---------------------
+#!/bin/sh
+DATE=$1
+pg_dump -f /usr/local/backup-work/dbdumps/sharedDaily$DATE.dump shared
+
+
+
+hourlyBackup.sh
+------------------------
+#!/bin/sh
+DATE_OLD=$(date -d "24 hours ago" +%Y%m%d_%H)
+DATE=$(date +%Y%m%d_%H)
+
+API_KEY="d4732db5e49b47068d6366962ac92058"
+SEC_KEY=""
+SWFT_URL="https://swift.rc.nectar.org.au:8888"
+CONTAINER="db_disaster_recovery"
+
+su - postgres -c "sh /usr/local/backup-work/pgdumphr.sh $DATE"
+
+/usr/local/jdk1.7.0_40/bin/java -jar s3clientexec.jar $SWFT_URL $API_KEY $SEC_KEY $CONTAINER PUT /usr/local/backup-work/dbdumps/sharedHourly$DATE.dump sharedHourly$DATE.dump
+
+/usr/local/jdk1.7.0_40/bin/java -jar s3clientexec.jar $SWFT_URL $API_KEY $SEC_KEY $CONTAINER DELETE sharedHourly$DATE_OLD.dump
+
+rm /usr/local/backup-work/dbdumps/sharedHourly$DATE_OLD.dump
+
+
+
+
+dailyBackup.sh
+-----------------------
+#!/bin/sh
+DATE_OLD=$(date -d "2 days ago" +%Y%m%d)
+DATE=$(date +%Y%m%d)
+
+API_KEY="d4732db5e49b47068d6366962ac92058"
+SEC_KEY=""
+SWFT_URL="https://swift.rc.nectar.org.au:8888"
+CONTAINER="db_disaster_recovery"
+
+su - postgres -c "sh /usr/local/backup-work/pgdumpday.sh $DATE"
+
+/usr/local/jdk1.7.0_40/bin/java -jar /usr/local/backup-work/s3clientexec.jar $SWFT_URL $API_KEY $SEC_KEY $CONTAINER PUT /usr/local/backup-work/dbdumps/sharedDaily$DATE.dump sharedDaily$DATE.dump
+
+#/usr/local/jdk1.7.0_40/bin/java -jar /usr/local/backup-work/s3clientexec.jar $SWFT_URL $API_KEY $SEC_KEY $CONTAINER DELETE sharedDaily$DATE_OLD.dump
+
+rm /usr/local/backup-work/dbdumps/sharedDaily$DATE_OLD.dump
+
+
+-----------------------------------------------------
+#cron jobs for hourly, and daily backups
+
+crontab -e
+1 * * * * /usr/local/backup-work/hourlyBackup.sh
+0 18 * * * /usr/local/backup-work/dailyBackup.sh
+
+
+
+

@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>13</version>
+	<title>SHaRED AEKOS Submission Tool</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>QA DataTeam version 1</introduction>
+	<submissionTitleQuestionId>1.1</submissionTitleQuestionId>
+	<firstPageTitle>Dataset Details</firstPageTitle>
+	<items>
+
+
+	<questionGroup id="1">
+		<groupTitle>Submission Details</groupTitle>
+		<items>
+			<question id="1.1" showId="true" type="TEXT" mandatory="true" meta="SHD.submissionTitle">
+				<text>Submission title</text>
+				<description>
+					<![CDATA[
+						Specify a unique title that distinguishes this submission from other versions of the same 
+						submissions or old submissions entered via SHaRED.
+					]]>
+				</description>
+			</question>
+		</items>
+	</questionGroup>
+	<questionGroup id="2">
+		<groupTitle>Identification Details</groupTitle>
+		<items>
+
+			<question id="2.1" showId="true" type="TEXT" mandatory="true" meta="SHD.datasetFormalName" prepop="1.1">
+				<text>Dataset Citable Title (110 characters maximum)</text>
+				<description>
+					<![CDATA[
+						Enter full title of dataset. This title will be used in the citation.
+					]]>
+				</description>
+			</question>
+
+			<question id="2.2" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetAlternativeTitle">
+				<text>Dataset Short Title (Optional)</text>
+				<description>
+					<![CDATA[
+						If available, please provide an alternative
+						title which is used to refer to the dataset.
+					]]>
+				</description>
+			</question>
+
+			<question id="2.3" type="TEXT" mandatory="false" meta="SHD.datasetVersion">
+				<text>What is the version number of the dataset?</text>
+				<description>
+					<![CDATA[
+						Please enter the edition or version number of the dataset (e.g., V1.1, Jul-2009)
+					]]>  
+				</description>
+			</question>
+
+			<question id="2.4" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetRDAidentifier">
+				<text>Dataset Research Data Australia (RDA) Identifier</text>
+				<description>
+					<![CDATA[
+						Record the persistent digital identifier for the dataset in the Research Data Australia metadata repository (see researchdata.ands.org.au for more information) 
+					]]>  
+				</description>
+			</question>
+
+			<multipleQuestionGroup id="2.4">
+				<text>Authors and Affiliations</text>
+				<description>
+					<![CDATA[
+						The author information will be used to build the citation string which user should use when they use your database. Please enter the author names in the format and order they should appear in the citation.
+					]]>
+				</description>
+				<items>
+					<question id="2.5.1" showId="true" type="TEXT" mandatory="false" meta="SHD.authorTitle">
+						<text>Title (Mr., Miss, Mrs., Ms., Dr, Associate Professor, Professor)</text>
+					</question>
+					
+					<question id="2.5.2" showId="true" type="TEXT" mandatory="false" meta="SHD.authorGivenNames">
+						<text>Firstname</text>
+						<description>
+							<![CDATA[
+								Please enter the author's first name(s) in the format they should appear in the citation.
+							]]>  
+						</description>
+					</question>
+					
+					<question id="2.5.3" showId="true" type="TEXT" mandatory="false" meta="SHD.authorSurname">
+						<text>Lastname</text>
+						<description>
+							<![CDATA[
+								Please enter the author's last name in the format it should appear in the citation.
+							]]>  
+						</description>
+					</question>
+					
+					<question id="2.5.4" showId="true" type="TEXT" mandatory="false" meta="SHD.correspondingAuthorRDAIdentifier">
+						<text>Author Research Data Australia (RDA) Identifier</text>
+						<description>
+							<![CDATA[
+								Record the persistent digital identifier for the author in the Research Data Australia metadata repository (see researchdata.ands.org.au for more information) 
+							]]>  
+						</description>
+					</question>
+					
+					<question id="2.5.5" showId="true" type="TEXT" mandatory="false" meta="SHD.correspondingAuthorORCIDIdentifier">
+						<text>Author ORCID Identifier</text>
+						<description>
+							<![CDATA[
+								Record the persistent digital identifier for the author in the ORCID registry (see orcid.org for more information) 
+							]]>  
+						</description>
+					</question>
+					
+					<question id="2.5.6" showId="true" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.authorOrganisation">
+						<text>Organisation</text>
+						<description>
+							<![CDATA[
+								Select the organisation the author was affiliated with during the production of the dataset.
+							]]>  
+						</description>
+					</question>
+					
+					<question id="2.5.7" showId="true" type="TEXT" mandatory="false" meta="SHD.correspondingAuthorOrganisationRDAIdentifier">
+						<text>Organisation Research Data Australia (RDA) Identifier</text>
+						<description>
+							<![CDATA[
+								Record the persistent digital identifier for the author's organisation in the Research Data Australia metadata repository (see researchdata.ands.org.au for more information) 
+							]]>  
+						</description>
+					</question>
+
+					<question id="2.5.8" showId="true" type="YES_NO" mandatory="false" meta="SHD.authorAffiliation">
+						<text>Corresponding author (Y/N)</text>
+						<description>
+							<![CDATA[
+							]]>  
+						</description>
+					</question>
+					
+					<question id="2.5.9" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactAddress">
+						<text>Postal Address (for corresponding author)</text>
+					</question>
+
+					<question id="2.5.10" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactEmail">
+						<text>Email Address (for corresponding author)</text>
+					</question>
+
+					<question id="2.5.11" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactPhone">
+						<text>Phone (for corresponding author; optional)</text>
+					</question>
+
+				</items>
+			</multipleQuestionGroup>
+
+		</items>
+	</questionGroup>
+
+	<questionGroup id="3">
+		<groupTitle>Dataset Overview</groupTitle>
+		<items>
+			<question id="3.1" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.datasetAbstract">
+				<text>Summary (200 words)</text>
+				<description>
+					<![CDATA[
+						The summary should succintly describe the study, types of methods used/assy(s) performed (e.g., soil analysis), the resulting data and the datasets reuse potential. 
+						(No comments about scientific findings and references).
+					]]>
+				</description>
+				<responseInputClass>textBoxDefault</responseInputClass>
+			</question>
+			
+			<question id="3.2" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.datasetBackground">
+				<text>Background (200 words)</text>
+				<description>
+					<![CDATA[
+						An overview of the study design, field methods undertaken/assays performed (e.g., soil analysis), and the data created including any background information needed 
+						to put the study into context of previous work and literature. Information of the goals and objectives of the study that created the dataset should be decribe, any relevant citations. 
+					]]>
+				</description>
+				<responseInputClass>textBoxDefault</responseInputClass>
+			</question>
+
+			<question id="3.3" showId="true" type="YES_NO" mandatory="false" meta="SHD.repeatVisits">
+				<text>Does the dataset contain repeat visits to study locations?</text>
+				<description>
+					<![CDATA[
+						Please specify if any of the study
+						locations have been visited more
+						than once.
+					]]>
+				</description>
+			</question>
+
+			<question id="3.4" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.datasetRecords">
+				<text>Data records</text>
+				<description>
+					<![CDATA[
+						Please describe each data record associated with this work ( including tables, columns, measurements), an overview of the data file types and their format.
+					]]>
+				</description>
+				<responseInputClass>textBoxDefault</responseInputClass>
+			</question>
+
+			<question id="3.5" showId="true" type="TREE_SELECT" trait="ecologicalTheme" isCustom="true" mandatory="false" meta="SHD.ecologicalTheme">
+				<text>Ecological Research Area</text>
+				<description>
+					<![CDATA[
+						Enter the research area which best describes your dataset. List up to five fields if there is no dominant theme.
+					]]>
+				</description>
+			</question>
+
+			<question id="3.6" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.ecologicalThemeSuggest">
+				<text>Other ecological research areas, please specify</text>
+				<description>
+					<![CDATA[
+						Give a title to the new theme.
+					]]>
+				</description>
+			</question>
+
+			<question id="3.7" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcfor" isCustom="true" mandatory="false" meta="SHD.fieldsOfResearch">
+				<text>Fields of Research (FOR08) Code (Optional)</text>
+				<description>
+					<![CDATA[
+						Please select one or more codes from the Australian and New Zealand Standard Research Classification (ANZSRC) list of fields of research.
+					]]>
+				</description>
+			</question>
+			
+			<question id="3.8" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcseo" isCustom="true" mandatory="false"
+				meta="SHD.socioEconomicObjectives">
+				<text>Socio-Economic Objectives (SEO) Code (Optional)</text>
+				<description>
+					<![CDATA[
+						Please select one or more items from the Australian and New Zealand Standard Research Classification (ANZSRC) list of Socio-Economic Objectives (SEO).
+					]]>
+				</description>
+			</question>
+
+			<question id="3.9" showId="true" type="TEXT" mandatory="false" meta="SHD.usageGuide">
+				<text>Usage Guide (Optional)</text>
+				<description>
+						<![CDATA[
+							Brief instructions that may help other researchers use the dataset whyich may include tips for integrating or comparing this with out datasets. For studies involving privacy, safety control or data restrictions, 
+							including how authors can apply to access the restricted data could be described.
+						]]>
+					</description>
+			</question>
+
+		</items>
+	</questionGroup>
+
+	<multipleQuestionGroup id="4." showId="true">
+		<text>Related Datasets</text>
+		<textDetails><![CDATA[Many interrelated datasets are often produced for a research project and each can be linked by using the title of the overarching research project.]]></textDetails>
+		<items>
+
+			<question id="4.1" showId="true" type="TEXT" mandatory="false" meta="SHD.relatedDatasetTitle">
+				<text>Related Dataset Full Title(s)</text>
+				<description>
+					<![CDATA[
+					 	If this dataset is related to other datasets for a project, please enter the full  title of other dataset(s) by adding one at a time.
+					]]>
+				</description>
+			</question>
+
+			<question id="4.2" showId="true" type="TEXT" mandatory="false" meta="SHD.relatedDatasetRDAidentifier">
+				<text>Related Dataset Research Data Australia (RDA) Identifier</text>
+				<description>
+					<![CDATA[
+						Record the persistent digital identifier for the related dataset in the Research Data Australia metadata repository (see researchdata.ands.org.au for more information) 
+					]]>  
+				</description>
+			</question>
+
+			<question id="4.3" showId="true" type="TEXT" mandatory="false" meta="SHD.projectName">
+				<text>Project Full Title (Optional)</text>
+				<description>
+					<![CDATA[
+					 	Enter the overarching research project for the related datasets.
+					]]>
+				</description>
+			</question>
+
+		</items>
+	</multipleQuestionGroup>
+
+
+	<pageBreak pageTitle="Coverage" />
+
+	<questionGroup id="5">
+		<groupTitle>Spatial Coverage</groupTitle>
+		<items>
+			<question id="5.1" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="spatialScale" mandatory="false" meta="SHD.spatialScale">
+				<text>Scale of Study (Optional)</text>
+				<description>
+					<![CDATA[
+						Select the scale of the study the produced the dataset. 
+					]]>
+				</description>
+			</question>
+
+			<question id="5.2" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.spatialScaleSuggest">
+				<text>Other scale, please specify</text>
+			</question>
+
+			<question id="5.3" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.studyAreaDescription">
+				<text>Describe the geographical extent of the study area.</text>
+				<description>
+					<![CDATA[
+						E.g., the study area extends north to the foothills of the Black Mt., to east until Coastal Road, to the south until Muddy Creek and to the west of the western boudnary of Dingo Station.
+					]]>
+					</description>
+				<responseInputClass>textBoxDefault</responseInputClass>
+			</question>
+			
+			<question id="5.4" showId="true" type="CONTROLLED_VOCAB" trait="data-type-default" mandatory="false">
+				<text>Select one approach to illustrate the coverage of the study area</text>
+				<description>
+					<![CDATA[
+						You can upload a file containing the stydu location coordinates. Alternatively, you can specify the bounding box coordinates manually, or you can use the map tool to specify of the locations, 
+						area coverage or bounding box of the dataset.
+					]]>
+				</description>
+				<defaultVocabulary>
+					<tag>
+						<value>Study location file upload</value>
+						<desc>Study location file upload</desc>
+						<display>Study location file upload</display>
+					</tag>
+					<tag>
+						<value>Bounding box coordinates</value>
+						<desc>Bounding box coordinates</desc>
+						<display>Bounding box coordinates</display>
+					</tag>
+					<tag>
+						<value>Interactive map tool</value>
+						<desc>Interactive map tool</desc>
+						<display>Interactive map tool</display>
+					</tag>
+				</defaultVocabulary>
+			</question>
+			
+			<question id="5.5" showId="true" type="SITE_FILE" mandatory="false" meta="SHD.studyLocationFile">
+				<text>Upload the GPS locations of all study locations (i.e., sites) and sampling units (if available) for the dataset in a file.</text>
+				<description>
+					<![CDATA[
+						Please upload a file containing the identifiers and coordinates of the study locations and sampling units (if available) covered by the dataset
+					]]>
+				</description>
+				<displayCondition questionId="5.4" responseValue="Study location file upload" responseNotNull="true" />
+			</question>
+			
+			<question id="5.6" showId="true" type="GEO_FEATURE_SET" mandatory="false" meta="SHD.studyAreaGeometry">
+				<text>Use the 'Edit Geometries' tool to specify the site locations and sampling units, 
+								the contours of the study area or a bounding box of the study locations on a map.</text>
+				<description>
+					<![CDATA[
+						 Use the 'Map tool' in the following question to manually specify the study locations.
+					]]>
+				</description>
+				<displayCondition questionId="5.4" responseValue="Interactive map tool" responseNotNull="true" />
+			</question>
+			
+			<questionGroup id="5.7">
+				<groupTitle>Study area bounding box coordinates</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						 Please sepcify the coordinates of two opposing corners of the bounding box comprising the study area. 
+					]]>
+				</groupDescription>
+				<items>
+					<question id="5.8" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxXmax">
+						<text>Please specify the longitude (x coordinate) of the first corner limiting the bounding box comprising the study area.</text>
+					</question>
+					
+					<question id="5.9" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxYmax">
+						<text>Please specify the latitude (y coordinate) of the first corner limiting the bounding box comprising the study area.</text>
+					</question>
+					
+					<question id="5.10" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxXmin">
+						<text>Please specify the longitude (x coordinate) of the second (opposing) corner limiting the bounding box comprising the study area.</text>
+					</question>
+					
+					<question id="5.11" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxYmin">
+						<text>Please specify the latitude (y coordinate) of the second (opposing) corner limiting the bounding box comprising the study area.</text>
+					</question>
+					
+					<question id="5.12" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="coordinateReferenceSystem" mandatory="false"
+						meta="SHD.studyAreaBoundingBoxCRS">
+						<text>Please specify the coordinate reference system used for the provided coordinates limiting the bounding box comprising the study area.</text>
+					</question>
+					
+				</items>
+				<displayCondition questionId="5.4" responseValue="Bounding box coordinates" responseNotNull="true" />
+			</questionGroup>
+
+			<question id="5.13" showId="true" type="TEXT" mandatory="false" meta="SHD.numberStudyLocation" customVal="int">
+				<text>What is the total number of study locations (sites) for the dataset?</text>
+				<description>
+					<![CDATA[
+						Please specify the number of study locations or sites located  within the study area. For SHaRED, a study location is simple to a study site, i.e., the place or area of interest of a study from which one 
+						or more sampling techniques are applied to collect data. A study location or site can have one or many sampling units (spatial replicates) which can be nested with sub-sampling units (e.g., quadrats). 
+					]]>
+				</description>
+			</question>
+
+			<question id="5.14" showId="true" type="TEXT" mandatory="false" meta="SHD.numberSamplingUnits" customVal="int">
+				<text>What is the total number of sampling units used to collect data?</text>
+				<description>
+					<![CDATA[
+						Sampling units may be plots, transects, animal arrays and within these may be sub-sampling units such as quadrats, point intercepts. Include all types of sampling units in your total.
+					]]>
+				</description>
+			</question>
+
+			<question id="5.15" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="false" trait="ibra region" mandatory="false" meta="SHD.ibraRegion">
+				<text>IBRA (The Interim Biogeographic Regionalisation for Australia) region(s)</text>
+				<description>
+					<![CDATA[
+						Select the IBRA region(s) in which the study area is located.
+					]]>
+				</description>
+			</question>
+			
+		</items>
+	</questionGroup>
+
+	<questionGroup id="6">
+		<groupTitle>Temporal Coverage</groupTitle>
+		<items>
+
+			<question id="6.1" showId="true" type="DATE" mandatory="false" meta="SHD.firstStudyAreaVisitDate">
+				<text>Start Date of Data Collection (First Visit)</text>
+				<description>
+					<![CDATA[
+						Please specify the date  of the first visit to the study area to collect data covered by the dataset.						
+					]]>
+				</description>
+			</question>
+			
+			<question id="6.2" showId="true" type="DATE" mandatory="false" meta="SHD.lastStudyAreaVisitDate">
+				<text>End Date of  Data Collection (Last Visit)</text>
+				<description>
+					<![CDATA[
+						Please specify the date of the last visit to a study area to collect data covered by the dataset.
+					]]>
+				</description>
+			</question>
+		</items>
+	</questionGroup>
+
+	<questionGroup id="7">
+		<groupTitle>Environmental Features</groupTitle>
+		<items>
+
+			<question id="7.1" showId="true" type="TREE_SELECT" isCustom="true" trait="environmentalFeatures" mandatory="false" meta="SHD.environmentalFeatures">
+				<text>Select landscape features of the study area influencing the study locations/sites and sampling units</text>
+				<description>
+				<![CDATA[
+					Multiples choices allowed.			
+				]]>
+			</description>
+			</question>
+			
+			<question id="7.2" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.environmentalFeaturesSuggest">
+				<text>Other landscape features, please specify</text>
+				<description>
+					<![CDATA[
+									
+					]]>
+				</description>
+			</question>
+			
+		</items>
+	</questionGroup>
+
+	<questionGroup id="8">
+		<groupTitle>Dataset Biota</groupTitle>
+		<items>
+
+			<question id="8.1" showId="true" type="YES_NO" mandatory="false">
+				<text>Does the dataset contain records on plants? Y/N</text>
+			</question>
+
+			<questionGroup id="8.2">
+				<groupTitle>Plants</groupTitle>
+				<displayCondition questionId="8.1" responseValue="Y" responseNotNull="true" />
+				<items>
+				
+					<question id="8.3" showId="true" type="SPECIES_LIST" mandatory="false" meta="SHD.studySpeciesFloraFile">
+						<text>Upload the complete species list of scientific names</text>
+						<description>
+							<![CDATA[
+								Click on 'Upload Species List' to upload complete species list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.4" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="taxon names" mandatory="false" meta="SHD.taxonName">
+						<text>If no species list is available, manually create a scientific name list using search tool.</text>
+						<description>
+							<![CDATA[
+								To create a list, enter any part of the name in the left-hand search panel and click on the selected taxon from the list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.5" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="common flora names" mandatory="false"
+						meta="SHD.floraCommonName">
+						<text>Common Name search tool (Optional)</text>
+						<description>
+							<![CDATA[
+								To find a name, please type any part of the name in the left-hand search panel and click on the common name from the list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.6" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="floraGroup" mandatory="false" meta="SHD.floraGroup">
+						<text>Select a higher taxonomic grouping(s) of plant taxa recorded in the dataset.</text>
+						<description>
+							<![CDATA[
+								Please select the taxonomic groupings which best correspond to the plant species recorded in the dataset from the drop-down list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.7" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.floraGroupSuggest">
+						<text>Other plant groups, please specify</text>
+					</question>
+
+				</items>
+			</questionGroup>
+
+			<question id="8.8" showId="true" type="YES_NO" mandatory="false">
+				<text>Does the dataset contain records on fauna? Y/N</text>
+			</question>
+
+			<questionGroup id="8.9">
+				<groupTitle>Animals</groupTitle>
+				<displayCondition questionId="8.8" responseValue="Y" responseNotNull="true" />
+				<items>
+
+					<question id="8.10" showId="true" type="SPECIES_LIST" mandatory="false" meta="SHD.studySpeciesFaunaFile">
+						<text>Upload the complete species list of scientific names</text>
+						<description>
+							<![CDATA[
+								Click on 'Upload Species List' to upload complete species list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.11" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="fauna taxon names" mandatory="false"
+						meta="SHD.faunaTaxonomicName">
+						<text>If no species list is available, manually create a scientific name list using search tool</text>
+						<description>
+							<![CDATA[
+								To create a list, enter any part of the name in the left-hand search panel and click on the selected taxon from the list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.12" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="common fauna names" mandatory="false"
+						meta="SHD.faunaCommonName">
+						<text>Common Name search tool (Optional)</text>
+						<description>
+							<![CDATA[
+								To find a name, please type any part of the name in the left-hand search panel and click on the common name from the list.
+							]]>
+						</description>
+					</question>
+
+					<question id="8.13" showId="true" type="TREE_SELECT" isCustom="true" trait="faunaGroup" mandatory="false" meta="SHD.faunaGroup">
+						<text>Select which animal group(s) are recorded in the dataset.</text>
+						<description>
+							<![CDATA[
+								Please select the animals group(s) which best correspond to the fauna species recorded in the dataset from the drop-down list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="8.14" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.faunaGroupSuggest">
+						<text>Other animal groups, please specify</text>
+					</question>
+
+				</items>
+			</questionGroup>
+		</items>
+	</questionGroup>
+
+	<pageBreak pageTitle="Methods" />
+
+	<questionGroup id="9">
+		<groupTitle>Research Methods</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				To enable data users to discover and understand the research methods carried out to collect the dataset.  
+			]]>
+		</groupDescription>
+		<items>
+
+
+			<multipleQuestionGroup id="9.1" showId="true">
+				<text>Detailed descriptions for each method used to collect the data.</text>
+				<description>
+						<![CDATA[
+							The methods should be described in enough detail to allow other researchers to interpret and repeat, if required, the study. The samling design, sampling techniques, sample size, response and explanatory 
+							variables, measurement derivations, processing steps, assumptions made and by whom should be included. Authors are encourage to cite previous descriptions of metnods used. Any changes to sampling regime 
+							should also be described.
+						]]>
+				</description>
+				<items>
+				
+					<question id="9.2" showId="true" type="TEXT" mandatory="false" meta="SHD.methodName">
+						<text>Name of Method</text>
+					</question>
+					
+					<question id="9.3" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.methodAbstract">
+						<text>Description</text>
+						<responseInputClass>textBoxDefault</responseInputClass>
+					</question>
+					
+					<question id="9.4" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.methodDriftDescription">
+						<text>Changes to Methods </text>
+						<description>
+							<![CDATA[
+								If the method has changed over the period of the project, please describe how and when the method has changed?
+							]]>
+						</description>
+						<responseInputClass>textBoxDefault</responseInputClass>
+					</question>
+					
+				</items>
+			</multipleQuestionGroup>
+
+			<question id="9.5" showId="true" type="TREE_SELECT" isCustom="true" trait="artefacts" mandatory="false" meta="SHD.artefacts">
+				<text>Other Information Collected</text>
+				<description>
+					<![CDATA[
+						Select other information (e.g., vouchers, , analysis and/or record keeping) collected for this dataset from the dropdown.
+					]]>
+				</description>
+			</question>
+			
+			<question id="9.6" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.artefactsSuggest">
+				<text>Other information, please specify.</text>
+			</question>
+
+			<question id="9.7" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.keywords">
+				<text>Keywords for Methods (Optional)</text>
+				<description>
+						<![CDATA[
+							To enable discovery of datasets by the sampling methods used, select appropriate keywords.						
+						]]>
+					</description>
+			</question>
+
+			<question id="9.8" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="samplingDesign" mandatory="false" meta="SHD.samplingDesign">
+				<text>Select the sampling design used to collect the data</text>
+			</question>
+			
+			<question id="9.9" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.samplingDesignSuggest">
+				<text>Other sampling designs, please specify.</text>
+			</question>
+			
+			<question id="9.10" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="floraTechnique" mandatory="false"
+				meta="SHD.floraTechnique">
+				<text>Select the sampling techniques to collect plant/vegetation data</text>
+			</question>
+			
+			<question id="9.11" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.floraTechniqueSuggest">
+				<text>Other sampling techniques for plants/vegetation, please specifiy.</text>
+			</question>
+			
+			<question id="9.12" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="faunaTechnique" mandatory="false"
+				meta="SHD.faunaTechnique">
+				<text>Select the sampling techniques used to collect animal data</text>
+			</question>
+			
+			<question id="9.13" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.faunaTechniqueSuggest">
+				<text>Other sampling techniques for animals, please specify.</text>
+			</question>
+
+		</items>
+	</questionGroup>
+
+	<questionGroup id="10">
+		<groupTitle>Supplementary Materials</groupTitle>
+		<items>
+
+			<multipleQuestionGroup id="10.1" showId="false">
+				<text></text>
+				<textDetails><![CDATA[Please specify associated materials such as field manuals, scientific papers, dataset schemas, algorithms, spatial layers or patents. For resources which are electronically accessible, 
+				e.g. on a website, please provide information allowing the identification of the materials. ]]></textDetails>
+				<items>
+
+					<question id="10.2" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="otherMaterials" mandatory="false"
+						meta="SHD.associatedMaterialType">
+						<text>Identify the type of supplementary materials</text>
+						<description>
+							<![CDATA[
+								Please select the type of supplementary material from the list.
+							]]>
+						</description>
+					</question>
+					
+					<question id="10.3" showId="true" type="TEXT" mandatory="false" meta="SHD.associatedMaterialTypeSuggest">
+						<text>Other, please specify.</text>
+						<displayCondition questionId="10.2" responseValue="Other" responseNotNull="true" />
+					</question>
+					
+					<question id="10.4" showId="true" type="CONTROLLED_VOCAB" trait="resourceIdentifierType" isCustom="true" mandatory="false"
+						meta="SHD.supplementaryMaterialIdentifierType">
+						<text>Identify the type of persistent digital identifier for supplementary materials</text>
+						<description>
+							<![CDATA[
+								Please choose the type of persistent digital identifier for the electronic resource.
+							]]>
+						</description>
+					</question>
+					
+					<question id="10.5" showId="true" type="TEXT" mandatory="false" meta="SHD.supplementaryMaterialIdentifier">
+						<text>Persistent Digital Identifier Code</text>
+						<description>
+							<![CDATA[
+								Please enter the persistent digital identifier for the electronic resource.
+							]]>
+						</description>
+						<displayCondition questionId="10.4" responseNotNull="true" />
+					</question>
+
+				</items>
+			</multipleQuestionGroup>
+
+			<question id="10.6" showId="true" type="DOCUMENT" mandatory="false" meta="SHD.supplementaryMaterialFile"><!-- TO DO: replace the type with a general file upload -->
+				<!-- TO DO: this question needs to be part of the previous multipleQuestionGroup (but does not currently work there) -->
+				<text>Upload supplementary material if not electronically available.</text>
+				<description>
+					<![CDATA[
+						Please click on the button to upload a document, e.g. field manuals, scientific paper, algorithms, spatial layers, patents etc.
+					]]>
+				</description>
+			</question>
+		</items>
+	</questionGroup>
+
+
+	<pageBreak pageTitle="Dataset Usage" />
+
+	<questionGroup id="11">
+		<groupTitle>Dataset Conditions of Use</groupTitle>
+		<groupDescription>
+					<![CDATA[
+						Information describing the conditions of use for the dataset.
+					]]> 
+					</groupDescription>
+		<items>
+
+			<question id="11.1" showId="true" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.ownerOrganisation">
+				<text>Organisation Ownership</text>
+				<description>
+					<![CDATA[
+						Please specify the organisation which has the rights to the intellectual property of the datasets. This is usually held by the author(s)' organisation when the grant for the research was awarded. 
+						In research contracts, the intellectual property is described and it can involve many collaborating organisations. If this is the case, the senior organisation needs to contact coauthors and negotiate 
+						which organisation will take responsiblity for the rights of the dataset. More on <a href="http://www.tern.org.au/datalicence">TERN's licensing policy</a>. If your organisation is not in the dropdown list, 
+						please choose 'Other' and specify the organisation.
+					]]>  
+				</description>
+			</question>
+
+			<question id="11.2" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="licenseType" mandatory="false" meta="SHD.licenseType">
+				<text>Select an open access licence for the dataset</text>
+				<description>
+					<![CDATA[
+						<a href="http://www.tern.org.au/Eco-informatics-pg17733.html">TERN Eco-informatics</a> encourages open access to publicly funded data and only publishes datasets under two types of licences. 
+						Other licences are not provided as they limit open access.<br><br>
+
+						A Creative Commons-Attribution (CC-BY) licence lets others distribute, remix and build upon a work, even commercially,
+						as long as they credit the original creator/s (and any other nominated parties). This is the most accommodating of the licences in terms of what others can do with the work. For more information on the CC-BY 
+						licence, please refer to the <a href="http://creativecommons.org/licences/by/2.0/au/deed.en">Creative Commons web site</a>.<br><br>
+						
+						The TERN Attribution (TERN-BY) data licence  v1.0 is based on the Creative Commons v2.0 standards but have been modified to protect those items of research data which may not be subject to copyright. 
+						The TERN Attribution Licence (TERN-BY) lets others distribute, remix,and build upon a work, even commercially, provided that they credit the original source and any other nominated parties. Please refer to the 
+						<a href="http://tern.org.au/datalicence/TERN-BY/1.0/">TERN web site</a> for more information about the TERN-BY data licence.
+					]]>
+				</description>
+			</question>
+
+			<question id="11.3" showId="true" type="DATE" mandatory="false" meta="SHD.embargo">
+				<text>Expiry Date for Dataset Embargo (up to 12 months)</text>
+				<description>
+					<![CDATA[
+						Datasets which are actively being used by the authors,  'in press', yet to be published (e.g. PhD students) or for other reasons cannot be openly accessed openly, the dataset can be embargoed for up to 12 months. 
+						When the embargo date has expired, access will be given to your dataset. 
+					]]>
+				</description>
+			</question>
+			
+		</items>
+	</questionGroup>
+
+	<questionGroup id="12">
+		<groupTitle>Dataset management</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the current management of the dataset.
+			]]>
+		</groupDescription>
+		<items>
+			<question id="12.1" showId="true" type="CONTROLLED_VOCAB" trait="project status" mandatory="false" meta="SHD.projectStatus">
+				<text>Identify Activity Status</text>
+				<description>
+					<![CDATA[
+						Please provide the current completion status of the dataset from the dropdown.
+					]]>
+				</description>
+			</question>
+			
+			<question id="12.2" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="false" trait="curation status" mandatory="false" meta="SHD.QaStatus">
+				<text>Quality Assurance</text>
+				<description>
+					<![CDATA[
+						Please provide the curation activities which have been applied to the dataset from the dropdown.
+					]]>
+				</description>
+			</question>
+			
+			<question id="12.3" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.QaStatusSuggest">
+				<text>Other, please specify</text>
+				<responseInputClass>textBoxDefault</responseInputClass>
+			</question>
+			
+			<question id="12.4" showId="true" type="DATE" mandatory="false" meta="SHD.latestUpdate">
+				<text>Date of Last Update</text>
+				<description>
+					<![CDATA[
+						Please provide the date when the was last updated or curated.
+					]]>
+				</description>
+			</question>
+
+		</items>
+	</questionGroup>
+
+	<questionGroup id="13">
+		<groupTitle>Acknowledgements</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Non-author contributors
+			]]>
+		</groupDescription>
+		<items>
+			<question id="13.1" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.acknowledgement">
+				<text>Brief Description</text>
+				<description>
+					<![CDATA[
+						Text acknowledging non-author contributors. Acknowledgement should be brief and acknowledge grants, in-kind or contribution numbers. Thanks to referees, editors or devotions are not encouraged.
+					]]>  
+				</description>
+				<responseInputClass>textBoxDefault</responseInputClass>
+			</question>
+
+		</items>
+	</questionGroup>
+
+	<question id="999" type="TEXT" mandatory="false" meta="SHD.datasetPublicationYear">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="9999" type="TEXT" mandatory="false" meta="SHD.threatsPressures">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="999911111" type="TEXT" mandatory="false" meta="SHD.threatsPressuresSuggest">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="99999" type="TEXT" mandatory="false" meta="SHD.conservationManagement">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="99999222" type="TEXT" mandatory="false" meta="SHD.conservationManagementSuggest">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="999999" type="TEXT" mandatory="false" meta="SHD.datasetContactName">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="9999999" type="TEXT" mandatory="false" meta="SHD.datasetContactOrganisation">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="99999999" type="TEXT" mandatory="false" meta="SHD.datasetNameForCitation">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="999994354353425" type="TEXT" mandatory="false" meta="SHD.measurement">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="9999776547654799" type="TEXT" mandatory="false" meta="SHD.measurementSuggest">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="999999098709879" type="TEXT" mandatory="false" meta="SHD.measurementTheme">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+	<question id="9987098079999999" type="TEXT" mandatory="false" meta="SHD.measurementThemeSuggest">
+		<text>Fake question for DOI minting requirements - can be removed when metatag SHD.datasetPublicationYear is removed from DOI service</text>
+	</question>
+								
+	</items>
+</questionnaire> 

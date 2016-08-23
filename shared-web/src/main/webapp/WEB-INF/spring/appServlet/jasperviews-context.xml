@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="publicationCertificateReport" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+        <property name="url" value="/WEB-INF/reports/SubmissionPublicationCertificate.jasper" />
+        <property name="reportDataKey" value="beanCollectionDataSource" />
+        <property name="headers">
+            <props>
+                <prop key="Content-Disposition">attachment; filename="publicationCertificate.pdf"</prop>
+            </props>
+		</property>
+    </bean>
+    
+    <bean id="submissionSummaryPdfReport" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+        <property name="url" value="/WEB-INF/reports/submission_summary.jasper" />
+        <property name="reportDataKey" value="beanCollectionDataSource" />
+        <property name="headers">
+            <props>
+                <prop key="Content-Disposition">attachment; filename="submissionSummary.pdf"</prop>
+            </props>
+		</property>
+    </bean>
+    
+    <bean id="citationPdfReport" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+        <property name="url" value="/WEB-INF/reports/citationReport.jasper" />
+        <property name="reportDataKey" value="beanCollectionDataSource" />
+        <property name="headers">
+            <props>
+                <prop key="Content-Disposition">attachment; filename="citation.pdf"</prop>
+            </props>
+		</property>
+    </bean>
+    
+    <bean id="submissionSummaryHtmlReport" class="org.springframework.web.servlet.view.jasperreports.JasperReportsHtmlView">
+        <property name="url" value="/WEB-INF/reports/submission_summary_html.jasper" />
+        <property name="reportDataKey" value="beanCollectionDataSource" />
+    </bean>
+    
+</beans>

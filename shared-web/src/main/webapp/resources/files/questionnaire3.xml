@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>160</version>
+	<title>SHaRED AEKOS Submission Tool</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>QA DataTeam version 1</introduction>
+	<submissionTitleQuestionId>1.1.1</submissionTitleQuestionId>
+	<items>
+		<questionGroup id="1">
+		<groupTitle>Dataset content</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the content of the dataset
+			]]>
+		</groupDescription>
+		<items>
+			<questionGroup id="1.1">
+			<groupTitle>Dataset description</groupTitle>
+			<groupDescription>
+				<![CDATA[
+					General description of the dataset
+				]]>
+			</groupDescription>
+			<items>
+				<question id="1.1.1" showId="false" type="TEXT" mandatory="true" meta="SHD.datasetFullName">
+					<text>Dataset name</text>
+					<description>
+						<![CDATA[
+							Please provide the formal name which is <br/>
+							commonly used to refer to dataset.
+						]]>
+					</description>
+				</question>
+				<question id="1.1.2" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetShortName">
+					<text>Abbreviated dataset name</text>
+					<description>
+						<![CDATA[
+							If available, please provide an abbreviated<br/>
+							name which is commonly used to refer<br/>
+							to dataset.
+						]]>
+					</description>
+				</question>
+				<question id="1.1.3" showId="false" type="CONTROLLED_VOCAB_SUGGEST" isCustom="true" trait="researchProgramme" mandatory="false" meta="SHD.researchProgram">
+					<text>Research program</text>
+					<description>
+						<![CDATA[
+							If the project which led to the establishment<br/>
+							of the dataset is part of a larger research <br/>
+							program, please provide the name of this <br/>
+							program.
+						]]>
+					</description>
+				</question>
+				<question id="1.1.4" showId="false" type="CONTROLLED_VOCAB" isCustom="true" trait="rifcsIdentifierType" mandatory="false" meta="SHD.dataset.researchProgramIdentifierType">
+					<text>Research program identifier type</text>
+					<description>
+						<![CDATA[
+							If the project which led to the<br/>
+							establishment of the dataset is<br/>
+							part of a broader research program<br/>
+							which is registered  in a metadata<br/>
+							repository such as Research Data<br/>
+							Australia (RDA) or TROVE (National<br/>
+							Library of Australia), <br/>
+							please provide the type of the <br/>
+							persistent identifier of this program<br/>
+							in the metadata repository.<br/>
+						]]> 
+					</description>
+					<displayCondition questionId="1.1.3" responseNotNull="true" />
+				</question>
+				<question id="1.1.5" showId="false" type="TEXT" mandatory="false" meta="SHD.researchProgramIdentifier">
+					<text>Research activity identifier</text>
+					<description>
+						<![CDATA[
+							If the project which led to the<br/>
+							establishment of the dataset is<br/>
+							part of a broader research activity<br/>
+							which is registered  in a metadata<br/>
+							repository such as Research Data<br/>
+							Australia (RDA) or TROVE (National<br/>
+							Library of Australia), <br/>
+							please profvide a persistent<br/>
+							identifier of this activity<br/>
+							in the metadata repository.<br/>
+						]]>
+					</description>
+					<displayCondition questionId="1.1.3" responseNotNull="true" />
+				</question>
+
+				<question id="1.1.7" showId="false" type="TEXT_BOX" mandatory="false" meta="SHD.datasetAbstract">
+					<text>Abstract</text>
+					<description>
+						<![CDATA[
+							Please provide a short but meaningful<br/>
+							summary about the nature of the dataset<br/>
+							as well as how and why it was collected.
+						]]>
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+				</question>
+				<question id="1.1.8" showId="false" type="MULTISELECT_TEXT_BOX" mandatory="false" meta="SHD.datasetObjective">
+					<text>Objectives</text>
+					<description>
+						<![CDATA[
+							Please describe the objectives of the<br/>
+							data collection which led to the<br/>
+							production of the dataset.<br/> 
+							To provide multiple objectives,<br/>
+							click on + to enter each objective<br/>
+							in a new text box.
+						]]>
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+				</question>
+			</items>
+		</questionGroup>
+
+					<!--Details about the spatial, temporal and taxonomic coverage of the dataset, and information about the methos applied to collect the data in the field.-->
+		<questionGroup id="1.2">
+		<groupTitle>Spatial coverage</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the spatial coverage of the<br>
+				dataset.
+			]]>
+		</groupDescription>
+		<items>
+					<question id="1.2.1" showId="false" type="TEXT" mandatory="false" meta="SHD.numberStudyLocation">
+						<text>Number of study locations</text>
+						<description>
+							<![CDATA[
+								Please specify the number of study<br/>
+								locations within the study area.
+							]]>
+						</description>
+					</question>
+				<question id="1.2.2" showId="false" type="TEXT_BOX" mandatory="false" meta="SHD.studyAreaDescription">
+					<text>Study area description</text>
+					<description>
+						<![CDATA[
+							Please describe the geographic extent of the<br/>
+							data in the dataset.
+						]]>
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+				</question>
+						<question id="1.2.3" showId="false" type="SITE_FILE" mandatory="false" meta="SHD.studyLocationFile">
+							<text>Study location file upload</text>
+							<description>
+							<![CDATA[
+								Please upload a file containing the<br/>
+								coordinates of the study locations.
+							]]>
+							</description>
+						</question>
+						<question id="1.2.4" showId="false" type="GEO_FEATURE_SET" mandatory="false" meta="SHD.studyAreaGeometry">	
+							<text>Map tool</text>
+							<description>
+							<![CDATA[
+								Please use the map tool to specify of the<br/>
+								locations, area coverage or bounding box<br/>
+								of the dataset.<br/>
+							]]>
+							</description>
+					</question>
+			</items>
+		</questionGroup>		
+		<questionGroup id="1.3">
+		<groupTitle>Temporal coverage</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the temporal coverage of the<br>
+				dataset.
+			]]>
+		</groupDescription>
+		<items>
+					<question id="1.3.1" showId="false" type="TEXT" mandatory="false" meta="SHD.numberStudyLocationVisits">
+								<text>Study location visits</text>
+								<description>
+									<![CDATA[
+										Please specify the total number<br/>
+										of visits to individual study<br/>
+										locations.
+									]]>
+								</description>
+					</question>
+
+				<question id="1.3.2" showId="false" type="DATE" mandatory="false" meta="SHD.firstStudyAreaVisit">
+					<text>First study area visit date</text>
+					<description>
+						<![CDATA[
+							Please specify the date of the earliest visit<br/>
+							to a study area covered by the dataset.							
+						]]>
+					</description>
+				</question>
+				<question id="1.3.3" showId="false" type="DATE" mandatory="false" meta="SHD.lastStudyLocationVisit">
+					<text>Last study area visit date</text>
+					<description>
+						<![CDATA[
+							Please specify the date of the last visit<br/>
+							to a study area covered by the dataset.
+						]]>
+					</description>
+				</question>
+		</items>
+		</questionGroup>
+		<questionGroup id="1.4">
+		<groupTitle>Taxonomic coverage</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the taxonomic coverage of the<br>
+				dataset.
+			]]>
+		</groupDescription>
+		<items>
+					<questionGroup id="1.4.1" showId="false">
+						<groupTitle>Study species</groupTitle>
+						<groupDescription>
+							<![CDATA[
+								Please provide the names of <br/>
+								taxa included in the dataset.<br/>
+								You can either upload a species<br/>
+								list or specify the taxa manually.
+							]]>
+						</groupDescription>
+						<items>
+							<question id="1.4.1.1" showId="false" type="SPECIES_LIST" mandatory="false" meta="SHD.studySpeciesFile">
+								<text>Study species file upload</text>
+								<description>
+									<![CDATA[
+										Please upload a file specifying the<br/>
+										taxonomic name of all taxa included<br/>
+										in the dataset.
+									]]>
+								</description>
+							</question>
+									<question id="1.4.1.2" showId="false" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="taxon names" mandatory="false" meta="SHD.taxonName">
+									<text>Taxon name</text>
+									<description>
+										<![CDATA[
+											Please specify the name of the taxon.<br/>
+										]]>
+									</description>
+									<displayCondition questionId="1.4.1.1" responseNull="true" /><!--this group should only be visible if no taxa file has been uploaded under question 1.16.1-->
+							</question>
+						</items>
+					</questionGroup>
+				</items>
+		</questionGroup>
+		<questionGroup id="1.5">
+		<groupTitle>Thematic coverage</groupTitle>
+		<groupDescription>
+			<![CDATA[
+				Information about the thematic coverage of the<br>
+				dataset.
+			]]>
+		</groupDescription>
+		<items>
+					<question id="1.5.1" showId="false" type="MULTISELECT_CONTROLLED_VOCAB" trait="thematic scope item" mandatory="false" meta="SHD.thematicScope">
+						<text>Thematic scope</text>
+						<description>
+							<![CDATA[
+								Please select one or more thematic areas<br/>
+								from the list.
+							]]>
+						</description>
+					</question>
+					<question id="1.5.2" showId="false" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcfor" isCustom="true" mandatory="false" meta="SHD.fieldsOfResearch">
+						<text>Fields of research</text>
+						<description>
+							<![CDATA[
+								Please select one or more items from the<br/>
+								Australian and New Zealand Standard<br/>
+								Research Classification (ANZSRC) list of<br/>
+								fields of research groups.<br/>
+							]]>
+						</description>
+					</question>
+					<question id="1.5.3" showId="false" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcseo" isCustom="true" mandatory="false" meta="SHD.socioEconomicObjectives">
+						<text>Socio-economic objectives</text>
+						<description>
+							<![CDATA[
+								Please select one or more items from the<br/>
+								fAustralian and New Zealand Standard<br/>
+								Research Classification (ANZSRC) list of<br/>
+								socio-economic objectives groups.<br/>
+							]]>
+						</description>
+					</question>
+			</items>
+		</questionGroup>
+
+			<multipleQuestionGroup id="1.6" showId="false">
+				<text>Field methods</text>
+				<description>
+						<![CDATA[
+							Please provide method names and <br/>
+							abstracts for all methods used to<br/>
+							collect the data in the field.
+						]]>
+				</description>
+				<items>
+					<question id="1.6.1" showId="false" type="TEXT" mandatory="false" meta="SHD.methodName">
+						<text>Method name</text>
+						<description>
+							<![CDATA[
+								Please enter the name of the field<br/>
+								method used to collect data for<br/>
+								the dataset.<br/>
+							]]>
+						</description>
+					</question>
+					<question id="1.6.2" showId="false" type="TEXT_BOX" mandatory="false" meta="SHD.methodAbstract">
+						<text>Method abstract</text>
+						<description>
+							<![CDATA[
+								Please enter the field method used<br/>
+								to collect data for the dataset.<br/>
+							]]>
+						</description>
+						<responseInputClass>textBoxDefault</responseInputClass>
+					</question>
+					<question id="1.6.3" showId="false" type="TEXT_BOX" mandatory="false" meta="SHD.methodDriftDescription">
+						<text>If the method has changed over the period of the study, please describe how and when the method has changed?</text>
+						<description>
+							<![CDATA[
+								Please provide details about the method<br/>
+								change, especially when the method change<br/>
+								occurred and how the method changed.
+							]]>
+						</description>
+						<responseInputClass>textBoxDefault</responseInputClass>
+					</question>
+				</items>
+			</multipleQuestionGroup>
+		
+			<multipleQuestionGroup id="1.7">
+				<text>Associated materials</text>
+				<description>
+					<![CDATA[
+						Please upload associated materials<br/>
+						such as field manuals,<br/>
+						scientific papers or dataset schemas.<br/>
+						Alternatively, for resources which are <br/>
+						electronically accessible, e.g. on a <br/>
+						website, please provide information <br/>
+						allowing the identification of the<br/>
+						materials.
+					]]>
+				</description>
+				<items>
+							<question id="1.7.1" showId="false" type="CONTROLLED_VOCAB" isCustom="true" trait="resourceType" mandatory="false" meta="SHD.resourceType">
+								<text>Document type</text>
+								<description>
+								<![CDATA[
+									Please select the type of<br/>
+									associated material from the list.
+								]]>
+								</description>
+							</question>
+							<question id="1.7.2" showId="false" type="CONTROLLED_VOCAB" trait="resourceIdentifierType" isCustom="true" mandatory="false" meta="SHD.resourceIdentifierType">
+								<text>Document identifier type</text>
+								<description>
+								<![CDATA[
+									Please choose the type of identifier<br/>
+									which identifies the electronic<br/>
+									resource.
+								]]>
+								</description>
+							</question>
+							<question id="1.7.3" showId="false" type="TEXT" mandatory="false" meta="SHD.resourceIdentifier">
+								<text>Document identifier</text>
+								<description>
+								<![CDATA[
+									Please enter the identifier which <br/>
+									identifies the electronic resource.
+								]]>
+								</description>
+							</question>
+
+				</items>
+			</multipleQuestionGroup>
+			
+							<question id="1.7.4" showId="false" type="IMAGE" mandatory="false" meta="SHD.file"><!-- TO DO: replace the type with a general file upload -->
+							<!-- TO DO: this question needs to be part of the previous multipleQuestionGroup (but does not currently work there) -->
+								<text>Document upload</text>
+								<description>
+								<![CDATA[
+									If available, please click on<br/>
+									the button to upload a document,<br/>
+									e.g. field manuals, scientific<br/>
+									paper etc.
+								]]>
+								</description>
+							</question>
+		</items>
+		</questionGroup>
+	<pageBreak />
+		<questionGroup id="2">
+			<groupTitle>Dataset administration</groupTitle>
+			<groupDescription>
+				<![CDATA[
+					Information about the administration of<br>
+					the dataset.
+				]]>
+			</groupDescription>
+			<items>
+			<questionGroup id="2.1">
+				<groupTitle>Dataset contact</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information about the contact person<br>
+						for the dataset.
+					]]>
+				</groupDescription>
+				<items>
+						<question id="2.1.1" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetContactName">
+							<text>Name</text>
+							<description>
+							<![CDATA[
+								Please specify the name of the person to<br/>
+								be contacted for questions on the dataset.
+							]]>   
+							</description>
+						</question>
+						<question id="2.1.2" showId="false" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.datasetContactOrganisation">
+							<text>Organisation</text>
+							<description>
+							<![CDATA[
+								Please specify the organisation to which<br/>
+								the person specified in the previous<br/>
+								question belongs by clicking on the<br/>
+								corresponding entry in the list.<br/>
+								If the required organisation is not in the<br/>
+								list, please choose 'Other - Please suggest'<br/>
+								and provide the organisation name in the<br/>
+								appearing text box.
+							]]>   
+							</description>
+						</question>
+						<question id="2.1.3" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetContactAddress">
+							<text>Postal address</text>
+							<description>
+							<![CDATA[
+								Please provide the postal address of the<br/>
+								dataset contact.<br/>
+							]]>  
+							</description>	
+						</question>
+						<question id="2.1.4" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetContactEmail">
+							<text>Email address</text>
+							<description>
+							<![CDATA[
+								Please provide the email address of the<br/>
+								dataset contact.<br/>
+							]]> 
+							</description>	
+						</question>
+						<question id="2.1.5" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetContactPhone">
+							<text>Telephone number</text>
+							<description>
+							<![CDATA[
+								Please provide the telephone number<br/>
+								of the dataset contact.<br/>
+							]]> 
+							</description>	
+						</question>
+				</items>
+			</questionGroup>
+			<questionGroup id="2.2">
+				<groupTitle>Dataset publisher</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information about the publisher<br>
+						of the dataset.
+					]]>
+				</groupDescription>
+				<items>				
+					
+						<question id="2.2.1" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetPublisherName" prepop="2.1.1">
+							<text>Name</text>
+							<description>
+							<![CDATA[
+								Please specify the name of the person who<br/>
+								publishes the dataset.
+							]]>   
+							</description>
+						</question>
+						<question id="2.2.2" showId="false" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.datasetPublisherOrganisation" prepop="2.1.2">
+							<text>Organisation</text>
+							<description>
+							<![CDATA[
+								Please specify the organisation to which<br/>
+								the publisher specified in the previous<br/>
+								question belongs by clicking on the<br/>
+								corresponding entry in the list.<br/>
+								If the required organisation is not in the<br/>
+								list, please choose 'Other - Please suggest'<br/>
+								and provide the organisation name in the<br/>
+								appearing text box.
+							]]>   
+							</description>
+						</question>
+						<question id="2.2.3" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetPublisherAddress" prepop="2.1.3">
+							<text>Postal address</text>
+							<description>
+							<![CDATA[
+								Please provide the postal address of the<br/>
+								dataset publisher.<br/>
+							]]>  
+							</description>	
+						</question>
+						<question id="2.2.4" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetPublisherEmail" prepop="2.1.4">
+							<text>Email address</text>
+							<description>
+							<![CDATA[
+								Please provide the email address of the<br/>
+								dataset publisher.<br/>
+							]]> 
+							</description>	
+						</question>
+						<question id="2.2.5" showId="false" type="TEXT" mandatory="false" meta="SHD.datasetPublisherPhone" prepop="2.1.5">
+							<text>Telephone number</text>
+							<description>
+							<![CDATA[
+								Please provide the telephone number<br/>
+								of the dataset publisher.<br/>
+							]]> 
+							</description>	
+						</question>
+					</items>
+					</questionGroup>
+					
+				<questionGroup id="2.3">
+				<groupTitle>Legal information</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information about the legal aspects of the<br>
+						dataset.
+					]]> 
+					</groupDescription>
+				<items>
+					<multipleQuestionGroup id="2.3.1" showId="false">
+						<text>Legal Publishers</text>
+						<description>Information about legal publishers</description>
+						<items>
+							<question id="2.3.1.1" showId="false" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.legalPublisher">
+								<text>Legal publisher</text>
+								<description>
+								<![CDATA[
+									Please specify the legal publisher by<br/>
+									clicking on the corresponding entry <br/>
+									in the list.<br/>
+									If the required organisation is not in the list,<br/>
+									please choose 'Other - Please suggest' and<br/>
+									provide details for this owner in the following<br/>
+									questions.
+								]]>
+								</description>
+							</question>
+					</items>
+					</multipleQuestionGroup>
+			<questionGroup id="2.3.2" showId="false" >
+				<groupTitle>Legal contact</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information about the person to<br>
+						be contacted for legal questions.
+					]]>
+				</groupDescription>
+				<items>		
+						<question id="2.3.2.1" showId="false" type="TEXT" mandatory="false" meta="SHD.legalContactName">
+							<text>Name</text>
+							<description>
+							<![CDATA[
+								Please specify the name of the person to<br/>
+								be contacted for legal questions on the<br/>
+								dataset.
+							]]>   
+							</description>
+						</question>
+						<question id="2.3.2.2" showId="false" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.legalContactOrganisation">
+							<text>Organisation</text>
+							<description>
+							<![CDATA[
+								Please specify the organisation to which<br/>
+								the legal contact specified in the previous<br/>
+								question belongs by clicking on the<br/>
+								corresponding entry in the list.<br/>
+								If the required organisation is not in the<br/>
+								list, please choose 'Other - Please suggest'<br/>
+								and provide the organisation name in the<br/>
+								appearing text box.
+							]]>   
+							</description>
+						</question>
+						<question id="2.3.2.3" showId="false" type="TEXT" mandatory="false" meta="SHD.legalContactAddress">
+							<text>Postal address</text>
+							<description>
+							<![CDATA[
+								Please provide the postal address of the<br/>
+								legal contact.<br/>
+							]]>  
+							</description>	
+						</question>
+						<question id="2.3.2.4" showId="false" type="TEXT" mandatory="false" meta="SHD.legalContactEmail">
+							<text>Email address</text>
+							<description>
+							<![CDATA[
+								Please provide the email address of the<br/>
+								legal contact.<br/>
+							]]> 
+							</description>	
+						</question>
+						<question id="2.3.2.5" showId="false" type="TEXT" mandatory="false" meta="SHD.legalContactPhone">
+							<text>Telephone number</text>
+							<description>
+							<![CDATA[
+								Please provide the telephone number<br/>
+								of the legal contact.<br/>
+							]]> 
+							</description>	
+						</question>
+					
+				</items>
+				</questionGroup>
+			
+						<question id="2.3.3" showId="false" type="CONTROLLED_VOCAB" isCustom="true" trait="licenseType" mandatory="false" meta="SHD.licenseType">
+							<text>Licence type</text>
+							<description>
+							<![CDATA[
+								Please provide the licence type which<br/>
+								defines the usage of the dataset.<br/><br/>
+								A Creative Commons-Attribution (CC-BY)<br/>
+								licence lets others distribute, remix<br/>
+								and build upon a work, even commercially,<br/>
+								as long as they credit the original creator/s<br/>
+								(and any other nominated parties). This is the<br/>
+								most accommodating of the licences in terms<br/> 
+								of what others can do with the work. For more<br/>
+								information on the CC-BY licence, please refer<br/>
+								to the <a href="http://creativecommons.org/licences/by/2.0/au/deed.en">Creative Commons web site</a>.<br/><br/>
+								The TERN Attribution (TERN-BY) data licence<br/> 
+								v1.0 is based on the Creative Commons v2.0<br/> 
+								standards but have been modified to protect<br/> 
+								those items of research data which may not <br/>
+								be subject to copyright. The TERN Attribution<br/>
+								Licence (TERN-BY) lets others distribute, remix,<br/>
+								and build upon a work, even commercially,<br/>
+								provided that they credit the original source<br/>
+								and any other nominated parties.  Please refer <br/> 
+								to the <a href="http://tern.org.au/datalicence/TERN-BY/1.0/">TERN web site</a> for more information<br/>
+								about the TERN-BY data licence.<br/><br/>
+								If the applicable licence is not in the list,<br/>
+								please choose 'Other - Please suggest' and<br/>
+								provide details for this licence in the following<br/>
+								questions.
+							]]>
+							</description>
+						</question>
+
+				<question id="2.3.4"  showId="false" type="TEXT_BOX" mandatory="false" meta="SHD.acknowledgement">
+					<text>Dataset acknowledgements</text>
+					<description>
+					<![CDATA[
+						If contributors to the dataset are to be<br/>
+						acknowledged, please provide a corresponding<br/>
+						statement.
+					]]>  
+					</description>
+					<responseInputClass>textBoxDefault</responseInputClass>
+				</question>
+						<question id="2.3.5" showId="false" type="DATE" mandatory="false" meta="SHD.embargo">
+							<text>Embargo date</text>
+							<description>
+								<![CDATA[
+									Please provide date until which the dataset<br/>
+									is embargoed. The dataset can be embargoed<br/>
+									for up to 12 months.<br/>
+								]]>
+							</description>
+						</question>
+				</items>
+			</questionGroup>
+<pageBreak />
+				<questionGroup id="2.4">
+				<groupTitle>Dataset management</groupTitle>
+				<groupDescription>
+					<![CDATA[
+						Information about the current<br>
+						management of the dataset.
+					]]>
+				</groupDescription>
+				<items>			
+						<question id="2.4.1" showId="false" type="CONTROLLED_VOCAB" trait="project status" mandatory="false" meta="SHD.curationStatus">
+							<text>Current status</text>
+							<description>
+								<![CDATA[
+									Please provide the current activity status<br/>
+									of the dataset.<br/>
+								]]>
+							</description>
+						</question>
+						<question id="2.4.2" showId="false" type="MULTISELECT_CONTROLLED_VOCAB" trait="curation status" mandatory="false" meta="SHD.curationActivity">
+							<text>Curation activities</text>
+							<description>
+								<![CDATA[
+									Please provide the curation activities which<br/>
+									have been applied to the dataset.<br/>
+								]]>
+							</description>
+						</question>
+						<question id="2.4.3" showId="false" type="TEXT" mandatory="false" meta="SHD.curationComments">
+							<text>Curation comments</text>
+							<description>
+								<![CDATA[
+									Please specify comments on the curation<br/>
+									status of the dataset.<br/>
+								]]>
+							</description>
+							<responseInputClass>textBoxDefault</responseInputClass>
+						</question>
+						<question id="2.4.4" showId="false" type="DATE" mandatory="false" meta="SHD.latestUpdate">
+							<text>When was the dataset last updated or curated?</text>
+							<description>
+								<![CDATA[
+									Please provide the date when the<br/>
+									was last updated or curated.
+								]]>
+							</description>
+						</question>
+								
+				</items>
+				</questionGroup>
+			</items>
+		</questionGroup>
+
+<pageBreak />
+
+				<questionGroup id="3">
+					<groupTitle>Dataset citation</groupTitle>
+					<groupDescription>
+						<![CDATA[
+							Information about the citation to be used<br/>
+							when referring to the dataset
+						]]>
+					</groupDescription>
+					<items>
+						<multipleQuestionGroup id="3.1">
+							<text>Dataset authors</text>
+							<description>
+								<![CDATA[
+									Identification of the main contributors<br/>
+									to the production of the dataset
+								]]>
+							</description>
+							<items>
+								<question id="3.1.1" showId="false" type="TEXT" mandatory="false" meta="SHD.authors" prepop="2.1.6">
+									<text>Author name</text>
+									<description>
+									<![CDATA[
+										Please specify a person or a party which<br/>
+										contributed to the production of the<br/>
+										dataset. If entering a person's name,<br/>
+										please use the format <br/>
+										'[Surname],[First name's intital].', e.g.<br/>
+										'Smith, J.'
+									]]>  
+									</description>
+								</question>
+							</items>
+						</multipleQuestionGroup>
+						<question id="3.2" type="TEXT" mandatory="false" meta="SHD.datasetPublicationYear">
+							<text>Publication year</text>
+							<description>
+							<![CDATA[
+								If the dataset has been published previous<br/>
+								to this SHaRED submission, please provide<br/>
+								the year of publication. If this is the <br/>
+								first publication of the dataset, please<br/>
+								enter the current year.
+							]]>  
+							</description>
+						</question>
+						<question id="3.3" type="TEXT" mandatory="false" meta="SHD.datasetVersion">
+							<text>Dataset version number</text>
+							<description>
+							<![CDATA[
+								Please enter the edition or version number<br/>
+								of the dataset.
+							]]>  
+							</description>
+						</question>
+						<question id="3.4" type="TEXT" mandatory="false" meta="SHD.datasetNameForCitation"  prepop="1.1.1">
+							<text>Dataset name</text>
+							<description>
+							<![CDATA[
+								Please provide the name which should be<br/>
+								used when citing the dataset.							
+							]]>  
+							</description>
+						</question>
+						<question id="3.5" type="YES_NO" mandatory="false" meta="SHD.datasetPrepublished">
+							<text>Has the dataset been previously published?</text>
+							<description>
+							<![CDATA[
+								Please specify if the dataset has been<br/>
+								previously published, for example in a<br/>
+								metadata repository such as Research<br/>
+								Data Australia (RDA) or TROVE (National<br/>
+								Library of Australia).
+							]]>  
+							</description>
+						</question>
+						<question id="3.6" type="TEXT" mandatory="false" meta="SHD.datasetDOI">
+							<text>DOI</text>
+							<description>
+							<![CDATA[
+								Please provide the DOI under which the<br/>
+								dataset has been previously published.
+							]]>  
+							</description>
+							<displayCondition questionId="3.5" responseValue="Y" />
+						</question>
+					</items>
+				</questionGroup>
+	</items>
+</questionnaire> 

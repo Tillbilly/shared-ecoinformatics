@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="citationReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba6b5ebf-c057-4592-a516-73570014e030">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="accessStatement" class="java.lang.String">
+		<fieldDescription><![CDATA[accessStatement]]></fieldDescription>
+	</field>
+	<field name="citation" class="java.lang.String">
+		<fieldDescription><![CDATA[citation]]></fieldDescription>
+	</field>
+	<field name="license" class="java.lang.String">
+		<fieldDescription><![CDATA[license]]></fieldDescription>
+	</field>
+	<field name="rightsStatement" class="java.lang.String">
+		<fieldDescription><![CDATA[rightsStatement]]></fieldDescription>
+	</field>
+	<field name="datasetTitle" class="java.lang.String">
+		<fieldDescription><![CDATA[datasetTitle]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="43" uuid="19cf1762-553f-44f6-8ecb-00f9682b6a35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ÆKOS Data Citation and Conditions of Use]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="53" width="555" height="37" uuid="255fa0b3-ae10-42c2-9ad3-a8083348c3c1"/>
+				<box leftPadding="5" rightPadding="5"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[All data accessed from the ÆKOS Data Portal should be cited using the same publication ethics for scientific papers. These are described below as conditions of use.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="290" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="555" height="32" uuid="639dadf4-2fc4-454f-9f48-f5bc70b705fa"/>
+				<box leftPadding="5">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dataset Name: " + $F{datasetTitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="32" width="100" height="30" uuid="f647b5f7-7504-4737-acca-f15f4691fc97"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Citation]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="62" width="555" height="30" uuid="7b2cc31d-a671-4109-ab98-2caab40fe286"/>
+				<box topPadding="0" leftPadding="10" bottomPadding="5" rightPadding="5"/>
+				<textFieldExpression><![CDATA[$F{citation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="92" width="100" height="30" uuid="49d31c82-378a-46b3-81d3-08b1b71553aa"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[License]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="122" width="555" height="30" uuid="f1996a01-6479-43fe-814a-63e24c0fbd88"/>
+				<box topPadding="0" leftPadding="10" bottomPadding="5" rightPadding="5"/>
+				<textFieldExpression><![CDATA[$F{license}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="182" width="555" height="30" uuid="1370edfc-9bf1-4aca-be71-d439f620d7aa"/>
+				<box topPadding="0" leftPadding="10" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{rightsStatement}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="152" width="100" height="30" uuid="d78a133f-29cb-4dd4-8e3e-b42e1f27701f"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rights Statement]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="242" width="555" height="30" uuid="d92e917f-7e81-45df-92a8-0025617d668e"/>
+				<box topPadding="0" leftPadding="10" rightPadding="5"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{accessStatement}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="212" width="145" height="30" uuid="a88ab07c-84ce-4633-900b-f7c9a301db19"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Access Statement]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="266" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="56" width="555" height="66" uuid="1b9136e5-67ed-45a5-bdd2-b296cc47898a"/>
+				<box leftPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[                   By using this Data Portal, users acknowledge and agree that this Data Portal and the data submitted through this Portal may be incomplete, contain errors or omissions and the Data Portal may be unreliable in its operation or availability. Furthermore by using this Data Portal users acknowledge and agree that they will not hold the University of Adelaide responsible or liable for the consequences of any use of this Data Portal or data made available through the Data Portal. To the maximum permitted by law, the University of Adelaide excludes all liability to any person arising directly or indirectly from using this Data Portal and any data available from it.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="56" uuid="2381e829-a6bf-422c-bf69-5baf7dc4aaf7"/>
+				<box leftPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ÆKOS ( Australian Ecological Knowledge and Observation System ) is an online ecological data service providing free and open access to rich, ecological site data collected site data.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="65" width="53" height="10" uuid="1a5e4b47-a2d0-4948-be39-4291b2a99f98"/>
+				<box leftPadding="5"/>
+				<textElement>
+					<font size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Disclaimer]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

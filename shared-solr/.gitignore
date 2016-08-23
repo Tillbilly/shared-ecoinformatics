@@ -1,0 +1,11 @@
+.project
+.settings
+.classpath
+/build
+/target
+/bin
+/WebContent/META-INF
+.DS_Store
+.externalToolBuilders/
+logs/
+embedded-4.5/

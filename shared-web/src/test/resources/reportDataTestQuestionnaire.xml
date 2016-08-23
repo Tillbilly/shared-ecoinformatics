@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>1</version>
+	<title>RIF-CS tester</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>QA DataTeam version 1</introduction>
+	<submissionTitleQuestionId>1</submissionTitleQuestionId>
+	<items>
+	    <question id="1" type="TEXT" mandatory="true" meta="SHD.datasetFullName">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="1.1" type="TEXT" mandatory="true" meta="SHD.datasetNameForCitation">
+	        <text>Submission name</text>
+		    <description>It's just like dataset full name except not.</description>
+	   </question>
+	   <question id="1.2" type="TEXT" mandatory="true" meta="SHD.datasetVersion">
+	        <text>Dataset Version</text>
+		    <description>Newer is better</description>
+	   </question>
+	   <question id="1.3" type="TEXT" mandatory="true" meta="SHD.submissionName">
+	        <text>Submission name</text>
+		    <description>It's just like dataset full name except not.</description>
+	   </question>
+	   <question id="2" type="TEXT" mandatory="true" meta="SHD.datasetContactName">
+	        <text>Dataset contact name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="3" type="TEXT" mandatory="true" meta="SHD.datasetContactOrganisation">
+	        <text>Contact organisation</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+        <multipleQuestionGroup id="3.1" showId="true" mandatory="true">
+            <text>Dataset Custodians(s)</text>
+            <description></description>
+            <items>
+                <question id="3.1.1" showId="false" type="CONTROLLED_VOCAB_SUGGEST" mandatory="true" meta="SHD.legalCustodianOrganisation">
+                    <text>organisation(s) considered to have legal custodianship</text>
+                    <description></description>
+                </question>
+                <question id="3.1.2" showId="true" type="CONTROLLED_VOCAB_SUGGEST" mandatory="false" meta="SHD.legalCustodianOrganisationType">
+                    <text>Custodian organisation type?</text>
+                    <description></description>
+                </question>
+            </items>
+        </multipleQuestionGroup>
+	   <question id="4" type="TEXT_BOX" mandatory="true" meta="SHD.datasetContactAddress">
+	        <text>Contact Address</text>
+		    <description>desc</description>
+	   </question>
+	   <question id="5" type="TEXT" mandatory="true" meta="SHD.datasetContactPhone">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="6" type="TEXT" mandatory="true" meta="SHD.datasetContactEmail">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="7" type="MULTISELECT_TEXT" mandatory="true" meta="SHD.fieldsOfResearch">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="8" type="MULTISELECT_TEXT" mandatory="true" meta="SHD.socioEconomicObjectives">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="9" type="MULTISELECT_TEXT" mandatory="true" meta="SHD.thematicScope">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="10" type="TEXT_BOX" mandatory="true" meta="SHD.datasetAbstract">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="11" type="DATE" mandatory="true" meta="SHD.firstStudyAreaVisitDate">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="12" type="DATE" mandatory="true" meta="SHD.lastStudyAreaVisitDate">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="13" type="TEXT" mandatory="true" meta="SHD.studyAreaDescription">
+	        <text>Dataset full name</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="14" type="SITE_FILE" meta="SHD.studyLocationFile">
+	        <text>Site File</text>
+		    <description></description>
+	   </question>
+	   <question id="15" type="GEO_FEATURE_SET" meta="SHD.studyAreaGeometry">
+	        <text>Dataset full name</text>
+		    <description>geo feature set</description>
+	   </question>
+		<multipleQuestionGroup id="16" mandatory="true">
+			<text>Dataset Author(s)</text>
+			<description></description>
+			<items>
+				<question id="16.1" showId="false" type="TEXT" mandatory="false" meta="SHD.authorGivenNames">
+					<text>Author's Initials</text>
+					<description></description>
+				</question>
+				<question id="16.2" showId="false" type="TEXT" mandatory="true" meta="SHD.authorSurname">
+					<text>Author's Surname or Organisation Name</text>
+					<description></description>
+				</question>
+				<question id="16.3" showId="false" type="TEXT" mandatory="true" meta="SHD.authorAffiliation">
+					<text>Author's Affiliation</text>
+					<description></description>
+				</question>
+			</items>
+		</multipleQuestionGroup>
+	   
+       <question id="17" type="TEXT" mandatory="true" meta="SHD.datasetPublicationYear">
+	        <text>Dataset publication year</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="18" type="TEXT" mandatory="true" meta="SHD.licenseType">
+	        <text>License type</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	   <question id="19" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="true" meta="SHD.legalContactOrganisation">
+	        <text>Legal contact organisation</text>
+		    <description>Please provide a name for this submission.</description>
+	   </question>
+	</items>
+</questionnaire>		

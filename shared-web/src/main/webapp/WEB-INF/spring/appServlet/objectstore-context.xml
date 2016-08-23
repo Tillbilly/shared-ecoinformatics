@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+		
+        <!-- Object Store Configuration -->
+        <bean id="s3RestClientDev" class="au.org.ecoinformatics.s3client.S3RESTHttpClientImpl">
+            <property name="active" value="true" />
+            <property name="objectStoreName" value="nectar_shared_dev" />
+            <property name="S3ApiUrl" value="https://swift.rc.nectar.org.au:8888" />
+            <property name="bucket" value="shared-dev" />
+            <property name="apiKey" value="cd0bd6b738744e179a19b42dd406a9bc" />
+            <property name="secretKey" value="4b834e1a23d84be2a09a19cc6e32ad37" />
+        </bean>
+        
+        <bean id="s3RestClientDev_backup" class="au.org.ecoinformatics.s3client.S3RESTHttpClientImpl">
+            <property name="objectStoreName" value="nectar_shared_dev_backup" />
+            <property name="active" value="true" />
+            <property name="S3ApiUrl" value="https://swift.rc.nectar.org.au:8888" />
+            <property name="bucket" value="shared-dev-backup" />
+            <property name="apiKey" value="cd0bd6b738744e179a19b42dd406a9bc" />
+            <property name="secretKey" value="6ae0a3545a1341d4a38c8cb2e2478c96" />
+        </bean>
+        
+        <bean id="s3RestClientDev_SHaRED1" class="au.org.ecoinformatics.s3client.S3RESTHttpClientImpl">
+            <property name="objectStoreName" value="SHaRED_shared-dev-data" />
+            <property name="active" value="false" />
+            <property name="S3ApiUrl" value="https://swift.rc.nectar.org.au:8888" />
+            <property name="bucket" value="shared_submissions" />
+        </bean>
+        
+        <bean id="s3RestClientDev_SHaRED2" class="au.org.ecoinformatics.s3client.S3RESTHttpClientImpl">
+            <property name="objectStoreName" value="SHaRED_submissions_test" />
+            <property name="active" value="false" />
+            <property name="S3ApiUrl" value="https://swift.rc.nectar.org.au:8888" />
+            <property name="bucket" value="submissions_test" />
+        </bean>
+        
+</beans>

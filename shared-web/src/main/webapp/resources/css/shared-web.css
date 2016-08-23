@@ -1,0 +1,1075 @@
+/* SHaRED Colours
+ *   Brownish(Ochre)	#C15E20
+ *   Blueish   			#70B3C1
+ *   Greenish 			#8FB163
+ *   Grayish 			#A7A9AC
+ */
+
+/* \/ jQueryUI Overrides \/ */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	color: #000;
+}
+
+button.ui-button {
+	font-size: 0.75em;
+}
+/* /\ jQueryUI Overrides /\ */
+
+html {
+	font-family: Verdana, Corbel, sans-serif;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	display: block;
+	font-size: 2em;
+	margin: 0.67em 0;
+	font-weight: bold;
+}
+
+form {
+	margin: 0;
+}
+
+.sharedBodyBg {
+	background-color: #D2DFC0;
+}
+
+.focusText {
+	color: #8FB163;
+}
+
+textarea {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a, a:visited {
+	color: #C15E20;
+}
+
+.questionGroupHeaderText, .answerForm > .questionSet > .questionSetTitle, .projectDescriptionTerms {
+	font-weight: bold;
+}
+
+.questionGroupTitle {
+	margin-left: 1em;
+}
+
+.questionGroupHelpText {
+	font-size: 0.9em;
+	font-style: italic;
+	padding: 1em;
+	margin: 0;
+}
+
+.centeredBlock {
+	margin: 0 auto;
+}
+
+.pageFocus {
+	margin: 0 auto;
+	border: 2px solid black;
+	padding: 2em;
+	border-radius: 20px;
+	background-color: rgb(209, 223, 191);
+}
+
+#sharedFixedHeader {
+	background-color: #FFF;
+	position: fixed;
+	width: 960px;
+	top: 0;
+	height: auto;
+	z-index: 999;
+}
+
+#sharedFixedHeader #navButtons {
+	margin-right: 1.5em;
+	text-align: right;
+}
+
+.followsSharedFixedHeader {
+	margin-top: 76px;
+}
+
+.main-content {
+	width: 960px;
+	margin: 0 auto;
+	background-color: #FFF;
+	padding: 1em 10px;
+}
+
+.logoutLinkContainer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+	background-image: url('../images/logoutBtn.png');
+	width: 66px;
+	height: 66px;
+	background-repeat: no-repeat;
+}
+
+.logoutLinkUpper {
+	width: 60px;
+	height: 23px;
+	float: right;
+}
+
+.logoutLinkLower {
+	width: 35px;
+	height: 31px;
+	float: right;
+}
+
+table.licenseTable td.cb {
+	padding-left:25px;
+	padding-right:20px;
+}
+
+div.pageQuestionsDiv {
+	clear:both;
+}
+
+div.questionnaireNavigationDiv button {
+	margin-left: 0px;
+}
+
+a.hp-nav {
+	font-size:larger;
+}
+
+.nav-desc{
+	padding-left: 2em;
+}
+
+.errorMessage, .jsonResponseErrorMessage, .mandatoryIndicator {
+	color: #CC0000;
+}
+
+form.answerForm {
+	margin-bottom:0px;
+}
+
+input.formInputError, select.formInputError, textarea.formInputError {
+	background: #FFDDDD;
+    border: 1px solid #FF0000
+}
+
+span.formErrorSpan {
+	color: #FF3333;
+}
+
+div.errorSummary {
+    color: #FF3333;
+}
+
+div.questionDiv {
+	padding: 10px;
+	clear:both;
+}
+
+div.odd {
+/* 	background-color: #F5FDFF; */
+}
+
+.questionSetEntryDiv {
+	border: 1px solid #DDDDDD;
+}
+
+div.questionGroup, .answerForm > .questionSet {
+	margin: 10px 0;
+	border: 1px solid #DDD;
+	padding: 0 0 10px;
+}
+
+.submissionSummaryContainer div.questionGroup {
+	padding: 0 10px;
+}
+
+.answerContainer, .responseSuggestInputSpan, .questionDiv > .formErrorSpan, .imageThumbSpan {
+	margin-left: 5em;
+	display: block;
+}
+
+span.questionSpan {
+    width: 850px;
+    display: inline-block;	
+    vertical-align: top;
+}
+
+.questionGroup .questionSpan {
+	width: 840px;
+}
+
+span.questionIdSpan1{ 
+    width: 70px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+span.questionIdSpan2{ 
+    width: 80px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+span.questionIdSpan3{ 
+    width: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+span.helpSpan{
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.multiselectAnswer {
+	display:inline-block;
+	vertical-align: top;
+}
+
+.warningIcon {
+	background-image: url('../images/Ambox_warning_yellow.svg');
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+div.submittedFilesHeader {
+	height:27px;
+}
+
+input.dateResponseInput {
+	width : 120px;
+}
+
+.uploadedFilesContainer table, .sharedTable, .sharedDatatable {
+	width: 100%;
+	border-spacing: 0;
+	font-size: 0.8em;
+	border-collapse:collapse;
+}
+
+.sharedTable {
+	margin: 1em auto;
+}
+
+.uploadedFilesContainer table th, table.displayTable thead tr, .questionGroupHeader
+, .sharedTable th, .answerForm > .questionSet > .questionSetTitle, .mapPopup #coordListHeader
+, .failedSubmission h3, .sharedHeaderBackground, table.sharedDatatable.dataTable tr.odd td.sorting_1 {
+	background-color: #A3D4FF;
+}
+
+.uploadedFilesContainer table th, .uploadedFilesContainer table td, .sharedTable th, .sharedTable td {
+	padding: 0 5px;
+}
+
+.uploadedFilesContainer table tbody tr:nth-child(even) td, .sharedTable tr:nth-child(even) td {
+	background-color: #F0F8FF;
+}
+
+.uploadedFilesContainer .filename {
+	width: auto;
+}
+
+.uploadedFilesContainer .filetype {
+	width: 120px;
+}
+
+.uploadedFilesContainer .description {
+	width: auto;
+}
+
+.uploadedFilesContainer .filesize{
+	width: 110px;
+}
+
+.sharedTable .roleList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+table.summarySubmittedDataFiles th , table.summarySubmittedDataFiles td{
+	text-align:left;
+	padding:5px;
+} 
+
+table.displayTable {
+	width: 80%;
+	margin: 1em auto;
+}
+
+table.displayTable .hiddenColumn {
+	display: none;
+}
+
+table.displayTable th, table.displayTable td {
+	padding: 2px 4px 2px 4px;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.displayTable th.sorted a {
+	font-weight: bold;
+}
+
+table.displayTable th, table.displayTable th a, table.displayTable th a:visited {
+	color: black;
+	font-weight: normal;
+}
+
+table.displayTable th.sortable a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+table.displayTable th.sorted a, table.displayTable th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+
+table.displayTable th.sortable a {
+	background-image: url(../images/arrow_off.png);
+	background-repeat: no-repeat;
+}
+
+table.displayTable th.order1 a {
+	background-image: url(../images/arrow_down.png);
+	background-repeat: no-repeat;
+}
+
+table.displayTable th.order2 a {
+	background-image: url(../images/arrow_up.png);
+	background-repeat: no-repeat;
+}
+
+table.displayTable tr.even, table.sharedDatatable.dataTable tr.even td.sorting_1, table.sharedDatatable.dataTable tr.odd {
+	background-color: #F0F8FF;
+}
+
+.uploadFilesButtonDiv {
+	width: 100%;
+	padding-top: 15px;
+	text-align: right;
+	clear: left;
+}
+
+.removeFile {
+	cursor: pointer;
+}
+
+textarea.fileDescriptionTextArea {
+	width: 98%;
+}
+
+div.submissionMetaDetails span.titleSpan {
+	width:150px;
+	display:inline-block;	
+}
+
+div.submissionMetaDetails span.valueSpan {
+	width:262px;
+	display:inline-block;
+}
+
+div.noResponseFontClass{
+	color:#9C9797;
+}
+
+div.submissionQuestionNumber {
+	padding: 0 0.5em;
+	width: 50px;
+	display: table-cell;
+}
+
+div.submissionQuestionText {
+	padding-right: 20px;
+	padding-bottom: 10px;
+	display: table-cell;
+}
+
+div.submissionAnswer {
+	margin-right: 1em;
+	font-size: 0.9em;
+	margin-left: 5em;
+}
+
+div.submissionResponseType {
+	font-family: monospace;
+}
+
+div.viewSubmissionGroup {
+	margin-top: 0.5em;
+}
+
+.followsSharedFixedHeader > .viewSubmissionGroup {
+	border: 1px solid #DDD;
+}
+
+#viewSubmission div.questionDiv {
+	padding: 0.5em;
+	margin-bottom: 3px;
+}
+
+#viewSubmission .followsSharedFixedHeader > div.questionDiv {
+	padding-left: 0;
+	border: 1px solid #DDD;
+	margin-top: 0.5em;
+}
+
+.submissionViewMultiSelectTable td {
+	vertical-align: top;
+}
+
+div.submissionQuestionGroupNumber, div.submissionQuestionGroupText {
+	padding: 0.5em;
+	display: table-cell;
+}
+
+div.submissionQuestionGroupIcon {
+	display: table-cell;
+	padding-left: 0.5em;
+	padding-top: 0.2em;
+}
+
+div.submissionQuestionGroupText {
+	padding-left: 1em;
+}
+
+.twisty:hover {
+	background-color: #EEE;
+	cursor: pointer;
+}
+
+.questionnairePageButtonDiv{
+    clear:left; 
+    padding-top:20px;
+}
+
+span.reviewButton {
+	cursor: pointer;
+}
+
+table.reviewTable {
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+
+table.reviewTable td, table.reviewTable th{
+	border: 1px solid black;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+table.multiselectReviewTable td {
+	border: none;
+}
+
+table.featureReviewTable ,table.featureReviewTable td, table.featureReviewTable th{ 
+    border: none;
+}
+
+tr.reviewHeaderRow {
+	background-color: #DDDDDD;
+}
+
+table.reviewTable tr.groupRow {
+	background-color: #DDDDDD;
+	font-weight:bold;
+}
+
+td.reviewGroupTitle{
+	padding-left : 5px;
+}
+
+th.radioHeader {
+	width:70px;
+}
+
+th.radioHeader a {
+	cursor:pointer;
+}
+
+th.reviewHeaderQA {
+	text-align:left;
+	padding-left:5px;
+}
+
+td.reviewNoResponse {
+	background-color: #DDFFEE;
+}
+
+.reviewIdColumn {
+	padding-left : 5px;
+	padding-right:5px;
+}
+
+td.reviewQ_Quest{
+	padding-left : 5px;
+	width : 350px;
+}
+
+td.reviewQ_PASS{
+	width : 40px;
+	text-align : center;
+}
+
+td.reviewQ_REJECT{
+	width : 40px;
+	text-align : center;
+}
+
+td.reviewQ_Response{
+	padding:10px;
+	width : 400px;
+}
+
+td.multiAnswerCell {
+	vertical-align: top;
+}
+
+.reviewNotes {
+	width: 100%;
+	height: 200px;
+}
+
+.reviewNotesError {
+	background-color: #FFDDDD;
+}
+
+.rejectionEmailTextArea{
+	width:800px;
+	height:400px;
+}
+
+.modifySubmissionAnswerRejectionMessage{
+	background-color: #FFDDDD;
+	clear:both;
+}
+
+.hoveredMapFeature {
+	background-color: #EEE;
+}
+
+.featureDetails .featureId {
+	cursor : default;
+}
+
+div.featureDetails span.deleteFeatureSpan{
+	cursor : pointer;
+	padding-top: 10px;
+}
+
+.textBoxDefault {
+	width: 90%;
+	height: 100px;
+}
+
+.questionSets {
+	margin-left: 3em;
+}
+
+.submissionRejectionSummaryDetails{
+	background-color: #FFDDDD;
+}
+
+.showQuestionReviewHistoryIcon {
+	cursor : pointer;
+}
+
+.reviewAnswerWasRejectedClass {
+	background-color: #FF6666;
+}
+
+.reviewAnswerChangedClass {
+	background-color: #FFCC33;
+}
+
+.reviewAnswerHistoryQuestionText {
+	font-weight:bold;
+	font-size:150%;
+}
+
+table.reviewAnswerHistoryTable td {
+    vertical-align: top;
+    padding-left:5px;
+	padding-right:10px;
+	padding-top:10px;
+}
+
+table.reviewAnswerHistoryTable th {
+	text-align:left;
+	padding-top:15px;
+	padding-left:5px;
+}
+
+table.reviewAnswerHistoryTable td.reviewAnswerContextTd {
+    width: 250px;
+}
+
+table.reviewAnswerHistoryTable td.reviewAnswerTextTd {
+	width: 350px;
+}
+
+table.reviewAnswerHistoryTable td.reviewAnswerStatusTd{
+	width:90px;
+}
+
+table.reviewAnswerHistoryTable td.reviewAnswerCommentsTd {
+	width: 300px;
+}
+	
+table.reviewQuestionSetTable td {
+	border:none;
+}
+
+table.reviewQuestionSetTable td.reviewQuestionSetRowTitle{
+	padding-right:10px;
+}
+
+td.vsa-questionText {
+	width: 300px;
+	padding-left:10px;
+}
+
+td.vsa-pqresponse {
+	padding-left:10px;
+}
+
+#updateDetailsForm input[type="text"], #updateDetailsForm textarea {
+	width:400px;
+}
+
+.helpIcon {
+	cursor:pointer;
+	width: 20px;
+	height: 20px;
+	background-image: url('../images/Information_icon.svg');
+	background-size: contain;
+	display: inline-block;
+	-webkit-filter: grayscale(100%); /* Chrome and Safari */
+	filter: url(filter.svg#desaturate); /* Firefox */
+	filter: gray; /* IE (note: the order matters, this must be the last filter entry) */
+}
+
+.helpIcon:hover {
+	-webkit-filter: grayscale(0%); /* Chrome and Safari */
+	filter: none; /* Firefox and IE */
+}
+
+.deleteIcon {
+	display: inline-block;
+	background-image: url('../images/Deletion_icon.svg');
+	width: 24px;
+	height: 24px;
+	background-size: contain;
+	-webkit-filter: grayscale(100%); /* Chrome and Safari */
+	filter: url(filter.svg#desaturate); /* Firefox */
+	filter: gray; /* IE (note: the order matters, this must be the last filter entry) */
+}
+
+.deleteIcon:hover {
+	-webkit-filter: grayscale(0%); /* Chrome and Safari */
+	filter: none; /* Firefox and IE */
+}
+
+.helpText {
+	display: none;
+}
+
+.ui-autocomplete {
+	max-height: 500px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+}
+	    
+.twoColLeft {
+	float: left;
+	text-align: left;
+	width: 30%;
+	padding-right: 5px;
+	min-height: 1px;
+}
+
+.twoColRight {
+	overflow: hidden;
+	padding-left: 5px;
+}
+
+.centeredContent {
+	text-align: center;
+}
+
+#regoOptionalNote {
+	margin: 6px 0;
+	text-align: center;
+}
+
+#resetPasswordForm {
+	width: 700px;
+}
+
+.regoConfirm {
+	margin-bottom: 5px;
+}
+
+.nectarBlurb {
+	font-style: italic;
+	font-size: 0.7em;
+	margin-top: 0;
+}
+
+#disabledLink, #activeLink {
+	margin-top: 1em;
+}
+
+#disabledLink a {
+	color: #BDBDBD;
+}
+
+.qtip-content {
+	font-size: 1.2em;
+}
+
+.msgBoxSpacing {
+	padding: 0.5em;
+	margin: 1em 9em 0.3em;
+}
+
+.warningBox {
+	border: 2px solid #FFD600;
+	background-color: #FEFDE5;
+}
+
+.infoBox {
+	border: 2px solid #07C;
+	background-color: #E5F1F9;
+}
+
+.successBox {
+	border: 2px solid #66cc66;
+	background-color: #EFF9EF;
+}
+
+.errorBox {
+	border: 2px solid #FF6666;
+	background-color: #FEEFEF;
+}
+
+.errorText {
+	color: #F00;
+}
+
+.goodColour {
+	background-color: #EFF9EF;
+	color: #66cc66;
+}
+
+.badColour {
+	background-color: #F7D1D1;
+	color: #ff6666;
+}
+
+.leftAligned {
+	text-align: left;
+}
+
+.rightAligned {
+	text-align: right;
+}
+
+div.shrinkWrapCenter {
+	display: table;
+	margin: 0 auto;
+}
+
+#menuTable a > button {
+	font-size: 1em;
+	width: 100%;
+}
+
+.controlButton {
+	padding: 3px;
+}
+
+.mapPopup #header, .mapPopup #map, .mapPopup #coordList, .mapPopup #toolSelector {
+	position: absolute;
+	background-color: #FFF;
+}
+		
+.mapPopup #header {
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 52px;
+	border-bottom: 2px solid black;
+}
+		
+.mapPopup #header h2 {
+	margin: 0;
+}
+		
+.mapPopup #map {
+	right: 316px;
+	bottom: 0;
+	left: 0;
+	top: 54px;
+}
+
+.mapPopup #coordList {
+	right: 0;
+	width: 316px;
+	top: 54px;
+	bottom: 0;
+	border-left: 2px solid black;
+}
+		
+.mapPopup #coords {
+	overflow-y: auto;
+	position: absolute;
+	bottom: 0;
+	top: 68px;
+	left: 0;
+	right: 0;
+}
+		
+.mapPopup #map .olImageLoadError, .mapPopup #map {
+	background-color: #06205B;
+}
+		
+.mapPopup .toolSelectionCell {
+	white-space: nowrap;
+}
+		
+body.mapPopup  {
+	position: absolute;
+	min-width: 820px;
+	min-height: 540px;
+}
+		
+.noMargin {
+	margin: 0;
+}
+
+.questionnaireSummary .responseSummarySpan {
+	margin-left: 4em;
+}
+
+.questionnaireSummary .questionSpan, .questionnaireSummary .responseSummarySpan {
+	font-size: 0.8em;
+}
+
+.failedSubmission {
+	border: 2px solid #DDD;
+}
+
+.failedSubmission h3 {
+	padding: 0.6em 0;
+	margin: 0;
+}
+
+.stacktrace {
+	white-space: pre;
+	font-family: monospace;
+	overflow-x: auto;
+}
+
+.sharedTermsList {
+	line-height: 26px;
+}
+
+.lessImportantText {
+	font-size: 0.8em;
+}
+
+#manageSubmissionsListing {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1em 0;
+	font-size: 0.8em;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+#upDownArrowIcon {
+	width: 50px;
+	height: 50px;
+}
+
+.uploadFileClearButton {
+	display: none;
+}
+
+.filename, .filesize {
+	font-family: monospace;
+}
+
+.imagePopup #header, .imagePopup .uploadedImageDetailsTitle {
+	border-bottom: 2px solid #DDD;
+}
+
+.imagePopup #header h2 {
+	margin: 0;
+}
+
+.imagePopup #uploadform {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 400px;
+	bottom: 30px;
+	border-right: 2px solid #DDD;
+}
+
+.imagePopup #uploadedImages {
+	position: absolute;
+	top: 30px;
+	left: 402px;
+	right: 0;
+	bottom: 30px;
+}
+
+.imagePopup #footer {
+	position: absolute;
+	height: 30px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-top: 2px solid #DDD;
+}
+
+.imagePopup {
+	position: absolute;
+	min-width: 600px;
+	min-height: 300px;
+}
+
+.buttonName {
+	font-family: monospace;
+	font-weight: bold;
+}
+
+.placeholderText {
+	font-style: italic;
+}
+
+.autoCompleteMultiSelectControlledVocabInput {
+	vertical-align: top;
+	padding-top: 5px;
+}
+
+.csvFormat {
+	font-family: monospace;
+	padding: 1em;
+	display: block;
+	font-size: 1.2em;
+}
+
+.multiAnswerCell span {
+	vertical-align: super;
+}
+
+.emphasisedText {
+	font-weight: bold;
+}
+
+a.noUnderline {
+	text-decoration: none;
+}
+
+.questionDiv:nth-child(odd) {
+	background-color: #F0F8FF;
+}
+
+#loginMethodContainer {
+	width: 600px;
+	margin-top: 1em;
+	padding: 0.3em 1.3em 1.3em;
+}
+
+#loginMethodContainer .loginTitle {
+	margin: 0;
+}
+
+.loginMethodSeparator {
+	width: 2px;
+	height: 100px;
+	background-color: #000;
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.loginMethod {
+	width: 48%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.loginMethod h3 {
+	margin: 0.3em 0;
+}
+
+.dontWrap {
+	white-space: nowrap;
+}
+
+.truncatable {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.summaryQuestionAnswerCell {
+	padding-left: 2em;
+}
+
+.latestVersionStar {
+	cursor: default;
+	color:  #FF6600 ;
+}
+
+.reducedBottomMargin {
+	margin-bottom: 0.2em;
+}
+
+.speciesListExample {
+	white-space: pre-line;
+	font-family: monospace;
+}
+
+.speciesListExampleContainer {
+	height: 8em;
+	width: 80%;
+	background-color: #EEE;
+	overflow-y: auto;
+	padding-left: 0.3em;
+	padding-bottom: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.nicelySizedTextBox {
+	width: 95%;
+	height: 5em;
+}
+
+.sharedTable .slightBottomPadding {
+	padding-bottom: 1em;
+}

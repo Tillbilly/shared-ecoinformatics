@@ -1,0 +1,167 @@
+Reduced set for first cut.
+
+========================================================================================================
+//Submission data                 Index Field
+IS  id                            id
+IS  doi                           doi
+
+//Meta fields
+I   SHD.submissionName            submissionName_tn 
+IS  SHD.datasetFullName           datasetFullName_t
+IS  SHD.datasetShortName          datasetShortName_t
+IS  SHD.datasetOwnerName          datasetOwnerName_t
+ 
+IS  SHD.methodName                methodName_x_mntn
+IS  SHD.methodAbstract            methodAbstract_x_matn
+
+IS  SHD.datasetKeywords           datasetKeyword_txt                                                                   
+IS  SHD.datasetAbstract           datasetAbstract_t   
+IS  SHD.taxonName                 taxonName_txt
+IS  SHD.datasetPublicationYear    datasetPublicationYear_t
+IS  SHD.firstStudyLocationVisit   firstStudyLocationVisit_dt
+IS  SHD.lastStudyLocationVisit    lastStudyLocationVisit_dt
+IS  SHD.fieldsOfResearch          fieldOfResearch_txt
+IS  SHD.socioEconomicObjectives   socioEconomicObjective_txt
+IS  SHD.curationStatus            curationStatus_t
+IS  SHD.studyAreaDescription      studyAreaDescription_t
+
+//Spatial Related
+IS  SHD.studyLocation             geo_mv
+IS  SHD.studyAreaGeometry         geo
+ 
+IS  SHD.totalNumberStudyLocation  totalNumberStudyLocation_i
+
+========================================================================================================
+
+
+
+========================================================================================================
+//Implicit Fields               indexField
+IS  id   ( submissionId )
+IS  doi  ( TERN minted DOI )
+
+//Meta fields
+I   SHD.submissionName  TEXT  Submission name   - 
+IS  SHD.datasetFullName  TEXT  Dataset name   - 
+IS  SHD.datasetShortName  TEXT  Abbreviated dataset name   - 
+IS  SHD.methodName  TEXT  Method name   - 
+IS  SHD.methodAbstract  TEXT_BOX  Method abstract   - 
+IS  SHD.datasetKeywords  MULTISELECT_TEXT  Keywords   -                                                                    
+IS  SHD.datasetAbstract  TEXT_BOX  Abstract   
+IS  SHD.taxonName  TEXT  Taxon name    'species name'
+IS  SHD.datasetPublicationYear
+IS  SHD.firstStudyLocationVisit  DATE  First study location visit date   - 
+IS  SHD.lastStudyLocationVisit  DATE  Last study location visit date   - 
+IS  SHD.fieldsOfResearch  MULTISELECT_CONTROLLED_VOCAB  Fields of research   "anzsrcfor"
+IS  SHD.socioEconomicObjectives  MULTISELECT_CONTROLLED_VOCAB  Socio-economic objectives   "anzsrcseo" 
+IS  SHD.curationStatus  CONTROLLED_VOCAB  Current status   "project status"
+
+IS  SHD.studyAreaDescription  TEXT_BOX  Study area   - 
+
+//Spatial Related
+S   SHD.studyLocationFileURL  SITE_FILE  Study location file upload   - 
+IS  SHD.studyLocation   ( from file - If the coord system is appropriate )
+IS  SHD.studyAreaGeometry  GEO_FEATURE_SET  Map tool   -
+ 
+IS  SHD.totalNumberStudyLocation  TEXT  Total number of study locations   -
+
+========================================================================================================
+
+
+
+
+
+SHD.researchProgram  CONTROLLED_VOCAB_SUGGEST  Research program   "researchProgramme"      
+SHD.researchProgramIdentifier  TEXT  Research activity identifier   - 
+SHD.datasetContact  CONTROLLED_VOCAB_SUGGEST  Dataset contact   "organisation"
+SHD.datasetOwnerName  CONTROLLED_VOCAB_SUGGEST  Dataset owner   "organisation"
+SHD.licenseType  CONTROLLED_VOCAB_SUGGEST  Licence type   "licenseType"
+SHD.authors  CONTROLLED_VOCAB_SUGGEST  Author name   "organisation"
+SHD.datasetPublicationYear  TEXT  Publication year   - 
+SHD.datasetVersion  TEXT  Dataset version   -             
+SHD.datasetIdentifierType  CONTROLLED_VOCAB  Dataset identifier type   "rifcsIdentifierType"
+SHD.datasetIdentifier  TEXT  Dataset identifier   - 
+SHD.datasetPublisher  TEXT  Publisher   - 
+SHD.embargo  DATE  Embargo date   -                                                                  
+SHD.curationActivities  MULTISELECT_CONTROLLED_VOCAB  Curation activities   "curation status"
+SHD.curationStatus  CONTROLLED_VOCAB  Current status   "project status"                                         
+SHD.datasetKeywords  MULTISELECT_TEXT  Keywords   -                                                                    
+SHD.datasetAbstract  TEXT_BOX  Abstract   - 
+SHD.datasetObjectives  MULTISELECT_TEXT  Objectives   -               
+SHD.studyAreaDescription  TEXT_BOX  Study area   -                                                                                                                       
+SHD.studyLocationCoordinatesFromFile  SITE_FILE  Study location file upload   -     We will do spatial querying - specific semantics and info model tbd.                                 
+SHD.studyLocationCoordinatesFromFile  GEO_FEATURE_SET  Map tool   -                                                  
+SHD.firstStudyLocationVisit  DATE  First study location visit date   - 
+SHD.lastStudyLocationVisit  DATE  Last study location visit date   - 
+SHD.taxonName  TEXT  Taxon name   -                                               --Is this the species name??
+SHD.thematicScope  MULTISELECT_CONTROLLED_VOCAB  Thematic scope   "thematic scope item"
+SHD.fieldsOfResearch  MULTISELECT_CONTROLLED_VOCAB  Fields of research   "anzsrcfor"
+SHD.socioEconomicObjectives  MULTISELECT_CONTROLLED_VOCAB  Socio-economic objectives   "anzsrcseo"    
+SHD.methodName  TEXT  Method name   - 
+SHD.methodAbstract  TEXT_BOX  Method abstract   - 
+
+
+SHD.submissionName  TEXT  Submission name   - 
+SHD.datasetFullName  TEXT  Dataset name   - 
+SHD.datasetShortName  TEXT  Abbreviated dataset name   - 
+SHD.researchProgram  CONTROLLED_VOCAB_SUGGEST  Research program   "researchProgramme"
+SHD.dataset.researchProgramIdentifierType  CONTROLLED_VOCAB  Research program identifier type   "rifcsIdentifierType"
+SHD.researchProgramIdentifier  TEXT  Research activity identifier   - 
+SHD.submitterIsDatasetContact  YES_NO  Is the submitter also the primary dataset contact?   - 
+SHD.ownerIsDatasetContact  YES_NO  Is the dataset owner also the primary dataset contact?   - 
+SHD.datasetContact  CONTROLLED_VOCAB_SUGGEST  Dataset contact   "organisation"
+SHD.datasetContactAddress  TEXT  Postal address   - 
+SHD.datasetContactEmail  TEXT  Email address   - 
+SHD.datasetContactPhone  TEXT  Telephone number   - 
+SHD.relationContactToDataset  CONTROLLED_VOCAB  Relation to dataset   "rifcsPartyRelationType"
+SHD.submitterIsOwner  YES_NO  Is the submitter also the dataset owner?   - 
+SHD.datasetOwnerName  CONTROLLED_VOCAB_SUGGEST  Dataset owner   "organisation"
+SHD.datasetOwnerAddress  TEXT  Postal address   - 
+SHD.datasetOwnerEmail  TEXT  Email address   - 
+SHD.datasetOwnerPhone  TEXT  Telephone number   - 
+SHD.datasetOwnerWebsite  TEXT  Website   - 
+SHD.licenseType  CONTROLLED_VOCAB_SUGGEST  Licence type   "licenseType"
+SHD.licenceDocument  IMAGE  Licence conditions document upload   - 
+SHD.rightsStatement  TEXT_BOX  Rights management statement   - 
+SHD.authors  CONTROLLED_VOCAB_SUGGEST  Author name   "organisation"
+SHD.datasetPublicationYear  TEXT  Publication year   - 
+SHD.datasetVersion  TEXT  Dataset version   - 
+SHD.datasetNameForCitation  TEXT  Dataset name   - 
+SHD.datasetIdentifierType  CONTROLLED_VOCAB  Dataset identifier type   "rifcsIdentifierType"
+SHD.datasetIdentifier  TEXT  Dataset identifier   - 
+SHD.datasetPublisher  TEXT  Publisher   - 
+SHD.datasetLink  TEXT  Dataset link   - 
+SHD.additionalInformation  TEXT  Additional information for citation   - 
+SHD.acknowledgement  TEXT_BOX  Acknowledgement   - 
+SHD.relatedPartyRelationToDataset  CONTROLLED_VOCAB  Relation to dataset   "rifcsPartyRelationType"
+SHD.relatedPartyName  CONTROLLED_VOCAB_SUGGEST  Party name   "organisation"
+SHD.relatedPartyAddress  TEXT  Postal address   - 
+SHD.relatedPartyEmail  TEXT  Email address   - 
+SHD.relatedPartyPhone  TEXT  Telephone number   - 
+SHD.relatedPartyWebsite  TEXT  Website   - 
+SHD.access  TEXT_BOX  Access   - 
+SHD.embargo  DATE  Embargo date   - 
+SHD.curationActivity  MULTISELECT_CONTROLLED_VOCAB  Curation activities   "curation status"
+SHD.curationComments  TEXT  Curation comments   - 
+SHD.curationStatus  CONTROLLED_VOCAB  Current status   "project status"
+SHD.datasetKeyword  MULTISELECT_TEXT  Keywords   - 
+SHD.datasetAbstract  TEXT_BOX  Abstract   - 
+SHD.datasetObjective  MULTISELECT_TEXT  Objectives   - 
+SHD.studyAreaDescription  TEXT_BOX  Study area   - 
+SHD.studyLocationFileURL  SITE_FILE  Study location file upload   - 
+SHD.studyAreaGeometry  GEO_FEATURE_SET  Map tool   - 
+SHD.totalNumberStudyLocation  TEXT  Total number of study locations   - 
+SHD.firstStudyLocationVisit  DATE  First study location visit date   - 
+SHD.lastStudyLocationVisit  DATE  Last study location visit date   - 
+SHD.taxonRank  CONTROLLED_VOCAB  Taxon rank   "taxonomicRank"
+SHD.taxonName  TEXT  Taxon name   - 
+SHD.thematicScope  MULTISELECT_CONTROLLED_VOCAB  Thematic scope   "thematic scope item"
+SHD.fieldsOfResearch  MULTISELECT_CONTROLLED_VOCAB  Fields of research   "anzsrcfor"
+SHD.socioEconomicObjectives  MULTISELECT_CONTROLLED_VOCAB  Socio-economic objectives   "anzsrcseo"
+SHD.methodName  TEXT  Method name   - 
+SHD.methodAbstract  TEXT_BOX  Method abstract   - 
+SHD.additionalResourceName  TEXT  Name   - 
+SHD.additionalResourceType  CONTROLLED_VOCAB  Type   "rifcsRelatedInformationType"
+SHD.additionalResourceIdentifierType  CONTROLLED_VOCAB  Identifier type   "rifcsRelatedInformationIdentifierType"
+SHD.additionalResourceIdentifier  TEXT  Identifier   - 
+SHD.additionalResourceUpload  MULTISELECT_IMAGE  Additional resources document upload   - 

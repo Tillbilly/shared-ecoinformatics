@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resource xsi:schemaLocation="http://datacite.org/schema/kernel-2.1 http://schema.datacite.org/meta/kernel-2.1/metadata.xsd" xmlns="http://datacite.org/schema/kernel-2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <identifier identifierType="DOI"/>
+    <creators>
+        <creator>
+            <creatorName>Till, Benjamin</creatorName>
+        </creator>
+    </creators>
+    <titles>
+        <title>Test</title>
+    </titles>
+    <publisher>AEKOS</publisher>
+    <contributors>
+        <contributor contributorType="ContactPerson">
+            <contributorName>Frederickson, Paul</contributorName>
+        </contributor>
+    </contributors>
+</resource>

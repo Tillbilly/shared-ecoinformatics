@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire  xmlns="http://shared.aekos.org.au/shared">
+    <version>1</version>
+    <title>Reusable group test</title>
+    <subtitle>Reusable group test</subtitle>
+    <introduction>Reusable group test</introduction>
+    <items>
+        <questionGroup id="1" reusableGroup="true" reusableGroupTitleQuestionId="1.1">
+            <groupTitle>Question Group 1</groupTitle>
+            <groupDescription>Group Description</groupDescription>
+            <items>
+               <question id="1.1" type="TEXT" mandatory="true">
+		           <text>Reusable Group Title Question Id</text>
+		           <description> a description for help or something</description>
+		       </question>
+               <question id="1.2" type="YES_NO" mandatory="true">
+		            <text>Is the data awesome?</text>
+		            <description> a description for help or something</description>
+        	   </question>
+            </items>
+        </questionGroup>
+    </items>
+</questionnaire>

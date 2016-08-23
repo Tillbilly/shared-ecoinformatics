@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <bean id="rifcsConfig" class="au.edu.aekos.shared.service.rifcs.SharedRifcsMappingConfig">
+        <property name="registryObjectKeyPrefix" value="aekos.org.au/collection/shared/" />
+        <property name="originatingSource" value="shared.aekos.org.au" />
+        <property name="collectionNameTag" value="SHD.datasetNameForCitation" />
+        <property name="versionTag" value="#{commonConceptMetatagConfig.datasetVersionMetatag}" />
+        <property name="electronicLocationUrlPrefix" value="http://aekos.org.au/dataset/" />
+        <property name="subjectLocalTagList">
+            <list>
+                <value>SHD.ecologicalTheme</value>
+                <value>SHD.threatsPressures</value>
+                <value>SHD.conservationManagement</value>
+            </list>
+        </property>
+        <property name="relatedObjectConfigList" >
+            <list>
+                <bean class="au.edu.aekos.shared.service.rifcs.RelatedObjectConfig">
+                    <property name="key" value="adelaide.edu.au/party/universityofadelaide/20110608" />
+                    <property name="description" value="This dataset is managed by TERN Eco-informatics at the University of Adelaide on behalf of a third party submitter" />
+                    <property name="relationType" value="isOwnedBy" />
+                    <property name="url" value="http://www.adelaide.edu.au" />
+                </bean>
+                <bean class="au.edu.aekos.shared.service.rifcs.RelatedObjectConfig">
+                    <property name="key" value="GVH4v3YLysc0iCRBeIsKlGubLyGS2z7zlEuGyiiWBkNJNuaS2ste" />
+                    <property name="description" value="This dataset has been submitted via SHaRED" />
+                    <property name="relationType" value="isProducedBy" />
+                    <property name="url" value="http://shared.ecoinformatics.org.au" />
+                </bean>
+                <bean class="au.edu.aekos.shared.service.rifcs.RelatedObjectConfig">
+                    <property name="key" value="bu1hlLoUF72Z54Qu9Z6q9TVwxD6j5Km64eefPt0lrTamNQHNGD4F" />
+                    <property name="description" value="This dataset can be accessed through AEKOS" />
+                    <property name="relationType" value="supports" />
+                    <property name="url" value="http://aekos.org.au" />
+                </bean>
+                <bean class="au.edu.aekos.shared.service.rifcs.RelatedObjectConfig">
+                    <property name="key" value="dfUv1CF6zf7yVF7170MfV51bVkMWMiSQnCbf5GbuM9TyEQpBH1Hs" />
+                    <property name="relationType" value="isOutputOf" />
+                    <property name="url" value="http://www.tern.org.au/Eco-informatics-pg17733.html" />
+                </bean>
+                <bean class="au.edu.aekos.shared.service.rifcs.RelatedObjectConfig">
+                    <property name="key" value="TERN-NC-10" />
+                    <property name="relationType" value="isPartOf" />
+                    <property name="url" value="http://www.tern.org.au" />
+                </bean>
+                <bean class="au.edu.aekos.shared.service.rifcs.RelatedObjectConfig">
+                    <property name="key" value="TERN-NC-0" />
+                    <property name="relationType" value="isOutputOf" />
+                </bean>
+            </list>
+        </property>
+    </bean>		
+</beans>

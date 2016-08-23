@@ -1,0 +1,26 @@
+package au.org.aekos.shared.api.model.dataset;
+
+@Deprecated
+public enum SharedResponseType {
+	TEXT,
+    TEXT_BOX,
+    CONTROLLED_VOCAB,
+    CONTROLLED_VOCAB_SUGGEST,
+    YES_NO,
+    DATE,
+    COORDINATE,
+    GEO_FEATURE_SET,
+    IMAGE,
+    BBOX,
+    MULTISELECT_TEXT,
+    MULTISELECT_TEXT_BOX,
+    MULTISELECT_CONTROLLED_VOCAB,
+    MULTISELECT_IMAGE,
+    TREE_SELECT,
+    SITE_FILE,
+    SPECIES_LIST,
+    LICENSE_CONDITIONS,
+    DOCUMENT,
+    MULTIPLE_DOCUMENT,
+    MULTIPLE_QUESTION_GROUP;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+    
+ 
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+<!-- 	Overrides -->
+	<bean id="securityServiceImpl" class="au.edu.aekos.shared.service.security.StubSecurityServiceImpl" />
+	
+<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> -->
+        <!-- one of the properties available; the maximum file size in bytes 
+             roughly a gig - experiment.  Will need to stream this too. -->
+<!--         <property name="maxUploadSize" value="1000000000"/> -->
+<!--     </bean> -->
+   
+<!-- 	<mvc:interceptors> -->
+<!-- 	    <mvc:interceptor> -->
+<!-- 	        <mvc:mapping path="/questionnaire/*" /> -->
+<!-- 	        <bean class="au.edu.aekos.shared.web.interceptors.QuestionnaireSessionActiveInterceptor" /> -->
+<!--         </mvc:interceptor> -->
+<!-- 	</mvc:interceptors> -->
+	
+	<!-- <ehcache:annotation-driven cache-manager="ehCacheManager" />
+    <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" /> -->
+    
+<!--     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" > -->
+<!--         <property name="formatters"> -->
+<!--             <set> -->
+<!--                 <bean class="au.edu.aekos.shared.web.converter.ResponseTypeFormatter" /> -->
+<!--             </set> -->
+<!--         </property> -->
+<!--     </bean> -->
+    
+    <!-- Asynchronous task execution - used for sending emails, and copying files to the object store -->
+<!--     <task:executor id="taskExecuter" pool-size="3-10" queue-capacity="20" rejection-policy="CALLER_RUNS"/> -->
+    
+</beans>

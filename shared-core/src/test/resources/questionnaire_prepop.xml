@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+    <version>version X</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Version 2 XML Structure Example</introduction>
+    <items>
+        <question id="1" type="TEXT" mandatory="true" meta="sub.text">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="2" type="TEXT_BOX" meta="sub.text_box">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="3" type="CONTROLLED_VOCAB" trait="organisation" >
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="4" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" isCustom="true" meta="sub.controlled_vocab_suggest" >
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="5" type="TEXT" meta="sub.text2" prepop="1">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="6" type="TEXT_BOX" meta="sub.text_box2" prepop="2">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="7" type="CONTROLLED_VOCAB" trait="organisation" prepop="3">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="8" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" isCustom="true" meta="sub.controlled_vocab_suggest2" prepop="4">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+        </question>
+    </items>    
+</questionnaire>

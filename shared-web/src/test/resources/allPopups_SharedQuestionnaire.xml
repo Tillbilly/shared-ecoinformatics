@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>666rc1</version>
+	<title>SHaRED AEKOS Submission Tool</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>QA DataTeam version 1</introduction>
+	<firstPageTitle>Testing Template</firstPageTitle>
+	<items>
+
+		<question id="61" showId="true" type="SITE_FILE" mandatory="false">
+			<text>Site file popup</text>
+		</question>
+		
+		<question id="62" showId="true" type="IMAGE" mandatory="false">
+			<text>Image popup</text>
+		</question>
+		
+		<question id="63" showId="true" type="MULTISELECT_IMAGE" mandatory="false">
+			<text>Multi image popup</text>
+		</question>
+		
+		<question id="64" showId="true" type="SPECIES_LIST" mandatory="false">
+			<text>Species list popup</text>
+		</question>
+		
+		<question id="65" showId="true" type="GEO_FEATURE_SET" mandatory="false">
+			<text>Geo feature set popup</text>
+		</question>
+		
+		<question id="66" showId="true" type="LICENSE_CONDITIONS" mandatory="false">
+			<text>Licence conditions popup</text>
+		</question>
+		
+		<question id="67" showId="true" type="DOCUMENT" mandatory="false">
+			<text>Document popup</text>
+		</question>
+
+
+
+		<question id="998" showId="true" type="YES_NO" mandatory="false">
+			<text>Show all the other stuff that needs to be included?</text>
+		</question>
+
+		<questionGroup id="999">
+			<groupTitle>Project</groupTitle>
+			<displayCondition questionId="998" responseValue="Y" />
+			<items>
+				<question id="900" showId="true" type="TEXT" mandatory="false" meta="SHD.studyLocationFile">
+				<text /></question>
+				<question id="1" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetFormalName">
+				<text /></question>
+				<question id="2.1" showId="true" type="TEXT" mandatory="false" meta="SHD.projectName">
+				<text /></question>
+				<question id="2.2" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.projectAbstract">
+					<responseInputClass>textBoxDefault</responseInputClass>
+				<text /></question>
+				<question id="2.3" showId="true" type="YES_NO" mandatory="false">
+				<text /></question>
+				<question id="2.4" showId="true" type="TEXT" mandatory="false" meta="SHD.projectIdentifier">
+					<displayCondition questionId="2.3" responseValue="Y" responseNotNull="true" />
+				<text /></question>
+				<question id="2.5" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="rifcsIdentifierType" mandatory="false"
+					meta="SHD.projectIdentifierType">
+					<displayCondition questionId="2.4" responseNotNull="true" />
+				<text /></question>
+				<question id="2.6" showId="true" type="YES_NO" mandatory="false">
+				<text /></question>
+				<question id="2.7" showId="true" type="CONTROLLED_VOCAB_SUGGEST" isCustom="true" trait="researchProgramme" mandatory="false"
+					meta="SHD.researchProgramName">
+					<displayCondition questionId="2.6" responseValue="Y" responseNotNull="true" />
+				<text /></question>
+				<question id="2.8" showId="true" type="YES_NO" mandatory="false">
+					<displayCondition questionId="2.7" responseNotNull="true" />
+				<text /></question>
+				<question id="2.9" showId="true" type="TEXT" mandatory="false" meta="SHD.researchProgramIdentifier">
+					<displayCondition questionId="2.8" responseValue="Y" responseNotNull="true" />
+				<text /></question>
+				<question id="2.10" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="rifcsIdentifierType" mandatory="false"
+					meta="SHD.researchProgramIdentifierType">
+					<displayCondition questionId="2.9" responseNotNull="true" />
+				<text /></question>
+				<question id="3.1" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetNameForCitation">
+				<text /></question>
+				<question id="3.2" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetAlternativeName">
+				<text /></question>
+				<question id="3.3" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.datasetAbstract">
+					<responseInputClass>textBoxDefault</responseInputClass>
+				<text /></question>
+				<question id="3.4" type="TEXT" mandatory="false" meta="SHD.datasetVersion">
+				<text /></question>
+
+				<question id="3.5" showId="true" type="YES_NO" mandatory="false">
+				<text /></question>
+				<question id="3.6" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetIdentifier">
+					<displayCondition questionId="3.5" responseValue="Y" responseNotNull="true" />
+				<text /></question>
+				<question id="3.7" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="rifcsIdentifierType" mandatory="false"
+					meta="SHD.datasetIdentifierType">
+					<displayCondition questionId="3.6" responseNotNull="true" />
+				<text /></question>
+				<question id="3.8" showId="true" type="TEXT" mandatory="false" meta="SHD.numberStudyLocation" customVal="int">
+				<text /></question>
+				<question id="3.9" showId="true" type="YES_NO" mandatory="false" meta="SHD.numberStudyLocationVisits">
+				<text /></question>
+				<question id="4.1" showId="true" type="TREE_SELECT" trait="ecologicalTheme" isCustom="true" mandatory="false" meta="SHD.ecologicalTheme">
+				<text /></question>
+				<question id="4.2" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.ecologicalThemeSuggest">
+				<text /></question>
+				<question id="4.3" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" trait="threatsPressures" isCustom="true" mandatory="false"
+					meta="SHD.threatsPressures">
+				<text /></question>
+				<question id="4.4" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.threatsPressuresSuggest">
+				<text /></question>
+				<question id="4.5" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" trait="conservationManagement" isCustom="true" mandatory="false"
+					meta="SHD.conservationManagement">
+				<text /></question>
+				<question id="4.6" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.conservationManagementSuggest">
+				<text /></question>
+				<question id="4.7" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcfor" isCustom="true" mandatory="false" meta="SHD.fieldsOfResearch">
+				<text /></question>
+				<question id="4.8" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" trait="anzsrcseo" isCustom="true" mandatory="false"
+					meta="SHD.socioEconomicObjectives">
+				<text /></question>
+				<question id="5.1" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="spatialScale" mandatory="false" meta="SHD.spatialScale">
+				<text /></question>
+				<question id="5.2" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.spatialScaleSuggest">
+				<text /></question>
+				<question id="5.3" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.studyAreaDescription">
+					<responseInputClass>textBoxDefault</responseInputClass>
+				<text /></question>
+				<question id="5.4" showId="true" type="CONTROLLED_VOCAB" trait="data-type-default" mandatory="false">
+					<defaultVocabulary>
+						<tag>
+							<value>Study location file upload</value>
+							<desc>Study location file upload</desc>
+							<display>Study location file upload</display>
+						</tag>
+					</defaultVocabulary>
+				<text /></question>
+				<question id="5.6" showId="true" type="GEO_FEATURE_SET" mandatory="false" meta="SHD.studyAreaGeometry">
+					<displayCondition questionId="5.4" responseValue="Interactive map tool" responseNotNull="true" />
+				<text /></question>
+				<questionGroup id="5.7">
+					<groupTitle>Study area bounding box coordinates</groupTitle>
+					<items>
+						<question id="5.8" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxXmax">
+						<text /></question>
+						<question id="5.9" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxYmax">
+						<text /></question>
+						<question id="5.10" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxXmin">
+						<text /></question>
+						<question id="5.11" showId="true" type="TEXT" mandatory="false" meta="SHD.studyAreaBoundingBoxYmin">
+						<text /></question>
+						<question id="5.12" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="coordinateReferenceSystem" mandatory="false"
+							meta="SHD.studyAreaBoundingBoxCRS">
+						<text /></question>
+					</items>
+					<displayCondition questionId="5.4" responseValue="Bounding box coordinates" responseNotNull="true" />
+				</questionGroup>
+				<question id="5.13" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="false" trait="ibra region" mandatory="false" meta="SHD.ibraRegion">
+				<text /></question>
+				<question id="6.1" showId="true" type="DATE" mandatory="false" meta="SHD.firstStudyAreaVisitDate">
+				<text /></question>
+				<question id="6.2" showId="true" type="DATE" mandatory="false" meta="SHD.lastStudyAreaVisitDate">
+				<text /></question>
+				<question id="7.1" showId="true" type="YES_NO" mandatory="false">
+				<text /></question>
+				<questionGroup id="7.2">
+					<groupTitle>Flora </groupTitle>
+					<displayCondition questionId="7.1" responseValue="Y" responseNotNull="true" />
+					<items>
+						<question id="7.4" showId="true" type="SPECIES_LIST" mandatory="false" meta="SHD.studySpeciesFloraFile">
+						<text /></question>
+						<question id="7.5" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="taxon names" mandatory="false" meta="SHD.taxonName">
+						<text /></question>
+						<question id="7.6" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="common flora names" mandatory="false"
+							meta="SHD.floraCommonName">
+						<text /></question>
+						<question id="7.7" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="floraGroup" mandatory="false" meta="SHD.floraGroup">
+						<text /></question>
+						<question id="7.8" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.floraGroupSuggest">
+						<text /></question>
+					</items>
+				</questionGroup>
+				<question id="7.9" showId="true" type="YES_NO" mandatory="false">
+				<text /></question>
+				<questionGroup id="7.10">
+					<groupTitle>Fauna </groupTitle>
+					<displayCondition questionId="7.9" responseValue="Y" responseNotNull="true" />
+					<items>
+						<question id="7.11" showId="true" type="SPECIES_LIST" mandatory="false" meta="SHD.studySpeciesFaunaFile">
+						<text /></question>
+						<question id="7.12" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="fauna taxon names" mandatory="false"
+							meta="SHD.faunaTaxonomicName">
+						<text /></question>
+						<question id="7.13" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" auto="true" trait="common fauna names" mandatory="false"
+							meta="SHD.faunaCommonName">
+						<text /></question>
+						<question id="7.14" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="faunaGroup" mandatory="false" meta="SHD.faunaGroup">
+						<text /></question>
+						<question id="7.15" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.faunaGroupSuggest">
+						<text /></question>
+					</items>
+				</questionGroup>
+				<question id="8.1" showId="true" type="TREE_SELECT" isCustom="true" trait="environmentalFeatures" mandatory="false" meta="SHD.environmentalFeatures">
+				<text /></question>
+				<question id="8.2" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.environmentalFeaturesSuggest">
+				<text /></question>
+				<question id="9.1" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="samplingDesign" mandatory="false"
+					meta="SHD.samplingDesign">
+				<text /></question>
+				<question id="9.2" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.samplingDesignSuggest">
+				<text /></question>
+				<question id="9.3" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="floraTechnique" mandatory="false"
+					meta="SHD.floraTechnique">
+				<text /></question>
+				<question id="9.4" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.floraTechniqueSuggest">
+				<text /></question>
+				<question id="9.5" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="faunaTechnique" mandatory="false"
+					meta="SHD.faunaTechnique">
+				<text /></question>
+				<question id="9.6" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.faunaTechniqueSuggest">
+				<text /></question>
+				<question id="9.7" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="true" trait="measurement" mandatory="false" meta="SHD.measurement">
+				<text /></question>
+				<question id="9.8" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.measurementSuggest">
+				<text /></question>
+				<question id="9.9" showId="true" type="TREE_SELECT" isCustom="true" trait="measurementTheme" mandatory="false" meta="SHD.measurementTheme">
+				<text /></question>
+				<question id="9.10" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.measurementThemeSuggest">
+				<text /></question>
+				<multipleQuestionGroup id="9.11" showId="true">
+					<items>
+						<question id="9.12" showId="true" type="TEXT" mandatory="false" meta="SHD.methodName">
+						<text /></question>
+						<question id="9.13" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.methodAbstract">
+							<responseInputClass>textBoxDefault</responseInputClass>
+						<text /></question>
+						<question id="9.14" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.methodDriftDescription">
+							<responseInputClass>textBoxDefault</responseInputClass>
+						<text /></question>
+					</items>
+				</multipleQuestionGroup>
+				<question id="9.15" showId="true" type="TREE_SELECT" isCustom="true" trait="artefacts" mandatory="false" meta="SHD.artefacts">
+				<text /></question>
+				<question id="9.16" showId="true" type="MULTISELECT_TEXT" mandatory="false" meta="SHD.artefactsSuggest">
+				<text /></question>
+				<multipleQuestionGroup id="10.1" showId="false">
+					<items>
+						<question id="10.2" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="otherMaterials" mandatory="false" meta="SHD.associatedMaterialType">
+						<text /></question>
+						<question id="10.3" showId="true" type="TEXT" mandatory="false" meta="SHD.associatedMaterialTypeSuggest">
+							<displayCondition questionId="10.2" responseValue="Other" responseNotNull="true" />
+						<text /></question>
+						<question id="10.4" showId="true" type="CONTROLLED_VOCAB" trait="resourceIdentifierType" isCustom="true" mandatory="false"
+							meta="SHD.associatedMaterialIdentifierType">
+						<text /></question>
+						<question id="10.5" showId="true" type="TEXT" mandatory="false" meta="SHD.associatedMaterialIdentifier">
+							<displayCondition questionId="10.4" responseNotNull="true" />
+						<text /></question>
+					</items>
+				</multipleQuestionGroup>
+				<question id="10.6" showId="true" type="DOCUMENT" mandatory="false" meta="SHD.file"><!-- TO DO: replace the type with a general file upload -->
+					<!-- TO DO: this question needs to be part of the previous multipleQuestionGroup (but does not currently work there) -->
+				<text /></question>
+				<question id="11.1" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactName">
+				<text /></question>
+				<question id="11.2" showId="true" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.datasetContactOrganisation">
+				<text /></question>
+				<question id="11.3" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactAddress">
+				<text /></question>
+				<question id="11.4" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactEmail">
+				<text /></question>
+				<question id="11.5" showId="true" type="TEXT" mandatory="false" meta="SHD.datasetContactPhone">
+				<text /></question>
+				<question id="12.1" showId="true" type="TEXT" mandatory="false" meta="SHD.authorGivenNames">
+				<text /></question>
+				<question id="12.2" showId="true" type="TEXT" mandatory="false" meta="SHD.authorSurname">
+				<text /></question>
+				<question id="12.3" showId="true" type="CONTROLLED_VOCAB_SUGGEST" trait="organisation" mandatory="false" meta="SHD.legalContactOrganisation">
+				<text /></question>
+				<question id="13.1" showId="true" type="CONTROLLED_VOCAB" isCustom="true" trait="licenseType" mandatory="false" meta="SHD.licenseType">
+				<text /></question>
+				<question id="13.2" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.acknowledgement">
+					<responseInputClass>textBoxDefault</responseInputClass>
+				<text /></question>
+				<question id="13.3" showId="true" type="DATE" mandatory="false" meta="SHD.embargo">
+				<text /></question>
+				<question id="14.1" showId="true" type="CONTROLLED_VOCAB" trait="project status" mandatory="false" meta="SHD.projectStatus">
+				<text /></question>
+				<question id="14.2" showId="true" type="MULTISELECT_CONTROLLED_VOCAB" isCustom="false" trait="curation status" mandatory="false"
+					meta="SHD.curationStatus">
+				<text /></question>
+				<question id="14.3" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.curationSuggest">
+					<responseInputClass>textBoxDefault</responseInputClass>
+				<text /></question>
+				<question id="14.4" showId="true" type="DATE" mandatory="false" meta="SHD.latestUpdate">
+				<text /></question>
+				<question id="999" type="TEXT" mandatory="false" meta="SHD.datasetPublicationYear">
+				<text /></question>
+			</items>
+		</questionGroup>
+	</items>
+</questionnaire> 

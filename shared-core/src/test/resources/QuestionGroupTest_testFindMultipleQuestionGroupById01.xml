@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+	<version>version 3</version>
+	<title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+	<subtitle>Ecological Research Data Repository</subtitle>
+	<introduction>Introduction to Shared - Question Group and Page Break
+		Example</introduction>
+	<submissionTitleQuestionId>1</submissionTitleQuestionId>
+	<items>
+		<questionGroup id="15">
+			<groupTitle>Dataset citation</groupTitle>
+			<groupDescription>
+							<![CDATA[
+								Information about the citation to be used
+								when referring to the dataset
+							]]>
+			</groupDescription>
+			<items>
+				<multipleQuestionGroup id="15.1">
+					<text>What author names should be included in the citation?</text>
+					<description>
+									<![CDATA[
+										Identification of the main contributor(s)
+										to the production of the dataset
+									]]>
+					</description>
+					<items>
+						<question id="15.2" showId="true" type="TEXT" mandatory="false"
+							meta="SHD.authorGivenNames">
+							<text>What are the given name(s) of the author?</text>
+							<description>
+										<![CDATA[
+			
+										]]>
+							</description>
+						</question>
+						<question id="15.3" showId="true" type="TEXT" mandatory="false"
+							meta="SHD.authorSurname">
+							<text>What is the surname of the author?</text>
+							<description>
+										<![CDATA[
+	
+										]]>
+							</description>
+						</question>
+					</items>
+				</multipleQuestionGroup>
+			</items>
+		</questionGroup>
+	</items>
+</questionnaire>

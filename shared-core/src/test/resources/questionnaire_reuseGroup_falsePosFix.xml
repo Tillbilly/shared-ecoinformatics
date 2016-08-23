@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+    <version>version 3</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Introduction to Shared - Question Group and Page Break Example</introduction>
+    <items>
+        <questionGroup id="1">
+            <groupTitle>Question Group 100</groupTitle>
+            <groupDescription>Group Description</groupDescription>
+            <items>
+               <question id="1.1" type="TEXT" mandatory="true">
+		           <text>Reusable Group Title Question Id</text>
+		           <description> a description for help or something</description>
+		       </question>
+               <question id="1.2" type="YES_NO" mandatory="true">
+		            <text>Is the data awesome?</text>
+		            <description> a description for help or something</description>
+        	   </question>
+            </items>
+        </questionGroup>
+    </items>
+</questionnaire>

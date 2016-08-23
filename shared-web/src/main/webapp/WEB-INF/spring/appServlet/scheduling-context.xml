@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    
+    <task:executor id="systemTaskExecuter" pool-size="1-5" queue-capacity="10" rejection-policy="CALLER_RUNS"/>
+    
+	<task:scheduled-tasks scheduler="scheduler">
+	    <!-- Fire at 1am every day -->
+	    <task:scheduled ref="systemScheduledTasks" method="cleanUpOrphanedFileSystemFiles" cron="0 0 1 * * ?"/> 
+	    <!-- Fire at 2am every day -->
+	    <task:scheduled ref="systemScheduledTasks" method="writeSubmissionDataToObjectStores" cron="0 0 2 * * ?"/>
+	    <!-- Fire at 8am every day -->
+	    <task:scheduled ref="systemScheduledTasks" method="writeObjectStoreManifests" cron="0 0 6 * * ?"/>
+	    
+	</task:scheduled-tasks>
+	
+	<task:scheduler id="scheduler" />
+	
+</beans>

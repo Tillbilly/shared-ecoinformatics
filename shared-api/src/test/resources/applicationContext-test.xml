@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	
+    <bean id="sharedClient" class="au.org.aekos.shared.api.client.RestSharedApiClient">
+    	<property name="restTemplate" ref="restTemplate" />
+    	<property name="filterFields">
+    		<array>
+    			<value>${index-names.id}</value>
+    			<value>${index-names.dataset.name}</value>
+    			<value>${index-names.dataset.abstract}</value>
+    			<value>${index-names.dataset.version}</value>
+    			<value>${index-names.project.name}</value>
+    			<value>${index-names.study-location-count}</value>
+    			<value>${index-names.visit-date.first}</value>
+    			<value>${index-names.visit-date.last}</value>
+    			<value>${index-names.keywords}</value>
+    			<value>${index-names.field-of-research}</value>
+    			<value>${index-names.socio-economic-objectives}</value>
+    			<value>${index-names.ecoloigical-theme}</value>
+    			<value>${index-names.conservation-themes}</value>
+    			<value>${index-names.dataset.custodian}</value>
+    			<value>${index-names.method.name}</value>
+    			<value>${index-names.license-type}</value>
+    			<value>${index-names.spatial-location}</value>
+    			<value>${index-names.image-url}</value>
+    			<value>${index-names.thumbnail-url}</value>
+    			<value>${index-names.embargo-date}</value>
+    		</array>
+    	</property>
+    	<property name="responseDatasetSearchFactory" ref="responseDatasetSearchFactory" />
+    </bean>
+	
+	<bean id="responseDatasetSearchFactory" class="au.org.aekos.shared.api.model.search.ResponseDatasetSearchFactory">
+		<property name="searchResultFactory" ref="searchResultFactory" />
+	</bean>
+	
+	<util:properties id="indexNamesProps" location="classpath:shared-index-names.properties" />
+	
+	<context:property-placeholder location="classpath:test.properties,classpath:shared-index-names.properties" />
+	
+	<bean id="searchResultFactory" class="au.org.aekos.shared.api.model.dataset.SharedSearchResultFactory">
+		<property name="gridCellMappings">
+			<list>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="Project Name" />
+					<constructor-arg name="indexField" value="${index-names.project.name}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="Version Number" />
+					<constructor-arg name="indexField" value="${index-names.dataset.version}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="Number of Sites" />
+					<constructor-arg name="indexField" value="${index-names.study-location-count}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.DateGridCellMapper">
+					<constructor-arg name="label" value="Start Date" />
+					<constructor-arg name="indexField" value="${index-names.visit-date.first}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.DateGridCellMapper">
+					<constructor-arg name="label" value="End Date" />
+					<constructor-arg name="indexField" value="${index-names.visit-date.last}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="Keywords" />
+					<constructor-arg name="indexField" value="${index-names.keywords}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="ANZRC FOR Codes" />
+					<constructor-arg name="indexField" value="${index-names.field-of-research}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="ANZRC SEO Codes" />
+					<constructor-arg name="indexField" value="${index-names.socio-economic-objectives}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="Ecological Themes" />
+					<constructor-arg name="indexField" value="${index-names.ecoloigical-theme}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+					<constructor-arg name="label" value="Conservation/NRM Themes" />
+					<constructor-arg name="indexField" value="${index-names.conservation-themes}" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+    				<constructor-arg name="label" value="Method Name" />
+    				<constructor-arg name="indexField" value="${index-names.method.name}" />
+    			</bean>
+    			<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+    				<constructor-arg name="label" value="Dataset Custodian" />
+    				<constructor-arg name="indexField" value="${index-names.dataset.custodian}" />
+    			</bean>
+    			<bean class="au.org.aekos.shared.api.model.dataset.StringGridCellMapper">
+    				<constructor-arg name="label" value="License Type" />
+    				<constructor-arg name="indexField" value="${index-names.license-type}" />
+    			</bean>
+			</list>
+		</property>
+		<property name="licenseTypeMappings">
+			<set>
+				<bean class="au.org.aekos.shared.api.model.dataset.LicenseTypeMapping">
+					<constructor-arg name="indexedValue" value="Tern Attribution (TERN-BY) Data Licence V1.0" />
+					<constructor-arg name="exportedValue" value="TERN-BY 1.0" />
+				</bean>
+				<bean class="au.org.aekos.shared.api.model.dataset.LicenseTypeMapping">
+					<constructor-arg name="indexedValue" value="Creative Commons Attribution 3.0 Australia" />
+					<constructor-arg name="exportedValue" value="CC-BY 3.0" />
+				</bean>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+</beans>

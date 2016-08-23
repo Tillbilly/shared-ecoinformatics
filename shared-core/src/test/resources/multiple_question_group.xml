@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire  xmlns="http://shared.aekos.org.au/shared">
+    <version>version 3</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Introduction to Shared - Question Group and Page Break Example</introduction>
+    <submissionTitleQuestionId>1</submissionTitleQuestionId>
+	<items>
+		<question id="1" type="TEXT" mandatory="true">
+			<text>What would you like to call this Submission?</text>
+			<description>Title Question - Text response type</description>
+		</question>
+        <multipleQuestionGroup id="2" mandatory="true">
+            <text>Please enter one or more party records</text>
+            <description>This is the help text for one of these multi question group</description>
+            <items>
+                <question id="2.1" type="TEXT" mandatory="true">
+					<text>Role:</text>
+					<description>Role help text</description>
+				</question>
+				<question id="2.2" type="TEXT">
+					<text>Description:</text>
+					<description>Title Question - Text response type</description>
+				</question>
+				<question id="2.3" type="TEXT">
+					<text>URL:</text>
+					<description>Title Question - Text response type</description>
+				</question>
+            </items>
+        </multipleQuestionGroup>
+    </items>
+</questionnaire>

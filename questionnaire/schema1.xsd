@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://shared.aekos.org.au/shared" xmlns:tns="http://shared.aekos.org.au/shared" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="questionnaire" type="tns:questionnaire"/>
+
+  <xs:complexType name="questionnaire">
+    <xs:all>
+      <xs:element name="version" type="xs:string" form="qualified"/>
+      <xs:element name="title" type="xs:string" form="qualified"/>
+      <xs:element name="subtitle" type="xs:string" form="qualified"/>
+      <xs:element name="introduction" type="xs:string" form="qualified"/>
+      <xs:element name="submissionTitleQuestionId" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="firstPageTitle" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="items" type="tns:Items" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="Items">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="question" type="tns:question" form="qualified"/>
+        <xs:element name="questionGroup" type="tns:questionGroup" form="qualified"/>
+        <xs:element name="pageBreak" type="tns:pageBreak" form="qualified"/>
+        <xs:element name="multipleQuestionGroup" type="tns:multipleQuestionGroup" form="qualified"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="question">
+    <xs:all>
+      <xs:element name="text" type="xs:string" form="qualified"/>
+      <xs:element name="description" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="multiselect" type="xs:boolean" form="qualified" minOccurs="0"/>
+      <xs:element name="displayCondition" type="tns:conditionalDisplay" form="qualified" minOccurs="0"/>
+      <xs:element name="defaultVocabulary" type="tns:defaultVocabulary" form="qualified" minOccurs="0"/>
+      <xs:element name="responseInputClass" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="sameAsOptionList" type="tns:SameAsOptionList" form="qualified" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="showId" type="xs:boolean"/>
+    <xs:attribute name="type" type="tns:responseType" use="required"/>
+    <xs:attribute name="mandatory" type="xs:boolean"/>
+    <xs:attribute name="trait" type="xs:string"/>
+    <xs:attribute name="isCustom" type="xs:boolean"/>
+    <xs:attribute name="auto" type="xs:boolean"/>
+    <xs:attribute name="customVal" type="xs:string"/>
+    <xs:attribute name="meta" type="xs:string"/>
+    <xs:attribute name="prepop" type="xs:string"/>
+    <xs:attribute name="parentSelect" type="xs:boolean"/>
+    <xs:attribute name="maxLength" type="xs:string"/>
+    <xs:attribute name="alphaSort" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="conditionalDisplay">
+    <xs:all/>
+    <xs:attribute name="questionId" type="xs:string" use="required"/>
+    <xs:attribute name="responseNotNull" type="xs:boolean"/>
+    <xs:attribute name="responseNull" type="xs:boolean"/>
+    <xs:attribute name="responseValue" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="defaultVocabulary">
+    <xs:sequence>
+      <xs:element name="tag" type="tns:defaultVocabularyTag" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="defaultVocabularyTag">
+    <xs:all>
+      <xs:element name="value" type="xs:string" form="qualified"/>
+      <xs:element name="desc" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="display" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="SameAsOptionList">
+    <xs:sequence>
+      <xs:element name="sameAsOption" type="tns:sameAsOption" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sameAsOption">
+    <xs:all/>
+    <xs:attribute name="questionId" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="questionGroup">
+    <xs:all>
+      <xs:element name="groupTitle" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="groupDescription" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="items" type="tns:Items" form="qualified" minOccurs="0"/>
+      <xs:element name="displayCondition" type="tns:conditionalDisplay" form="qualified" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="showId" type="xs:boolean"/>
+    <xs:attribute name="reusableGroup" type="xs:boolean"/>
+    <xs:attribute name="clearButton" type="xs:boolean"/>
+    <xs:attribute name="reusableGroupTitleQuestionId" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="pageBreak">
+    <xs:sequence/>
+    <xs:attribute name="pageTitle" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="multipleQuestionGroup">
+    <xs:all>
+      <xs:element name="text" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="textDetails" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="items" type="tns:Items" form="qualified" minOccurs="0"/>
+      <xs:element name="displayCondition" type="tns:conditionalDisplay" form="qualified" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="showId" type="xs:boolean"/>
+    <xs:attribute name="mandatory" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="sharedXmlElementSupport">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:simpleType name="responseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TEXT"/>
+      <xs:enumeration value="TEXT_BOX"/>
+      <xs:enumeration value="CONTROLLED_VOCAB"/>
+      <xs:enumeration value="CONTROLLED_VOCAB_SUGGEST"/>
+      <xs:enumeration value="YES_NO"/>
+      <xs:enumeration value="DATE"/>
+      <xs:enumeration value="COORDINATE"/>
+      <xs:enumeration value="GEO_FEATURE_SET"/>
+      <xs:enumeration value="IMAGE"/>
+      <xs:enumeration value="BBOX"/>
+      <xs:enumeration value="MULTISELECT_TEXT"/>
+      <xs:enumeration value="MULTISELECT_TEXT_BOX"/>
+      <xs:enumeration value="MULTISELECT_CONTROLLED_VOCAB"/>
+      <xs:enumeration value="MULTISELECT_CONTROLLED_VOCAB_SUGGEST"/>
+      <xs:enumeration value="MULTISELECT_IMAGE"/>
+      <xs:enumeration value="TREE_SELECT"/>
+      <xs:enumeration value="SITE_FILE"/>
+      <xs:enumeration value="SPECIES_LIST"/>
+      <xs:enumeration value="LICENSE_CONDITIONS"/>
+      <xs:enumeration value="DOCUMENT"/>
+      <xs:enumeration value="MULTIPLE_DOCUMENT"/>
+      <xs:enumeration value="MULTIPLE_QUESTION_GROUP"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sharedXmlElementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QUESTION"/>
+      <xs:enumeration value="QUESTION_GROUP"/>
+      <xs:enumeration value="MULTI_QUESTION_GROUP"/>
+      <xs:enumeration value="ITEMS"/>
+      <xs:enumeration value="QUESTIONNAIRE_CONFIG"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

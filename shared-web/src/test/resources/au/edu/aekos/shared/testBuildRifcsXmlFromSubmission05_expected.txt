@@ -1,0 +1,8 @@
+<relatedInfo>
+                <identifier type="Digital Object Identifier">10.4227/05/53B1F1C02C8E7</identifier>
+            </relatedInfo>
+            <relatedInfo>
+                <identifier type="Digital Object Identifier">20.3338/39/53B1F1C55D1A0</identifier>
+                <title>That other thing that I did</title>
+            </relatedInfo>
+            <rights>

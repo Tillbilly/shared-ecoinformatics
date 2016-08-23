@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire xmlns="http://shared.aekos.org.au/shared">
+    <version>version 3</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Introduction to Shared - Question Group and Page Break Example</introduction>
+    <submissionTitleQuestionId>7.2</submissionTitleQuestionId>
+    <items>
+         <question id="7.2" type="TEXT" mandatory="false">
+            <text>Question 7 - what is the title?</text>
+            <description> a description for help or something</description>
+        </question>
+    </items>
+</questionnaire>

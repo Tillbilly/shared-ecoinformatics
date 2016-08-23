@@ -1,0 +1,93 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<!-- <debug /> -->
+
+	<http pattern="/reg/**" security="none" />
+	<http pattern="/integration/**" security="none" />
+	<http pattern="/css/**" security="none" />
+	<http pattern="/images/**" security="none" />
+	<http pattern="/help/**" security="none" />
+	<http pattern="/script/**" security="none" />
+	<http pattern="/login*" security="none" />
+	<http pattern="/reports/published/**" security="none" />
+	<http pattern="/isSessionActive" security="none" />
+    <http pattern="/getSubmissionImage*" security="none" />
+    <http pattern="/viewPublishedTextFile*" security="none" />
+    
+	<http>
+	    <custom-filter position="PRE_AUTH_FILTER" ref="aafPreAuthFilter" />
+		<form-login login-page="/login" authentication-failure-url="/login?error=true" />
+		<http-basic />
+		<logout />
+		<intercept-url pattern="/groupAdmin/**" access="ROLE_GROUP_ADMIN" />
+		<intercept-url pattern="/vocabManagement/**" access="ROLE_VOCAB_MANAGER" />
+		<intercept-url pattern="/showAllSubmissions" access="ROLE_REVIEWER,ROLE_ADMIN" />
+		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/**" access="ROLE_USER,ROLE_REVIEWER,ROLE_ADMIN" />
+		<session-management> 
+            <concurrency-control session-registry-alias="sessionRegistry"/>
+        </session-management>
+	</http>
+	
+	 <!--  
+        <security:session-management session-fixation-protection="migrateSession" session-authentication-error-url="/login.jsp?authFailed=true"> 
+            <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" expired-url="/login.html" session-registry-alias="sessionRegistry"/>
+        </security:session-management>
+        -->
+        
+	
+	<beans:bean id="aafPreAuthFilter" class="au.edu.aekos.shared.service.security.AAFRapidConnectPreAuthenticatedProcessingFilter">
+	    <beans:property name="authenticationManager" ref="authenticationManager" />
+	    <beans:property name="jwtValidationService" ref="jwtValidationService" /> 
+	    <beans:property name="aafAuthService" ref="aafAuthService" />
+	</beans:bean>
+
+    <beans:bean id="jwtValidationService" class="au.edu.aekos.shared.service.security.JWTValidationServiceImpl">
+        <beans:property name="secretKey" value="jwLbkBM.,B%f~~1YXOo2lAFs9TNyVu_L" />
+        <beans:property name="audAllowedLocation">
+            <beans:set>
+                <beans:value>shared-dev.ecoinformatics.org.au</beans:value>
+                <beans:value>shared-uat.ecoinformatics.org.au</beans:value>
+                <beans:value>shared-qa.aekos.org.au</beans:value>
+                <beans:value>shared.aekos.org.au</beans:value>
+                <beans:value>shared.ecoinformatics.org.au</beans:value>
+            </beans:set>
+        </beans:property>
+       
+    </beans:bean>
+
+    <beans:bean id="aafAuthService" class="au.edu.aekos.shared.service.security.AAFAuthServiceImpl">
+        <beans:property name="dataSource" ref="securityDataSource"/>
+    </beans:bean>
+
+    <beans:bean id="aafPreAuthUserDetailsService" class="au.edu.aekos.shared.service.security.AAFPreAuthUserDetailsService" >
+        <beans:property name="aafAuthService" ref="aafAuthService" />
+    </beans:bean>
+
+    <beans:bean id="aafPreAuthAuthenticationProvider" class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">
+        <beans:property name="preAuthenticatedUserDetailsService" ref="aafPreAuthUserDetailsService" />
+    </beans:bean>
+
+    <!--  <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" /> -->
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="securityDataSource"
+				users-by-username-query="select username,password,enabled from shared_user where username = ? and ( aafuser is null or aafuser = false) and password is not null"
+				authorities-by-username-query="select username,authority from shared_authorities where username = ?" />
+		</authentication-provider>
+		<authentication-provider ref="aafPreAuthAuthenticationProvider" />
+	</authentication-manager>
+
+	<beans:bean id="securityDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="${shared.db.driver}" />
+	    <beans:property name="url" value="${shared.db.url}" />
+		<beans:property name="username" value="${shared.db.username}" />
+		<beans:property name="password" value="${shared.db.password}"/>
+	</beans:bean>
+</beans:beans>

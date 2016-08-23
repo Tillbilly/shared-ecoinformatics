@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+	<context:component-scan base-package="au.edu.aekos.shared.doiclient" />
+	
+    <bean name="doiClientConfig" class="au.edu.aekos.shared.doiclient.service.DoiClientConfig">
+        <property name="userId" value="matt.schneider@adelaide.edu.au"/>
+        <property name="appId" value="eb4ff2eaf145bc50b66bc3a85a0036c0"/>
+        <property name="topLevelUrl" value="http://www.aekos.org.au"/>
+        <property name="doiMintingServiceUrl" value="https://doi.tern.uq.edu.au/test/index.php"/>
+        <property name="keystoreFilePath" value="classpath:ternkeystore.bks"/>
+        <property name="keystorePassword" value="mysecret" />
+    </bean>
+</beans>

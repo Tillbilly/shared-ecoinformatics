@@ -1,0 +1,3 @@
+pg_dump -F c -f shared-pre15dump.dump shared
+
+pg_dump -F p -t shared_user -t shared_authorities -t shared_user_shared_authorities -f shared-users-preparks.sql shared

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+		<bean id="idWriter" class="au.edu.aekos.shared.service.index.IdValueWriter" />
+		<bean id="doiWriter" class="au.edu.aekos.shared.service.index.DoiValueWriter" />
+		<bean id="methodWriter" class="au.edu.aekos.shared.service.index.MethodValueWriter" />
+		<bean id="studyLocationWriter" class="au.edu.aekos.shared.service.index.StudyLocationWriter" />
+		<bean id="studyAreaGeometryWriter" class="au.edu.aekos.shared.service.index.StudyAreaGeometryWriter" />
+		
+		<bean id="studyAreaBoundingBoxWriter" class="au.edu.aekos.shared.service.index.StudyAreaBoundingBoxWriter" >
+		    <property name="minXTag" value="SHD.studyAreaBoundingBoxXmin" />
+		    <property name="minYTag" value="SHD.studyAreaBoundingBoxYmin" />
+		    <property name="maxXTag" value="SHD.studyAreaBoundingBoxXmax" />
+		    <property name="maxYTag" value="SHD.studyAreaBoundingBoxYmax" />
+		    <property name="crsTag" value="SHD.studyAreaBoundingBoxCRS" />
+		</bean>
+		
+		<bean id="pubindexConfig" class="au.edu.aekos.shared.service.index.SubmissionIndexConfig">
+		    <property name="solrUrl" value="http://shared-uat.ecoinformatics.org.au:8080/solr" />
+		    <property name="authRequired" value="true" />
+		    <property name="username" value="solr" />
+		    <property name="password" value="solr" />
+            <!--(busted in 4.5 ) These properties are used for an embedded solr server (i.e. for dev) -->
+            <property name="embeddedServer" value="false" />
+            <property name="coreName" value="collection1" />
+            <property name="embeddedIndexLocation" value="embeddedTestSolr" />
+            
+		    <property name="manualFieldWriterMap">
+		        <map>
+                    <entry key="id" value-ref="idWriter"/>
+                    <entry key="doi" value-ref="doiWriter"/>
+                    <entry key="SHD.methodName" value-ref="methodWriter"/>
+                    <entry key="SHD.methodAbstract" value-ref="methodWriter"/>
+                    <entry key="SHD.studyLocation" value-ref="studyLocationWriter"/>
+                    <entry key="SHD.studyAreaGeometry" value-ref="studyAreaGeometryWriter"/>		        
+		        </map>
+		    </property>
+		    
+		    <property name="fieldMappingList">
+		        <list>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="id" />
+		                <property name="indexFieldName" value="id" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="doi" />
+		                <property name="indexFieldName" value="doi" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.submissionName" />
+		                <property name="indexFieldName" value="submissionName_tn" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetFullName" />
+		                <property name="indexFieldName" value="datasetFullName_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetShortName" />
+		                <property name="indexFieldName" value="datasetShortName_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetOwnerName" />
+		                <property name="indexFieldName" value="datasetOwnerName_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.methodName" />
+		                <property name="indexFieldName" value="methodName_x_mntn" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.methodAbstract" />
+		                <property name="indexFieldName" value="methodAbstract_x_matn" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetKeyword" />
+		                <property name="indexFieldName" value="datasetKeyword_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.datasetAbstract" />
+		                <property name="indexFieldName" value="datasetAbstract_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.taxonName" />
+		                <property name="indexFieldName" value="taxonName_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.firstStudyLocationVisit" />
+		                <property name="indexFieldName" value="firstStudyLocationVisit_dt" />
+		                <property name="convertValueToClass" value="java.util.Date" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.lastStudyLocationVisit" />
+		                <property name="indexFieldName" value="lastStudyLocationVisit_dt" />
+		                <property name="convertValueToClass" value="java.util.Date" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.fieldsOfResearch" />
+		                <property name="indexFieldName" value="fieldOfResearch_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.socioEconomicObjectives" />
+		                <property name="indexFieldName" value="socioEconomicObjective_txt" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.curationStatus" />
+		                <property name="indexFieldName" value="curationStatus_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studyAreaDescription" />
+		                <property name="indexFieldName" value="studyAreaDescription_t" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studyLocation" />
+		                <property name="indexFieldName" value="geo_mv" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.studyAreaGeometry" />
+		                <property name="indexFieldName" value="geo_mv" />
+		            </bean>
+		            <bean class="au.edu.aekos.shared.service.index.SubmissionIndexField">
+		                <property name="sharedTag" value="SHD.totalNumberStudyLocation" />
+		                <property name="indexFieldName" value="totalNumberStudyLocation_i" />
+		                <property name="convertValueToClass" value="java.lang.Integer" />
+		            </bean>
+		        </list>
+		    </property>
+		</bean>
+</beans>
+    

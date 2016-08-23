@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resource xsi:schemaLocation="http://datacite.org/schema/kernel-2.1 http://schema.datacite.org/meta/kernel-2.1/metadata.xsd" xmlns="http://datacite.org/schema/kernel-2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <identifier identifierType="DOI"/>
+    <creators>
+        <creator>
+            <creatorName>Till, Benjamin</creatorName>
+        </creator>
+    </creators>
+    <titles>
+        <title>Test</title>
+    </titles>
+    <publisher>AEKOS</publisher>
+    <publicationYear>2020</publicationYear>
+    <subjects>
+        <subject>Ecology</subject>
+        <subject>Climate change</subject>
+    </subjects>
+    <contributors>
+        <contributor contributorType="ContactPerson">
+            <contributorName>Frederickson, Paul</contributorName>
+        </contributor>
+    </contributors>
+    <dates>
+        <date dateType="Created">2016-01-14</date>
+        <date dateType="StartDate">2016-01-14</date>
+    </dates>
+    <language>English</language>
+    <resourceType resourceTypeGeneral="Dataset">database</resourceType>
+    <alternateIdentifiers>
+        <alternateIdentifier alternateIdentifierType="Internal ID">ALT_ID</alternateIdentifier>
+    </alternateIdentifiers>
+    <relatedIdentifiers>
+        <relatedIdentifier relatedIdentifierType="URN" relationType="IsNewVersionOf">123</relatedIdentifier>
+    </relatedIdentifiers>
+    <formats>
+        <format xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">.accdb</format>
+    </formats>
+    <version>0.0.1</version>
+    <descriptions>
+        <description descriptionType="Abstract">description line 1</description>
+    </descriptions>
+</resource>

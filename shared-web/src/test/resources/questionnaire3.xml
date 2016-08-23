@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questionnaire  xmlns="http://shared.aekos.org.au/shared">
+    <version>version 3</version>
+    <title>SHaRED AEKOS Submission Tool - Example Config 3</title>
+    <subtitle>Ecological Research Data Repository</subtitle>
+    <introduction>Introduction to Shared - Question Group and Page Break Example</introduction>
+    <items>
+        <question id="1" type="CONTROLLED_VOCAB_SUGGEST" mandatory="true" trait="data-type-default">
+            <text>What kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Research</value>
+                </tag>
+                <tag>
+                    <value>Professional</value>
+                    <desc>Professional</desc>
+                    <display>Professional Data</display>
+                </tag>
+                <tag>
+                    <value>Survey</value>
+                    <desc>Survey data description</desc>
+                    <display>Survey Data</display>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="2" type="YES_NO" mandatory="true">
+            <text>Is the data awesome?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="3" type="CONTROLLED_VOCAB" trait="genus-def" mandatory="true">
+            <text>No really, what kind of data are you submitting?</text>
+            <description> a description for help or something</description>
+            <defaultVocabulary>
+                <tag>
+                    <value>Animal</value>
+                </tag>
+                <tag>
+                    <value>Vegetable</value>
+                    <desc>A genus definition</desc>
+                </tag>
+                <tag>
+                    <value>Mineral</value>
+                    <desc>A genus definition</desc>
+                </tag>
+            </defaultVocabulary>
+        </question>
+        <question id="4" type="DATE" mandatory="false">
+            <text>Please pick a Date?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="5" type="YES_NO" mandatory="false">
+            <text>Please pick a Yes/No?</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="6" type="YES_NO">
+            <text>Display if 5 Yes?</text>
+            <description> a description for help or something</description>
+            <displayCondition questionId="5" responseNotNull="true" responseValue="Y" />
+        </question>
+        <question id="7" type="TEXT">
+            <text>Question 7</text>
+            <description> a description for help or something</description>
+        </question>
+        <question id="8" type="TEXT">
+            <text>Question 8 - 7 not null</text>
+            <description> a description for help or something</description>
+            <displayCondition questionId="7" responseNotNull="true" />
+        </question>
+        <pageBreak pageTitle="Page 2"/>
+        <questionGroup id="100">
+            <groupTitle>Question Group 100</groupTitle>
+            <groupDescription>Group Description</groupDescription>
+            <items>
+                <question id="101" type="TEXT" mandatory="true">
+                    <text>Question number 101?</text>
+                    <description> a description for help or something</description>
+                </question>
+                <question id="102" type="DATE" mandatory="true">
+                    <text>Question number 102?</text>
+                    <description> a description for help or something</description>
+                </question>
+                <question id="103" type="COORDINATE" mandatory="true">
+                    <text>Question number 103?</text>
+                    <description> a description for help or something</description>
+                </question>
+                <question id="104" type="BBOX" mandatory="true">
+                    <text>Question number 104?</text>
+                    <description> a description for help or something</description>
+                    <displayCondition questionId="103" responseNotNull="true" />
+                </question>
+            </items>
+        </questionGroup>
+        <questionGroup id="200">
+            <groupTitle>Question Group 200</groupTitle>
+            <groupDescription>Description - Mineral Specific Questions</groupDescription>
+            <items>
+                <questionGroup id="2001">
+                    <groupTitle>Question Sub Group 20000</groupTitle>
+                    <groupDescription> Sub Group Description</groupDescription>
+                    <items>
+                        <question id="20001" type="TEXT" mandatory="true">
+                            <text>Question number 20001?</text>
+                            <description> a description for help or something</description>
+                        </question>
+                        <question id="20002" type="DATE" mandatory="true">
+                            <text>Question number 20002?</text>
+                            <description> a description for help or something</description>
+                        </question>
+                    </items>
+                </questionGroup>
+            </items>
+            <displayCondition questionId="3" responseNotNull="true" responseValue="Mineral"/>
+        </questionGroup>
+        <pageBreak pageTitle="Page 3"/>
+        <questionGroup id="300">
+            <groupTitle>Question Group 300</groupTitle>
+            <groupDescription>Group Description</groupDescription>
+            <items>
+                <question id="3.1" type="IMAGE">
+                    <text>Can you please enter a submission summary image?</text>
+                    <description> a description for help or something</description>
+                </question>
+                <question id="3.2" type="MULTISELECT_IMAGE">
+                    <text>Please enter an image series?</text>
+                    <description> a description for help or something</description>
+                </question>
+            </items>
+        </questionGroup>
+    </items>
+</questionnaire>

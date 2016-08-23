@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubmissionPublicationCertificate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d8849f64-b0da-4d57-bc24-f0cc6be9f7b7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="72"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="submissionTitle" class="java.lang.String">
+		<fieldDescription><![CDATA[submissionTitle]]></fieldDescription>
+	</field>
+	<field name="landingPageUrl" class="java.lang.String">
+		<fieldDescription><![CDATA[landingPageUrl]]></fieldDescription>
+	</field>
+	<field name="datasetName" class="java.lang.String">
+		<fieldDescription><![CDATA[datasetName]]></fieldDescription>
+	</field>
+	<field name="submissionDateString" class="java.lang.String">
+		<fieldDescription><![CDATA[submissionDateString]]></fieldDescription>
+	</field>
+	<field name="submissionId" class="java.lang.Long">
+		<fieldDescription><![CDATA[submissionId]]></fieldDescription>
+	</field>
+	<field name="submitterNameString" class="java.lang.String">
+		<fieldDescription><![CDATA[submitterNameString]]></fieldDescription>
+	</field>
+	<field name="publicationDateString" class="java.lang.String">
+		<fieldDescription><![CDATA[publicationDateString]]></fieldDescription>
+	</field>
+	<field name="doi" class="java.lang.String">
+		<fieldDescription><![CDATA[doi]]></fieldDescription>
+	</field>
+	<field name="submitterOrganisationString" class="java.lang.String">
+		<fieldDescription><![CDATA[submitterOrganisationString]]></fieldDescription>
+	</field>
+	<field name="licenceType" class="java.lang.String">
+		<fieldDescription><![CDATA[licenceType]]></fieldDescription>
+	</field>
+	<field name="publicationYear" class="java.lang.String">
+		<fieldDescription><![CDATA[publicationYear]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="54" uuid="bed3f580-f211-4b58-8234-8711e2e1219f"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Certificate of Data Publication]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="408" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="16" width="555" height="82" uuid="40618c86-e060-4285-ac0e-f205099bfc02"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This certificate confirms that the dataset described below has been submitted  through the SHaRED tool and made publically available for viewing and download from the ÆKOS Data Portal in accordance with the condition of use agreed by the research data author(s) on behalf of the nominated custodian."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="129" width="113" height="20" uuid="593e260e-a19a-4d11-90dd-1c285f410c73"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Submission Title:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="129" width="427" height="20" uuid="ed0ecae0-1420-4b2f-a73f-a388c0840d0b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{submissionTitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="149" width="113" height="20" uuid="27f248ca-9b04-43b4-9a68-f58169e1e725"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Dataset Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="149" width="427" height="20" uuid="af0690d0-54aa-42db-8948-6ab842ca442b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datasetName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="169" width="113" height="20" uuid="8178e757-f86a-40a3-97d6-f42e8365dfb6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DataCite DOI:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="169" width="427" height="20" uuid="225e904e-1e60-4f27-b14f-89b64b70e28a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="189" width="113" height="20" uuid="fdc10327-e43f-47cf-96ae-2ed0bd65c0b5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Landing Page:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="189" width="427" height="20" forecolor="#0033CC" uuid="bd4584b4-59cc-4126-a6d7-75c6c8e20036"/>
+				<textElement>
+					<font size="12" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{landingPageUrl}]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA["AEKOS Portal landing page for submission"]]></hyperlinkTooltipExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="209" width="113" height="20" uuid="2aacfcdb-464c-4ab2-bc02-468ded3ed954"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Submission ID:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="209" width="427" height="20" uuid="d4d77810-3b25-4852-b5a2-80c92ba4315c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{submissionId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="229" width="113" height="20" uuid="2f0826c6-e495-45f4-b238-892497aaafeb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Publication Date:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="229" width="427" height="20" uuid="f1db7625-f540-489f-8fa0-46a3b03f06b2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{publicationDateString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="249" width="113" height="20" uuid="813fd3f6-4eed-4964-be22-9921877681c0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Submitted By:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="249" width="427" height="20" uuid="a1a86d04-d72d-4112-9d76-6ca5fb418154"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{submitterNameString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="269" width="113" height="20" uuid="c1df326d-164f-4594-a39e-b6dd2b0382a9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Organisation:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="269" width="427" height="40" uuid="6e70092b-92e0-4b64-9693-338ea3027fb6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{submitterOrganisationString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="309" width="113" height="20" uuid="b04910ef-c64a-4c38-9518-b09a317838cc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Submission Date:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="309" width="427" height="20" uuid="dbc6c6f4-8887-451e-b29c-91a8ae02e1e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{submissionDateString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="329" width="113" height="20" uuid="36221c16-3ec6-4920-890c-aada6b68a58a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Accessibility:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="329" width="427" height="31" uuid="ef59e1c6-cd79-46f0-b578-825f48b00d44"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This dataset can be accessed together with its metadata via the ÆKOS (Australian Ecological Knowledge and Observation System) portal. "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="128" y="360" width="427" height="31" uuid="852eaa14-e7bc-4b10-b2e5-3f2400a715a7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["The data is © "+$F{submitterOrganisationString}+", "+ $F{publicationYear}+". The material is licensed under "+$F{licenceType}+" licence." ]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="326" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="64" uuid="e00beb9b-2d7e-49a8-935d-257fb4a6bc99"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHaRED (Submission Harmonisation and Retrieval of Ecological Data) is an online data submission service for ecologists to upload their research datasets and enable them to be published via ÆKOS data portal. ÆKOS is an online ecological data service providing free and open access to rich, ecological data collected using plot-based research methods. ]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="368" y="306" width="187" height="20" uuid="7b3dff49-db77-4b04-94a7-2c79c0af29a6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="155" y="111" width="240" height="86" uuid="b61f7e3d-4678-498b-af34-898229942a72"/>
+				<imageExpression><![CDATA["/reports/tern-ecoinformatics.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="155" y="208" width="143" height="15" uuid="1a2e2adb-1c3a-4759-ab5e-13fa02df573c"/>
+				<text><![CDATA[The University of Adelaide]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="223" width="200" height="15" uuid="6f3ba347-f318-459b-b8e8-6bc09dc2bf15"/>
+				<text><![CDATA[L12 Schulz Building]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="238" width="245" height="15" uuid="ccb3d782-4ea9-46e9-8d7a-4c43afa04aaf"/>
+				<text><![CDATA[Adelaide, South Australia, Australia 5005]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="253" width="245" height="15" uuid="fe7d0ba4-d748-46af-b884-de5068596f1e"/>
+				<text><![CDATA[aekos.org.au]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

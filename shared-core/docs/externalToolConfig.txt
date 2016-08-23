@@ -1,0 +1,11 @@
+schemagen external tool settings
+
+Location
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/schemagen
+
+Working directory
+${workspace_loc:/shared-core/src/main/java/au/edu/aekos/shared/questionnaire/jaxb}
+
+Arguments
+QuestionnaireConfig.java Items.java Question.java QuestionGroup.java ResponseType.java ConditionalDisplay.java DefaultVocabulary.java DefaultVocabularyTag.java PageBreak.java MultipleQuestionGroup.java DisplayConditionSubject.java SameAsOption.java SameAsOptionList.java SharedXmlElement.java SharedXmlElementSupport.java
+

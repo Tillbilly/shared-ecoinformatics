@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<registryObjects xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd" xmlns:ns2="http://ands.org.au/standards/rif-cs/extendedRegistryObjects" xmlns="http://ands.org.au/standards/rif-cs/registryObjects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <registryObject group="GROUP">
+        <key>myCollectionKey</key>
+        <originatingSource>http://hello.org</originatingSource>
+        <collection type="dataset" dateModified="2012-01-12" dateAccessioned="2010-01-10">
+            <citationInfo>
+                <citationMetadata>
+                    <identifier type="doi">MY-DOI</identifier>
+                    <contributor seq="1">
+                        <namePart>Auth1</namePart>
+                    </contributor>
+                    <contributor seq="2">
+                        <namePart>Auth2</namePart>
+                    </contributor>
+                    <title>My Dataset Title</title>
+                    <publisher>The Publisher</publisher>
+                    <date type="dateSubmitted">2001-01-01</date>
+                    <date type="publicationDate">2010-01-01</date>
+                </citationMetadata>
+            </citationInfo>
+        </collection>
+    </registryObject>
+</registryObjects>

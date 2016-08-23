@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="submissionSummaryConfig" class="au.edu.aekos.shared.reports.SubmissionSummaryConfig" >
+        <property name="submissionIdMetatag" value="SHD.submissionId" />
+        <property name="submitterMetatag" value="SHD.submitter" />
+        <property name="doiMetatag" value="SHD.submissionDoi" />
+        <property name="publicationDateMetatag" value="SHD.submissionPublicationDate" />
+		<property name="dcmiBBOXMetatag" value="SHD.iso19139dcmiBox" />
+		<property name="siteFileMetatag" value="SHD.studyLocationFile" />
+		<property name="siteFileSRSMetatag" value="SHD.studyLocationFileSRS" />
+		<property name="bboxMinXMetatag" value="SHD.studyAreaBoundingBoxXmin" />
+		<property name="bboxMinYMetatag" value="SHD.studyAreaBoundingBoxYmin" />
+		<property name="bboxMaxXMetatag" value="SHD.studyAreaBoundingBoxXmax" />
+		<property name="bboxMaxYMetatag" value="SHD.studyAreaBoundingBoxYmax" />
+		<property name="fileLinkMetatags">
+		    <list>
+		        <value>SHD.studyLocationFile</value>
+		        <value>SHD.studySpeciesFloraFile</value>
+		        <value>SHD.studySpeciesFloraCommonFile</value>
+		        <value>SHD.studySpeciesFaunaFile</value>
+		        <value>SHD.studySpeciesFaunaCommonFile</value>
+		        <value>SHD.imageFile</value>
+		    </list>
+		</property>
+		<property name="bboxSRSMetatag" value="SHD.studyAreaBoundingBoxCRS" />
+		<property name="pickedGeometryMetatag" value="SHD.studyAreaGeometry" />
+		<property name="floraFileEntryMetatag" value="SHD.studySpeciesFloraFileEntry" />
+		<property name="floraCommonFileEntryMetatag" value="SHD.studySpeciesFloraCommonFileEntry" />
+		<property name="faunaFileEntryMetatag" value="SHD.studySpeciesFaunaFileEntry" />
+		<property name="faunaCommonFileEntryMetatag" value="SHD.studySpeciesFaunaCommonFileEntry" />
+		<property name="datasetFileGroupName" value="Dataset File" />
+		<property name="filenameMetatag" value="SHD.fileName" />
+		<property name="filesizeMetatag" value="SHD.fileSize" />
+		<property name="fileDescriptionMetatag" value="SHD.fileDescription" />
+		<property name="fileTypeMetatag" value="SHD.fileType" />
+		<property name="fileFormatMetatag" value="SHD.fileFormat" />
+		<property name="fileFormatVersionMetatag" value="SHD.fileFormatVersion" />
+		<property name="fileIdMetatag" value="SHD.fileId" />
+		<!-- Derived Citation Metatags -->
+		<property name="citationMetatag" value="SHD.citation" />
+		<property name="rightsStatementMetatag" value="SHD.rightsStatement" />
+		<property name="accessStatementMetatag" value="SHD.accessStatement" />
+    </bean>
+</beans>
