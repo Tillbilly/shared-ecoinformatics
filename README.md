@@ -15,8 +15,17 @@ Myself, (Ben Till) is the primary author,  but Tom Saleeba has contributed a rea
 
 A spiel about SHaRED hosted by ANDS  - https://researchdata.ands.org.au/shared-submission-harmonization-ecological-data/357684
 
+Clone the project,  cd into the pom directory then    mvn install -Dmaven.test.skip=true
+In the same directory   mvn eclipse:eclipse
+This will allow you to easily import the project into eclipse.
+
+
+
+
 
 The below documentation was written by Tom Saleeba,  who also maintains the codebase at TERN Ecoinformatics.
+
+
 
 # SHaRED
 ## Bare minium set up to satisfy the AEKOS dependency
