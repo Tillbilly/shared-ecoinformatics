@@ -22,7 +22,7 @@
 		<aekos.shared-api-version>1.5-SNAPSHOT</aekos.shared-api-version>
 		<ecoinformatics-s3client-version>0.0.1</ecoinformatics-s3client-version>
 		<ehcache-version>2.6.3</ehcache-version>
-		<hibernate.core-version>4.1.5.SP1</hibernate.core-version>
+		<hibernate.core-version>5.4.24.Final</hibernate.core-version>
 		<shared.doi.client.version>0.0.4</shared.doi.client.version>
 		<jasperreports.version>5.5.0</jasperreports.version>
 		<geotools.version>10.3</geotools.version>
