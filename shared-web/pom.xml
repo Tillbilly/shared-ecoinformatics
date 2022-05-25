@@ -16,7 +16,7 @@
 	</parent>
 
 	<properties>
-		<spring.security-version>3.1.4.RELEASE</spring.security-version>
+		<spring.security-version>5.5.7</spring.security-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<aekos.shared-core-version>3.2.3-SNAPSHOT</aekos.shared-core-version>
 		<aekos.shared-api-version>1.5-SNAPSHOT</aekos.shared-api-version>
